@@ -1,0 +1,1387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="GROUP_BY_SEVERITY" value="true" />
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ec227069-5aad-4f4d-951f-ae9ddae2be32" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/geniustest.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lyricextractor.sublime-project" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lyricextractor.sublime-workspace" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/bin/safe_yaml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/cache/bundler/git/Lyricfy-5343e08ffd6e01a93707fc1e26ae1f57f2b66217/FETCH_HEAD" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/cache/bundler/git/rspotify-0f988e3976947b92cc9487d201bf16dbe8f9bc51/FETCH_HEAD" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/cache/bundler/git/rspotify-0f988e3976947b92cc9487d201bf16dbe8f9bc51/objects/pack/pack-b25c6df3a46a5881fcb79bab1cc8c7b417acfb8b.idx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/cache/bundler/git/rspotify-0f988e3976947b92cc9487d201bf16dbe8f9bc51/objects/pack/pack-b25c6df3a46a5881fcb79bab1cc8c7b417acfb8b.pack" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/cache/crack-0.4.2.gem" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/cache/discogs-wrapper-1.1.4.gem" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/cache/hashie-3.4.1.gem" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/cache/json-1.8.2.gem" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/cache/jwt-1.5.0.gem" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/cache/mime-types-2.5.gem" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/cache/multi_json-1.11.0.gem" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/cache/multi_json-1.11.1.gem" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/cache/omniauth-oauth2-1.3.0.gem" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/cache/rack-1.6.1.gem" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/cache/rack-1.6.2.gem" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/cache/safe_yaml-1.0.4.gem" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/extensions/x86_64-darwin-14/2.2.0/json-1.8.2/gem.build_complete" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/extensions/x86_64-darwin-14/2.2.0/json-1.8.2/gem_make.out" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/extensions/x86_64-darwin-14/2.2.0/json-1.8.2/json/ext/generator.bundle" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/extensions/x86_64-darwin-14/2.2.0/json-1.8.2/json/ext/parser.bundle" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/crack-0.4.2/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/crack-0.4.2/Gemfile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/crack-0.4.2/History" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/crack-0.4.2/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/crack-0.4.2/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/crack-0.4.2/crack.gemspec" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/crack-0.4.2/lib/crack.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/crack-0.4.2/lib/crack/json.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/crack-0.4.2/lib/crack/util.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/crack-0.4.2/lib/crack/version.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/crack-0.4.2/lib/crack/xml.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/crack-0.4.2/script/bootstrap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/crack-0.4.2/script/release" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/crack-0.4.2/script/test" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/crack-0.4.2/test/data/twittersearch-firefox.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/crack-0.4.2/test/data/twittersearch-ie.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/crack-0.4.2/test/hash_test.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/crack-0.4.2/test/json_test.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/crack-0.4.2/test/parser_test.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/crack-0.4.2/test/string_test.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/crack-0.4.2/test/test_helper.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/crack-0.4.2/test/xml_test.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/discogs-wrapper-1.1.4/README.markdown" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/discogs-wrapper-1.1.4/Rakefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/discogs-wrapper-1.1.4/discogs.gemspec" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/discogs-wrapper-1.1.4/lib/discogs.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/discogs-wrapper-1.1.4/lib/wrapper/resource.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/discogs-wrapper-1.1.4/lib/wrapper/resource_mappings.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/discogs-wrapper-1.1.4/lib/wrapper/resources/artist.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/discogs-wrapper-1.1.4/lib/wrapper/resources/artist_release.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/discogs-wrapper-1.1.4/lib/wrapper/resources/format.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/discogs-wrapper-1.1.4/lib/wrapper/resources/generic_list.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/discogs-wrapper-1.1.4/lib/wrapper/resources/image.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/discogs-wrapper-1.1.4/lib/wrapper/resources/label.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/discogs-wrapper-1.1.4/lib/wrapper/resources/label_release.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/discogs-wrapper-1.1.4/lib/wrapper/resources/master_release.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/discogs-wrapper-1.1.4/lib/wrapper/resources/master_release_version.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/discogs-wrapper-1.1.4/lib/wrapper/resources/release.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/discogs-wrapper-1.1.4/lib/wrapper/resources/release_artist.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/discogs-wrapper-1.1.4/lib/wrapper/resources/release_label.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/discogs-wrapper-1.1.4/lib/wrapper/resources/search.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/discogs-wrapper-1.1.4/lib/wrapper/resources/search_result.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/discogs-wrapper-1.1.4/lib/wrapper/resources/track.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/discogs-wrapper-1.1.4/lib/wrapper/resources/user.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/discogs-wrapper-1.1.4/lib/wrapper/resources/video.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/discogs-wrapper-1.1.4/lib/wrapper/wrapper.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/discogs-wrapper-1.1.4/spec/resource_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/discogs-wrapper-1.1.4/spec/resources/artist_release_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/discogs-wrapper-1.1.4/spec/resources/artist_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/discogs-wrapper-1.1.4/spec/resources/format_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/discogs-wrapper-1.1.4/spec/resources/generic_list_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/discogs-wrapper-1.1.4/spec/resources/image_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/discogs-wrapper-1.1.4/spec/resources/label_release_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/discogs-wrapper-1.1.4/spec/resources/label_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/discogs-wrapper-1.1.4/spec/resources/master_release_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/discogs-wrapper-1.1.4/spec/resources/master_release_version_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/discogs-wrapper-1.1.4/spec/resources/release_artist_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/discogs-wrapper-1.1.4/spec/resources/release_label_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/discogs-wrapper-1.1.4/spec/resources/release_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/discogs-wrapper-1.1.4/spec/resources/search_result_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/discogs-wrapper-1.1.4/spec/resources/search_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/discogs-wrapper-1.1.4/spec/resources/track_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/discogs-wrapper-1.1.4/spec/resources/video_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/discogs-wrapper-1.1.4/spec/spec_helper.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/discogs-wrapper-1.1.4/spec/wrapper_methods/get_artist_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/discogs-wrapper-1.1.4/spec/wrapper_methods/get_label_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/discogs-wrapper-1.1.4/spec/wrapper_methods/get_master_release_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/discogs-wrapper-1.1.4/spec/wrapper_methods/get_release_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/discogs-wrapper-1.1.4/spec/wrapper_methods/search_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/discogs-wrapper-1.1.4/spec/wrapper_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/.yardopts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/CHANGELOG.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/CONTRIBUTING.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/Rakefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/UPGRADING.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/hashie.gemspec" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/lib/hashie.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/lib/hashie/clash.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/lib/hashie/dash.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/lib/hashie/extensions/coercion.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/lib/hashie/extensions/dash/indifferent_access.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/lib/hashie/extensions/deep_fetch.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/lib/hashie/extensions/deep_find.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/lib/hashie/extensions/deep_locate.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/lib/hashie/extensions/deep_merge.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/lib/hashie/extensions/ignore_undeclared.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/lib/hashie/extensions/indifferent_access.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/lib/hashie/extensions/key_conversion.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/lib/hashie/extensions/mash/safe_assignment.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/lib/hashie/extensions/merge_initializer.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/lib/hashie/extensions/method_access.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/lib/hashie/extensions/parsers/yaml_erb_parser.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/lib/hashie/extensions/pretty_inspect.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/lib/hashie/extensions/stringify_keys.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/lib/hashie/extensions/symbolize_keys.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/lib/hashie/hash.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/lib/hashie/mash.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/lib/hashie/rash.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/lib/hashie/trash.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/lib/hashie/version.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/spec/hashie/clash_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/spec/hashie/dash_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/spec/hashie/extensions/autoload_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/spec/hashie/extensions/coercion_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/spec/hashie/extensions/dash/indifferent_access_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/spec/hashie/extensions/deep_fetch_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/spec/hashie/extensions/deep_find_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/spec/hashie/extensions/deep_locate_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/spec/hashie/extensions/deep_merge_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/spec/hashie/extensions/ignore_undeclared_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/spec/hashie/extensions/indifferent_access_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/spec/hashie/extensions/indifferent_access_with_rails_hwia_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/spec/hashie/extensions/key_conversion_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/spec/hashie/extensions/mash/safe_assignment_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/spec/hashie/extensions/merge_initializer_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/spec/hashie/extensions/method_access_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/spec/hashie/extensions/stringify_keys_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/spec/hashie/extensions/symbolize_keys_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/spec/hashie/hash_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/spec/hashie/mash_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/spec/hashie/parsers/yaml_erb_parser_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/spec/hashie/rash_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/spec/hashie/trash_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/spec/hashie/version_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/spec/spec_helper.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/hashie-3.4.1/spec/support/module_context.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/.travis.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/CHANGES" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/COPYING" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/COPYING-json-jruby" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/GPL" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/Gemfile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/README-json-jruby.markdown" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/README.rdoc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/Rakefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/TODO" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/VERSION" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/data/example.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/data/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/data/prototype.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/diagrams/.keep" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/ext/json/ext/fbuffer/fbuffer.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/ext/json/ext/generator/.RUBYARCHDIR.-.json.-.ext.time" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/ext/json/ext/generator/depend" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/ext/json/ext/generator/extconf.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/ext/json/ext/generator/generator.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/ext/json/ext/generator/generator.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/ext/json/ext/parser/.RUBYARCHDIR.-.json.-.ext.time" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/ext/json/ext/parser/depend" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/ext/json/ext/parser/extconf.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/ext/json/ext/parser/parser.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/ext/json/ext/parser/parser.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/ext/json/ext/parser/parser.rl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/ext/json/extconf.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/install.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/java/src/json/ext/ByteListTranscoder.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/java/src/json/ext/Generator.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/java/src/json/ext/GeneratorMethods.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/java/src/json/ext/GeneratorService.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/java/src/json/ext/GeneratorState.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/java/src/json/ext/OptionsReader.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/java/src/json/ext/Parser.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/java/src/json/ext/Parser.rl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/java/src/json/ext/ParserService.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/java/src/json/ext/RuntimeInfo.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/java/src/json/ext/StringDecoder.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/java/src/json/ext/StringEncoder.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/java/src/json/ext/Utils.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/json-java.gemspec" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/json.gemspec" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/json_pure.gemspec" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/lib/json.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/lib/json/add/bigdecimal.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/lib/json/add/complex.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/lib/json/add/core.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/lib/json/add/date.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/lib/json/add/date_time.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/lib/json/add/exception.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/lib/json/add/ostruct.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/lib/json/add/range.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/lib/json/add/rational.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/lib/json/add/regexp.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/lib/json/add/struct.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/lib/json/add/symbol.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/lib/json/add/time.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/lib/json/common.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/lib/json/ext.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/lib/json/ext/.keep" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/lib/json/generic_object.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/lib/json/pure.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/lib/json/pure/generator.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/lib/json/pure/parser.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/lib/json/version.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/tests/fixtures/fail1.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/tests/fixtures/fail10.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/tests/fixtures/fail11.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/tests/fixtures/fail12.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/tests/fixtures/fail13.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/tests/fixtures/fail14.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/tests/fixtures/fail18.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/tests/fixtures/fail19.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/tests/fixtures/fail2.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/tests/fixtures/fail20.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/tests/fixtures/fail21.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/tests/fixtures/fail22.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/tests/fixtures/fail23.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/tests/fixtures/fail24.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/tests/fixtures/fail25.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/tests/fixtures/fail27.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/tests/fixtures/fail28.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/tests/fixtures/fail3.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/tests/fixtures/fail4.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/tests/fixtures/fail5.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/tests/fixtures/fail6.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/tests/fixtures/fail7.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/tests/fixtures/fail8.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/tests/fixtures/fail9.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/tests/fixtures/pass1.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/tests/fixtures/pass15.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/tests/fixtures/pass16.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/tests/fixtures/pass17.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/tests/fixtures/pass2.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/tests/fixtures/pass26.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/tests/fixtures/pass3.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/tests/setup_variant.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/tests/test_json.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/tests/test_json_addition.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/tests/test_json_encoding.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/tests/test_json_fixtures.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/tests/test_json_generate.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/tests/test_json_generic_object.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/tests/test_json_string_matching.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/tests/test_json_unicode.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/tools/fuzz.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/json-1.8.2/tools/server.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/jwt-1.5.0/Manifest" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/jwt-1.5.0/Rakefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/jwt-1.5.0/jwt.gemspec" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/jwt-1.5.0/lib/jwt.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/jwt-1.5.0/lib/jwt/json.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/jwt-1.5.0/spec/helper.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/jwt-1.5.0/spec/jwt_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/mime-types-2.5/.autotest" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/mime-types-2.5/.gemtest" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/mime-types-2.5/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/mime-types-2.5/.hoerc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/mime-types-2.5/Contributing.rdoc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/mime-types-2.5/History-Types.rdoc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/mime-types-2.5/History.rdoc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/mime-types-2.5/Licence.rdoc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/mime-types-2.5/Manifest.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/mime-types-2.5/README.rdoc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/mime-types-2.5/Rakefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/mime-types-2.5/data/mime-types.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/mime-types-2.5/docs/COPYING.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/mime-types-2.5/docs/artistic.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/mime-types-2.5/lib/mime-types.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/mime-types-2.5/lib/mime.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/mime-types-2.5/lib/mime/type.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/mime-types-2.5/lib/mime/types.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/mime-types-2.5/lib/mime/types/cache.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/mime-types-2.5/lib/mime/types/loader.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/mime-types-2.5/lib/mime/types/loader_path.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/mime-types-2.5/support/apache_mime_types.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/mime-types-2.5/support/benchmarks/load.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/mime-types-2.5/support/convert.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/mime-types-2.5/support/iana_registry.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/mime-types-2.5/test/bad-fixtures/malformed" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/mime-types-2.5/test/fixture/json.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/mime-types-2.5/test/fixture/old-data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/mime-types-2.5/test/fixture/yaml.yaml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/mime-types-2.5/test/minitest_helper.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/mime-types-2.5/test/test_mime_type.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/mime-types-2.5/test/test_mime_types.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/mime-types-2.5/test/test_mime_types_cache.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/mime-types-2.5/test/test_mime_types_class.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/mime-types-2.5/test/test_mime_types_lazy.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/mime-types-2.5/test/test_mime_types_loader.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/multi_json-1.11.0/CHANGELOG.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/multi_json-1.11.0/CONTRIBUTING.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/multi_json-1.11.0/LICENSE.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/multi_json-1.11.0/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/multi_json-1.11.0/lib/multi_json.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/multi_json-1.11.0/lib/multi_json/adapter.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/multi_json-1.11.0/lib/multi_json/adapter_error.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/multi_json-1.11.0/lib/multi_json/adapters/gson.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/multi_json-1.11.0/lib/multi_json/adapters/jr_jackson.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/multi_json-1.11.0/lib/multi_json/adapters/json_common.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/multi_json-1.11.0/lib/multi_json/adapters/json_gem.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/multi_json-1.11.0/lib/multi_json/adapters/json_pure.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/multi_json-1.11.0/lib/multi_json/adapters/nsjsonserialization.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/multi_json-1.11.0/lib/multi_json/adapters/oj.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/multi_json-1.11.0/lib/multi_json/adapters/ok_json.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/multi_json-1.11.0/lib/multi_json/adapters/yajl.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/multi_json-1.11.0/lib/multi_json/convertible_hash_keys.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/multi_json-1.11.0/lib/multi_json/options.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/multi_json-1.11.0/lib/multi_json/parse_error.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/multi_json-1.11.0/lib/multi_json/vendor/okjson.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/multi_json-1.11.0/lib/multi_json/version.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/multi_json-1.11.0/multi_json.gemspec" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/multi_json-1.11.1/CHANGELOG.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/multi_json-1.11.1/CONTRIBUTING.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/multi_json-1.11.1/LICENSE.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/multi_json-1.11.1/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/multi_json-1.11.1/lib/multi_json.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/multi_json-1.11.1/lib/multi_json/adapter.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/multi_json-1.11.1/lib/multi_json/adapter_error.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/multi_json-1.11.1/lib/multi_json/adapters/gson.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/multi_json-1.11.1/lib/multi_json/adapters/jr_jackson.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/multi_json-1.11.1/lib/multi_json/adapters/json_common.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/multi_json-1.11.1/lib/multi_json/adapters/json_gem.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/multi_json-1.11.1/lib/multi_json/adapters/json_pure.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/multi_json-1.11.1/lib/multi_json/adapters/nsjsonserialization.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/multi_json-1.11.1/lib/multi_json/adapters/oj.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/multi_json-1.11.1/lib/multi_json/adapters/ok_json.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/multi_json-1.11.1/lib/multi_json/adapters/yajl.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/multi_json-1.11.1/lib/multi_json/convertible_hash_keys.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/multi_json-1.11.1/lib/multi_json/options.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/multi_json-1.11.1/lib/multi_json/parse_error.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/multi_json-1.11.1/lib/multi_json/vendor/okjson.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/multi_json-1.11.1/lib/multi_json/version.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/multi_json-1.11.1/multi_json.gemspec" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/omniauth-oauth2-1.3.0/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/omniauth-oauth2-1.3.0/.rspec" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/omniauth-oauth2-1.3.0/.rubocop.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/omniauth-oauth2-1.3.0/.travis.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/omniauth-oauth2-1.3.0/Gemfile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/omniauth-oauth2-1.3.0/LICENSE.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/omniauth-oauth2-1.3.0/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/omniauth-oauth2-1.3.0/Rakefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/omniauth-oauth2-1.3.0/lib/omniauth-oauth2.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/omniauth-oauth2-1.3.0/lib/omniauth-oauth2/version.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/omniauth-oauth2-1.3.0/lib/omniauth/strategies/oauth2.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/omniauth-oauth2-1.3.0/omniauth-oauth2.gemspec" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/omniauth-oauth2-1.3.0/spec/helper.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/omniauth-oauth2-1.3.0/spec/omniauth/strategies/oauth2_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/COPYING" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/HISTORY.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/KNOWN-ISSUES" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/README.rdoc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/Rakefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/SPEC" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/bin/rackup" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/contrib/rack.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/contrib/rack.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/contrib/rack_logo.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/contrib/rdoc.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/example/lobster.ru" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/example/protectedlobster.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/example/protectedlobster.ru" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/auth/abstract/handler.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/auth/abstract/request.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/auth/basic.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/auth/digest/md5.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/auth/digest/nonce.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/auth/digest/params.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/auth/digest/request.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/backports/uri/common_18.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/backports/uri/common_192.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/backports/uri/common_193.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/body_proxy.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/builder.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/cascade.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/chunked.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/commonlogger.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/conditionalget.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/config.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/content_length.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/content_type.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/deflater.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/directory.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/etag.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/file.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/handler.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/handler/cgi.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/handler/evented_mongrel.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/handler/fastcgi.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/handler/lsws.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/handler/mongrel.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/handler/scgi.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/handler/swiftiplied_mongrel.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/handler/thin.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/handler/webrick.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/head.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/lint.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/lobster.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/lock.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/logger.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/methodoverride.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/mime.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/mock.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/multipart.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/multipart/generator.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/multipart/parser.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/multipart/uploaded_file.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/nulllogger.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/recursive.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/reloader.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/request.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/response.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/rewindable_input.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/runtime.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/sendfile.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/server.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/session/abstract/id.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/session/cookie.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/session/memcache.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/session/pool.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/showexceptions.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/showstatus.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/static.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/tempfile_reaper.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/urlmap.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/utils.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/utils/okjson.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/rack.gemspec" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/builder/anything.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/builder/comment.ru" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/builder/end.ru" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/builder/line.ru" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/builder/options.ru" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/cgi/assets/folder/test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/cgi/assets/fonts/font.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/cgi/assets/images/image.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/cgi/assets/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/cgi/assets/javascripts/app.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/cgi/assets/stylesheets/app.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/cgi/lighttpd.conf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/cgi/rackup_stub.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/cgi/sample_rackup.ru" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/cgi/test" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/cgi/test+directory/test+file" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/cgi/test.fcgi" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/cgi/test.ru" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/gemloader.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/multipart/bad_robots" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/multipart/binary" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/multipart/content_type_and_no_filename" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/multipart/empty" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/multipart/fail_16384_nofile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/multipart/file1.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/multipart/filename_and_modification_param" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/multipart/filename_and_no_name" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/multipart/filename_with_escaped_quotes" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/multipart/filename_with_escaped_quotes_and_modification_param" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/multipart/filename_with_percent_escaped_quotes" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/multipart/filename_with_unescaped_percentages" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/multipart/filename_with_unescaped_percentages2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/multipart/filename_with_unescaped_percentages3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/multipart/filename_with_unescaped_quotes" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/multipart/ie" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/multipart/invalid_character" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/multipart/mixed_files" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/multipart/nested" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/multipart/none" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/multipart/semicolon" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/multipart/text" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/multipart/webkit" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/rackup/config.ru" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/registering_handler/rack/handler/registering_myself.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/spec_auth_basic.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/spec_auth_digest.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/spec_body_proxy.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/spec_builder.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/spec_cascade.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/spec_cgi.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/spec_chunked.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/spec_commonlogger.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/spec_conditionalget.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/spec_config.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/spec_content_length.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/spec_content_type.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/spec_deflater.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/spec_directory.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/spec_etag.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/spec_fastcgi.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/spec_file.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/spec_handler.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/spec_head.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/spec_lint.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/spec_lobster.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/spec_lock.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/spec_logger.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/spec_methodoverride.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/spec_mime.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/spec_mock.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/spec_mongrel.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/spec_multipart.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/spec_nulllogger.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/spec_recursive.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/spec_request.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/spec_response.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/spec_rewindable_input.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/spec_runtime.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/spec_sendfile.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/spec_server.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/spec_session_abstract_id.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/spec_session_cookie.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/spec_session_memcache.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/spec_session_pool.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/spec_showexceptions.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/spec_showstatus.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/spec_static.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/spec_tempfile_reaper.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/spec_thin.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/spec_urlmap.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/spec_utils.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/spec_version.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/spec_webrick.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/static/another/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/static/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/testrequest.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/unregistered_handler/rack/handler/unregistered.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/test/unregistered_handler/rack/handler/unregistered_long_one.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/COPYING" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/HISTORY.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/KNOWN-ISSUES" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/README.rdoc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/Rakefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/SPEC" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/bin/rackup" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/contrib/rack.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/contrib/rack.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/contrib/rack_logo.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/contrib/rdoc.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/example/lobster.ru" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/example/protectedlobster.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/example/protectedlobster.ru" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/auth/abstract/handler.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/auth/abstract/request.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/auth/basic.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/auth/digest/md5.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/auth/digest/nonce.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/auth/digest/params.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/auth/digest/request.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/backports/uri/common_18.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/backports/uri/common_192.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/backports/uri/common_193.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/body_proxy.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/builder.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/cascade.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/chunked.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/commonlogger.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/conditionalget.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/config.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/content_length.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/content_type.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/deflater.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/directory.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/etag.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/file.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/handler.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/handler/cgi.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/handler/evented_mongrel.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/handler/fastcgi.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/handler/lsws.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/handler/mongrel.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/handler/scgi.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/handler/swiftiplied_mongrel.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/handler/thin.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/handler/webrick.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/head.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/lint.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/lobster.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/lock.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/logger.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/methodoverride.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/mime.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/mock.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/multipart.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/multipart/generator.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/multipart/parser.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/multipart/uploaded_file.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/nulllogger.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/recursive.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/reloader.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/request.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/response.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/rewindable_input.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/runtime.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/sendfile.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/server.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/session/abstract/id.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/session/cookie.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/session/memcache.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/session/pool.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/showexceptions.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/showstatus.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/static.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/tempfile_reaper.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/urlmap.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/utils.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/utils/okjson.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/rack.gemspec" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/builder/anything.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/builder/comment.ru" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/builder/end.ru" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/builder/line.ru" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/builder/options.ru" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/cgi/assets/folder/test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/cgi/assets/fonts/font.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/cgi/assets/images/image.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/cgi/assets/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/cgi/assets/javascripts/app.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/cgi/assets/stylesheets/app.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/cgi/lighttpd.conf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/cgi/rackup_stub.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/cgi/sample_rackup.ru" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/cgi/test" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/cgi/test+directory/test+file" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/cgi/test.fcgi" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/cgi/test.ru" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/gemloader.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/multipart/bad_robots" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/multipart/binary" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/multipart/content_type_and_no_filename" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/multipart/empty" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/multipart/fail_16384_nofile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/multipart/file1.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/multipart/filename_and_modification_param" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/multipart/filename_and_no_name" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/multipart/filename_with_escaped_quotes" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/multipart/filename_with_escaped_quotes_and_modification_param" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/multipart/filename_with_percent_escaped_quotes" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/multipart/filename_with_unescaped_percentages" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/multipart/filename_with_unescaped_percentages2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/multipart/filename_with_unescaped_percentages3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/multipart/filename_with_unescaped_quotes" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/multipart/ie" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/multipart/invalid_character" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/multipart/mixed_files" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/multipart/nested" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/multipart/none" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/multipart/semicolon" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/multipart/text" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/multipart/webkit" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/rackup/config.ru" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/registering_handler/rack/handler/registering_myself.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/spec_auth_basic.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/spec_auth_digest.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/spec_body_proxy.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/spec_builder.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/spec_cascade.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/spec_cgi.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/spec_chunked.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/spec_commonlogger.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/spec_conditionalget.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/spec_config.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/spec_content_length.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/spec_content_type.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/spec_deflater.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/spec_directory.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/spec_etag.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/spec_fastcgi.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/spec_file.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/spec_handler.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/spec_head.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/spec_lint.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/spec_lobster.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/spec_lock.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/spec_logger.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/spec_methodoverride.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/spec_mime.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/spec_mock.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/spec_mongrel.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/spec_multipart.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/spec_nulllogger.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/spec_recursive.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/spec_request.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/spec_response.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/spec_rewindable_input.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/spec_runtime.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/spec_sendfile.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/spec_server.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/spec_session_abstract_id.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/spec_session_cookie.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/spec_session_memcache.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/spec_session_pool.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/spec_showexceptions.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/spec_showstatus.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/spec_static.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/spec_tempfile_reaper.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/spec_thin.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/spec_urlmap.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/spec_utils.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/spec_version.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/spec_webrick.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/static/another/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/static/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/testrequest.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/unregistered_handler/rack/handler/unregistered.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/test/unregistered_handler/rack/handler/unregistered_long_one.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/safe_yaml-1.0.4/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/safe_yaml-1.0.4/.travis.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/safe_yaml-1.0.4/CHANGES.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/safe_yaml-1.0.4/Gemfile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/safe_yaml-1.0.4/LICENSE.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/safe_yaml-1.0.4/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/safe_yaml-1.0.4/Rakefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/safe_yaml-1.0.4/bin/safe_yaml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/safe_yaml-1.0.4/bundle_install_all_ruby_versions.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/safe_yaml-1.0.4/lib/safe_yaml.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/safe_yaml-1.0.4/lib/safe_yaml/deep.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/safe_yaml-1.0.4/lib/safe_yaml/libyaml_checker.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/safe_yaml-1.0.4/lib/safe_yaml/load.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/safe_yaml-1.0.4/lib/safe_yaml/parse/date.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/safe_yaml-1.0.4/lib/safe_yaml/parse/hexadecimal.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/safe_yaml-1.0.4/lib/safe_yaml/parse/sexagesimal.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/safe_yaml-1.0.4/lib/safe_yaml/psych_handler.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/safe_yaml-1.0.4/lib/safe_yaml/psych_resolver.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/safe_yaml-1.0.4/lib/safe_yaml/resolver.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/safe_yaml-1.0.4/lib/safe_yaml/safe_to_ruby_visitor.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/safe_yaml-1.0.4/lib/safe_yaml/syck_hack.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/safe_yaml-1.0.4/lib/safe_yaml/syck_node_monkeypatch.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/safe_yaml-1.0.4/lib/safe_yaml/syck_resolver.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/safe_yaml-1.0.4/lib/safe_yaml/transform.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/safe_yaml-1.0.4/lib/safe_yaml/transform/to_boolean.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/safe_yaml-1.0.4/lib/safe_yaml/transform/to_date.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/safe_yaml-1.0.4/lib/safe_yaml/transform/to_float.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/safe_yaml-1.0.4/lib/safe_yaml/transform/to_integer.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/safe_yaml-1.0.4/lib/safe_yaml/transform/to_nil.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/safe_yaml-1.0.4/lib/safe_yaml/transform/to_symbol.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/safe_yaml-1.0.4/lib/safe_yaml/transform/transformation_map.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/safe_yaml-1.0.4/lib/safe_yaml/version.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/safe_yaml-1.0.4/run_specs_all_ruby_versions.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/safe_yaml-1.0.4/safe_yaml.gemspec" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/safe_yaml-1.0.4/spec/exploit.1.9.2.yaml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/safe_yaml-1.0.4/spec/exploit.1.9.3.yaml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/safe_yaml-1.0.4/spec/issue48.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/safe_yaml-1.0.4/spec/issue49.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/safe_yaml-1.0.4/spec/libyaml_checker_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/safe_yaml-1.0.4/spec/psych_resolver_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/safe_yaml-1.0.4/spec/resolver_specs.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/safe_yaml-1.0.4/spec/safe_yaml_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/safe_yaml-1.0.4/spec/spec_helper.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/safe_yaml-1.0.4/spec/support/exploitable_back_door.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/safe_yaml-1.0.4/spec/syck_resolver_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/safe_yaml-1.0.4/spec/transform/base64_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/safe_yaml-1.0.4/spec/transform/to_date_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/safe_yaml-1.0.4/spec/transform/to_float_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/safe_yaml-1.0.4/spec/transform/to_integer_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/safe_yaml-1.0.4/spec/transform/to_symbol_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/safe_yaml-1.0.4/spec/yaml_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/crack-0.4.2.gemspec" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/discogs-wrapper-1.1.4.gemspec" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/hashie-3.4.1.gemspec" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/json-1.8.2.gemspec" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/jwt-1.5.0.gemspec" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/mime-types-2.5.gemspec" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/multi_json-1.11.0.gemspec" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/multi_json-1.11.1.gemspec" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/omniauth-oauth2-1.3.0.gemspec" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/rack-1.6.1.gemspec" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/rack-1.6.2.gemspec" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/safe_yaml-1.0.4.gemspec" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/sqlite3-1.3.10/ext/sqlite3/backup.o" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/sqlite3-1.3.10/ext/sqlite3/backup.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/sqlite3-1.3.10/ext/sqlite3/database.o" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/sqlite3-1.3.10/ext/sqlite3/database.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/sqlite3-1.3.10/ext/sqlite3/exception.o" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/sqlite3-1.3.10/ext/sqlite3/exception.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/extensions/x86_64-darwin-14/2.2.0/json-1.8.3/json/ext/generator.bundle" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/extensions/x86_64-darwin-14/2.2.0/json-1.8.3/json/ext/generator.bundle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/html_document.o" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/html_document.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/html_element_description.o" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/html_element_description.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/html_entity_lookup.o" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/html_entity_lookup.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/html_sax_parser_context.o" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/html_sax_parser_context.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/html_sax_push_parser.o" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/html_sax_push_parser.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/extensions/x86_64-darwin-14/2.2.0/nokogiri-1.6.6.2/nokogiri/nokogiri.bundle" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/extensions/x86_64-darwin-14/2.2.0/nokogiri-1.6.6.2/nokogiri/nokogiri.bundle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/nokogiri.bundle" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/nokogiri.bundle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/lib/nokogiri/nokogiri.bundle" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/lib/nokogiri/nokogiri.bundle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/nokogiri.o" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/nokogiri.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/extensions/x86_64-darwin-14/2.2.0/json-1.8.3/json/ext/parser.bundle" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/extensions/x86_64-darwin-14/2.2.0/json-1.8.3/json/ext/parser.bundle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/sqlite3-1.3.10/ext/sqlite3/sqlite3.o" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/sqlite3-1.3.10/ext/sqlite3/sqlite3.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/extensions/x86_64-darwin-14/2.2.0/sqlite3-1.3.10/sqlite3/sqlite3_native.bundle" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/extensions/x86_64-darwin-14/2.2.0/sqlite3-1.3.10/sqlite3/sqlite3_native.bundle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/sqlite3-1.3.10/ext/sqlite3/sqlite3_native.bundle" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/sqlite3-1.3.10/ext/sqlite3/sqlite3_native.bundle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/sqlite3-1.3.10/lib/sqlite3/sqlite3_native.bundle" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/sqlite3-1.3.10/lib/sqlite3/sqlite3_native.bundle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/sqlite3-1.3.10/ext/sqlite3/statement.o" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/sqlite3-1.3.10/ext/sqlite3/statement.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_attr.o" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_attr.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_attribute_decl.o" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_attribute_decl.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_cdata.o" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_cdata.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_comment.o" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_comment.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_document.o" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_document.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_document_fragment.o" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_document_fragment.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_dtd.o" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_dtd.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_element_content.o" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_element_content.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_element_decl.o" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_element_decl.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_encoding_handler.o" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_encoding_handler.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_entity_decl.o" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_entity_decl.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_entity_reference.o" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_entity_reference.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_io.o" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_io.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_libxml2_hacks.o" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_libxml2_hacks.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_namespace.o" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_namespace.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_node.o" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_node.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_node_set.o" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_node_set.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_processing_instruction.o" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_processing_instruction.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_reader.o" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_reader.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_relax_ng.o" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_relax_ng.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_sax_parser.o" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_sax_parser.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_sax_parser_context.o" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_sax_parser_context.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_sax_push_parser.o" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_sax_push_parser.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_schema.o" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_schema.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_syntax_error.o" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_syntax_error.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_text.o" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_text.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_xpath_context.o" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xml_xpath_context.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xslt_stylesheet.o" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/xslt_stylesheet.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/Makefile" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/nokogiri-1.6.6.2/ext/nokogiri/Makefile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/sqlite3-1.3.10/ext/sqlite3/Makefile" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/sqlite3-1.3.10/ext/sqlite3/Makefile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/echowrap-0.1.4/lib/echowrap/audio_summary.rb" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/gems/echowrap-0.1.4/lib/echowrap/audio_summary.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chartparse.rb" afterPath="$PROJECT_DIR$/chartparse.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dbcalls.rb" afterPath="$PROJECT_DIR$/dbcalls.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/discogs-wrapper-2.1.1.gemspec" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/discogs-wrapper-2.1.1.gemspec" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/discogsapi.rb" afterPath="$PROJECT_DIR$/discogsapi.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/domain_name-0.5.24.gemspec" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/domain_name-0.5.24.gemspec" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/echowrap-0.1.4.gemspec" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/echowrap-0.1.4.gemspec" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/faraday-0.9.1.gemspec" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/faraday-0.9.1.gemspec" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/extensions/x86_64-darwin-14/2.2.0/json-1.8.3/gem_make.out" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/extensions/x86_64-darwin-14/2.2.0/json-1.8.3/gem_make.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/extensions/x86_64-darwin-14/2.2.0/nokogiri-1.6.6.2/gem_make.out" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/extensions/x86_64-darwin-14/2.2.0/nokogiri-1.6.6.2/gem_make.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/extensions/x86_64-darwin-14/2.2.0/sqlite3-1.3.10/gem_make.out" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/extensions/x86_64-darwin-14/2.2.0/sqlite3-1.3.10/gem_make.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/extensions/x86_64-darwin-14/2.2.0/unf_ext-0.0.7.1/gem_make.out" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/extensions/x86_64-darwin-14/2.2.0/unf_ext-0.0.7.1/gem_make.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/hashie-2.1.2.gemspec" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/hashie-2.1.2.gemspec" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/highline-1.7.2.gemspec" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/highline-1.7.2.gemspec" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/http-cookie-1.0.2.gemspec" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/http-cookie-1.0.2.gemspec" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/httparty-0.11.0.gemspec" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/httparty-0.11.0.gemspec" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/json-1.8.3.gemspec" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/json-1.8.3.gemspec" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/linkclass.rb" afterPath="$PROJECT_DIR$/linkclass.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lyricfycall.rb" afterPath="$PROJECT_DIR$/lyricfycall.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/mime-types-2.6.1.gemspec" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/mime-types-2.6.1.gemspec" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/mini_portile-0.6.2.gemspec" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/mini_portile-0.6.2.gemspec" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/extensions/x86_64-darwin-14/2.2.0/sqlite3-1.3.10/mkmf.log" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/extensions/x86_64-darwin-14/2.2.0/sqlite3-1.3.10/mkmf.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/multi_xml-0.5.5.gemspec" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/multi_xml-0.5.5.gemspec" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/multipart-post-2.0.0.gemspec" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/multipart-post-2.0.0.gemspec" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/netrc-0.10.3.gemspec" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/netrc-0.10.3.gemspec" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/nokogiri-1.6.6.2.gemspec" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/nokogiri-1.6.6.2.gemspec" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/oauth-0.4.7.gemspec" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/oauth-0.4.7.gemspec" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/oauth2-1.0.0.gemspec" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/oauth2-1.0.0.gemspec" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/omniauth-1.2.2.gemspec" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/omniauth-1.2.2.gemspec" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/cache/bundler/git/rspotify-0f988e3976947b92cc9487d201bf16dbe8f9bc51/packed-refs" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/cache/bundler/git/rspotify-0f988e3976947b92cc9487d201bf16dbe8f9bc51/packed-refs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/rapgenius-1.0.5.gemspec" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/rapgenius-1.0.5.gemspec" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/rest-client-1.8.0.gemspec" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/rest-client-1.8.0.gemspec" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/simple-rss-1.3.1.gemspec" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/simple-rss-1.3.1.gemspec" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/simple_oauth-0.3.1.gemspec" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/simple_oauth-0.3.1.gemspec" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/sqlite3-1.3.10.gemspec" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/sqlite3-1.3.10.gemspec" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/unf-0.1.4.gemspec" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/unf-0.1.4.gemspec" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/unf_ext-0.0.7.1.gemspec" afterPath="$PROJECT_DIR$/vendor/bundle/ruby/2.2.0/specifications/unf_ext-0.0.7.1.gemspec" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/writetofile.rb" afterPath="$PROJECT_DIR$/writetofile.rb" />
+    </list>
+    <ignored path="LyricExtractor.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="RubyMine70/coverage/LyricExtractor@main.coverage" NAME="main Coverage Results" MODIFIED="1436365366469" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="LyricExtractor" />
+    <SUITE FILE_PATH="RubyMine70/coverage/LyricExtractor@chartparse.coverage" NAME="chartparse Coverage Results" MODIFIED="1436188058918" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="LyricExtractor" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="LyricExtractor" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="chartparse.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/chartparse.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.797546">
+              <caret line="26" column="5" selection-start-line="25" selection-start-column="2" selection-end-line="27" selection-end-column="27" />
+              <folding>
+                <element signature="e#1524#4306#0" expanded="false" />
+                <element signature="e#4396#4761#0" expanded="false" />
+                <element signature="e#4833#6076#0" expanded="false" />
+                <element signature="e#4845#5317#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="linkclass.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/linkclass.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.8888888">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding>
+                <element signature="e#158#177#0" expanded="false" />
+                <element signature="e#286#1663#0" expanded="false" />
+                <element signature="e#1666#3104#0" expanded="false" />
+                <element signature="e#158#3577#1" expanded="false" />
+                <element signature="e#3362#3450#0" expanded="false" />
+                <element signature="e#3453#3491#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="linkfeeder.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/linkfeeder.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="chart_parse.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/chart_parse.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="32" column="49" selection-start-line="32" selection-start-column="49" selection-end-line="32" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Ruby Class Template" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/linkclass.rb" />
+        <option value="$PROJECT_DIR$/chartparse.rb" />
+        <option value="$PROJECT_DIR$/linkfeeder.rb" />
+        <option value="$PROJECT_DIR$/main.rb" />
+        <option value="$PROJECT_DIR$/chart_parse.rb" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
+  <component name="NamedScopeManager">
+    <order />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="123" />
+    <option name="y" value="23" />
+    <option name="width" value="1400" />
+    <option name="height" value="812" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scope">
+        <subPane subId="Problems" />
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LyricExtractor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LyricExtractor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BBSongDB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="recentsLimit" value="5" />
+    <property name="FullScreen" value="false" />
+  </component>
+  <component name="RunManager" selected="Ruby.main">
+    <configuration default="false" name="chartparse" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
+      <module name="LyricExtractor" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/chartparse.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <method />
+    </configuration>
+    <configuration default="false" name="main" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
+      <module name="LyricExtractor" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/main.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="CucumberRunConfigurationType" factoryName="Cucumber">
+      <predefined_log_file id="RUBY_CUCUMBER" enabled="true" />
+      <module name="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*.feature" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TAGS_FILTER" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_NAME_FILTER" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_ARGS" VALUE="--color -r features" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="VERBOSE_OPTION" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_RUNNER_PATH" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_RUNNER" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SETTINGS_VERSION" VALUE="2" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="RSpecRunConfigurationType" factoryName="RSpec">
+      <predefined_log_file id="RUBY_RSPEC" enabled="true" />
+      <module name="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*_spec.rb" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_SPEC_RUNNER" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="RubyRunConfigurationType" factoryName="Ruby">
+      <module name="" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest">
+      <predefined_log_file id="RUBY_TESTUNIT" enabled="true" />
+      <module name="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_OPTIONS" VALUE="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <pass-parent-envs>true</pass-parent-envs>
+      <envs />
+      <method />
+    </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="Ruby.chartparse" />
+      <item index="1" class="java.lang.String" itemvalue="Ruby.main" />
+    </list>
+    <recent_temporary>
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="Ruby.main" />
+        <item index="1" class="java.lang.String" itemvalue="Ruby.chartparse" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ec227069-5aad-4f4d-951f-ae9ddae2be32" name="Default" comment="" />
+      <created>1436113040349</created>
+      <option name="number" value="Default" />
+      <updated>1436113040349</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="123" y="23" width="1400" height="812" extended-state="0" />
+    <editor active="false" />
+    <layout>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39921975" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32769832" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32769832" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="ruby-line">
+          <url>file://$PROJECT_DIR$/linkclass.rb</url>
+          <line>163</line>
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="3" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/chartparse.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#1524#4306#0" expanded="false" />
+            <element signature="e#4396#4761#0" expanded="false" />
+            <element signature="e#4833#6076#0" expanded="false" />
+            <element signature="e#4845#5317#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chartparse.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#1524#4306#0" expanded="false" />
+            <element signature="e#4396#4761#0" expanded="false" />
+            <element signature="e#4833#6076#0" expanded="false" />
+            <element signature="e#4845#5317#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/linkclass.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.8888888">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding>
+            <element signature="e#158#177#0" expanded="false" />
+            <element signature="e#286#1663#0" expanded="false" />
+            <element signature="e#1666#3104#0" expanded="false" />
+            <element signature="e#158#3577#1" expanded="false" />
+            <element signature="e#3362#3450#0" expanded="false" />
+            <element signature="e#3453#3491#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/linkfeeder.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chart_parse.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="49" selection-start-line="32" selection-start-column="49" selection-end-line="32" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chartparse.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.797546">
+          <caret line="26" column="5" selection-start-line="25" selection-start-column="2" selection-end-line="27" selection-end-column="27" />
+          <folding>
+            <element signature="e#1524#4306#0" expanded="false" />
+            <element signature="e#4396#4761#0" expanded="false" />
+            <element signature="e#4833#6076#0" expanded="false" />
+            <element signature="e#4845#5317#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

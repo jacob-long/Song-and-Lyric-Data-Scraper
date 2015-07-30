@@ -1,0 +1,13 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+	precomposeunicode = true
+[remote "origin"]
+	url = /Users/Jacob/BBSongDB/vendor/bundle/ruby/2.2.0/cache/bundler/git/Lyricfy-5343e08ffd6e01a93707fc1e26ae1f57f2b66217
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master

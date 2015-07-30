@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require 'under_fire'
+
+UnderFire::CLI.start(ARGV)

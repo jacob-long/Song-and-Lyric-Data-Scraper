@@ -1,0 +1,24 @@
+/Users/Jacob/.rvm/rubies/ruby-2.2.2/bin/ruby -r ./siteconf20150705-47365-o5n4kx.rb extconf.rb
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling similar_text.c
+similar_text.c:17:19: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+        *pos1 = p - txt1;
+              ~ ~~^~~~~~
+similar_text.c:18:19: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+        *pos2 = q - txt2;
+              ~ ~~^~~~~~
+similar_text.c:52:41: warning: implicit conversion loses integer precision: 'size_t' (aka 'unsigned long') to 'int' [-Wshorten-64-to-32]
+  sim = similar_text_similar_char(txt1, t1_len, txt2, t2_len);
+        ~~~~~~~~~~~~~~~~~~~~~~~~~       ^~~~~~
+similar_text.c:52:55: warning: implicit conversion loses integer precision: 'size_t' (aka 'unsigned long') to 'int' [-Wshorten-64-to-32]
+  sim = similar_text_similar_char(txt1, t1_len, txt2, t2_len);
+        ~~~~~~~~~~~~~~~~~~~~~~~~~                     ^~~~~~
+4 warnings generated.
+linking shared-object similar_text.bundle
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 similar_text.bundle ./.gem.20150705-47365-11bdgvl
