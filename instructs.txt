@@ -1,0 +1,22 @@
+Use this file to set up a scraping session. When a line begins with '##', the following line will be a command for that parameter.
+
+When writing commands, you must copy LITERALLY from the options given, meaning case-sensitivity and spacing is important. Comma separation if multiple parameters are used.
+
+There are commands filled in by default to give you a sense of what things should look like and to give you the ability to do a dry run with no user-specified params.
+
+# Acceptable years begin around 2005, though this varies by genre.
+
+## years
+2014, 2015
+
+# Possible genres: pop, country, rock, R&B/hip hop, dance/electronic, rap, latin, christian
+# Album-only genres: blues, classical, jazz, new age, reggae
+
+## genres
+pop, rock
+
+# Name the .sqlite file where your data will be stored
+
+## dbname
+example.sqlite
+
