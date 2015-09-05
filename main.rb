@@ -6,42 +6,43 @@ require 'nokogiri'
 require 'open-uri'
 require 'date'
 
-require_relative 'linkfeeder'
-require_relative 'linkclass'
-require_relative 'dbcalls'
-require_relative 'chart_parse'
+require_relative 'lib/linkfeeder'
+require_relative 'lib/linkclass'
+require_relative 'lib/dbcalls'
+require_relative 'lib/chart_parse'
+require_relative 'lib/discogsapi'
 
 genres = []
 
-print 'Please name one genre to scrape. You\'ll have a chance to add more after pressing enter. '
-genre_input = gets.chomp
-genres << genre_input
-
-while genre_input != 'done' && genre_input != 'Done' && genre_input != ''
-  print 'If you have any more genres, write it and press enter. If not, write "done" or just press enter. '
-  genre_input = gets.chomp
-  if genre_input != 'done' && genre_input != 'Done' && genre_input != ''
-    genres << genre_input
-  else
-  end
-end
+# print 'Please name one genre to scrape. You\'ll have a chance to add more after pressing enter. '
+# genre_input = gets.chomp
+# genres << genre_input
+#
+# while genre_input != 'done' && genre_input != 'Done' && genre_input != ''
+#   print 'If you have any more genres, write it and press enter. If not, write "done" or just press enter. '
+#   genre_input = gets.chomp
+#   if genre_input != 'done' && genre_input != 'Done' && genre_input != ''
+#     genres << genre_input
+#   else
+#   end
+# end
 
 puts "You have chosen the following genres: #{genres.join(', ')}"
 
 years = []
 
-print 'Please name one year to scrape. You\'ll have a chance to add more after pressing enter. '
-year_input = gets.chomp
-years << year_input
-
-while year_input != 'done' && year_input != 'Done' && year_input != ''
-  print 'If you have any more years, write it and press enter. If not, write "done" or just press enter. '
-  year_input = gets.chomp
-  if year_input != 'done' && year_input != 'Done' && year_input != ''
-    years << year_input
-  else
-  end
-end
+# print 'Please name one year to scrape. You\'ll have a chance to add more after pressing enter. '
+# year_input = gets.chomp
+# years << year_input
+#
+# while year_input != 'done' && year_input != 'Done' && year_input != ''
+#   print 'If you have any more years, write it and press enter. If not, write "done" or just press enter. '
+#   year_input = gets.chomp
+#   if year_input != 'done' && year_input != 'Done' && year_input != ''
+#     years << year_input
+#   else
+#   end
+# end
 
 puts "You have chosen the following years: #{years.join(', ')}"
 
