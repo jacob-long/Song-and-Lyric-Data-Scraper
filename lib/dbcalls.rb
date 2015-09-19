@@ -36,11 +36,13 @@ class DBcalls
 				spotifyid TEXT,
 				lyrics_w TEXT,
 				lyrics_ml TEXT,
+				lyrics_sim_score TEXT,
 				album_title TEXT,
 				album_id INTEGER,
 				num_on_album INTEGER, 
 				spotify_album_id NUMERIC,
-				from_album TEXT,
+				from_album_chart TEXT,
+				from_album_song TEXT,
 				artist_location TEXT,
 				echonest_id TEXT,
 				key INTEGER,
@@ -65,6 +67,7 @@ class DBcalls
 				ISRC NUMERIC,
 				UNIQUE(songtitle COLLATE NOCASE, artist COLLATE NOCASE),
 				UNIQUE(songtitle, artist)
+				UNIQUE(songtitle COLLATE NOCASE, album_title COLLATE NOCASE)
 			)
 		")
 	end
@@ -79,6 +82,8 @@ class DBcalls
 				alt_artist TEXT,
 				spotifyid NUMERIC,
 				discogsid NUMERIC,
+				from_single TEXT,
+				discogsrun TEXT,
 				catnum NUMERIC,
 				UNIQUE(albumtitle, artist),
 				UNIQUE(albumtitle COLLATE NOCASE, artist COLLATE NOCASE)
@@ -110,29 +115,5 @@ class DBcalls
 	end
 
 end
-
-# For reference: use this add Echo Nest variables to table 
-# DB.execute(" ALTER TABLE testdata ADD COLUMN genre_bb TEXT ")
-# DB.execute(" ALTER TABLE testdata ADD COLUMN date TEXT ")
-# DB.execute(" ALTER TABLE testdata ADD COLUMN echonest_id TEXT ")
-# DB.execute(" ALTER TABLE testdata ADD COLUMN key INTEGER ")
-# DB.execute(" ALTER TABLE testdata ADD COLUMN key_confidence NUMERIC ")
-# DB.execute(" ALTER TABLE testdata ADD COLUMN energy NUMERIC ")
-# DB.execute(" ALTER TABLE testdata ADD COLUMN liveness NUMERIC ")
-# DB.execute(" ALTER TABLE testdata ADD COLUMN loudness NUMERIC ")
-# DB.execute(" ALTER TABLE testdata ADD COLUMN audio_md5 TEXT ")
-# DB.execute(" ALTER TABLE testdata ADD COLUMN valence NUMERIC ")
-# DB.execute(" ALTER TABLE testdata ADD COLUMN danceability NUMERIC ")
-# DB.execute(" ALTER TABLE testdata ADD COLUMN tempo NUMERIC ")
-# DB.execute(" ALTER TABLE testdata ADD COLUMN tempo_confidence NUMERIC ")
-# DB.execute(" ALTER TABLE testdata ADD COLUMN speechiness NUMERIC ")
-# DB.execute(" ALTER TABLE testdata ADD COLUMN acousticness NUMERIC ")
-# DB.execute(" ALTER TABLE testdata ADD COLUMN instrumentalness NUMERIC ")
-# DB.execute(" ALTER TABLE testdata ADD COLUMN mode INTEGER ")
-# DB.execute(" ALTER TABLE testdata ADD COLUMN mode_confidence NUMERIC ")
-# DB.execute(" ALTER TABLE testdata ADD COLUMN time_signature INTEGER ")
-# DB.execute(" ALTER TABLE testdata ADD COLUMN time_signature_confidence NUMERIC ")
-# DB.execute(" ALTER TABLE testdata ADD COLUMN duration NUMERIC ")
-# DB.execute(" ALTER TABLE testdata ADD COLUMN analysis_url TEXT ")
 
 

@@ -41,7 +41,6 @@ class Link
 			then @genre_snip = 'hot-mainstream-rock-tracks'
 			@album = false
 
-		
 		# R&B / hip hop
 		elsif genre == 'R&B/hip hop'
 		then @genre_snip = 'r-b-hip-hop-songs'
@@ -177,22 +176,5 @@ class Link
 
 
 end
-
-# test = Link.new
-# test.year = 2008
-# test.week = 25
-# test.date_get
-# puts test.date
-# puts test.date_snip
-
-
-# # # test.genre_get
-# test.genre = "pop"
-# # test.year = 1992
-# test.url_genre
-# puts test.genre_snip
-# test.url_make
-# puts test.url
-# puts test.inspect
 
 

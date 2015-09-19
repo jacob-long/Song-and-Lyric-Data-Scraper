@@ -8,24 +8,24 @@ require 'similar_text'
 
 require_relative 'dbcalls'
 
-module Discogs
+module DiscogsAPI
 
-	def get_albums(dbname)
+	def self.get_tracklists(dbname)
 
 		# included for crude benchmarking purposes
 		beginning = Time.now
 
-		# target/source database (I'm assuming they are same, modifications could make working with two possible)
-		DBNAME = "#{dbname}"
-
-		DB = SQLite3::Database.new( DBNAME )
-		DB.results_as_hash = true
-
 		# Authenticates with Discogs, "wrapper" variable will be used to initiate all interactions with the API
-		wrapper = Discogs::Wrapper.new("BB DB", app_key: "OgeBBIfpCfWxUuYujuSS", app_secret: "SaeoYeahnErQLhDUMMYHHgNIaLenfTaf")
+		#wrapper = Discogs::Wrapper.new("BB DB", app_key: "OgeBBIfpCfWxUuYujuSS", app_secret: "SaeoYeahnErQLhDUMMYHHgNIaLenfTaf")
+		wrapper = Discogs::Wrapper.new("BB DB", user_token: "***REMOVED***")
+		# target/source database (I'm assuming they are same, modifications could make working with two possible)
+		db_name = "#{dbname}"
+
+		db = SQLite3::Database.open( db_name )
+		db.results_as_hash = true
 
 		# Grabbing albums from database
-		dbalbums = DB.execute("SELECT * FROM album_master")
+		dbalbums = db.execute("SELECT * FROM album_master WHERE discogsrun IS NULL")
 		# Creating a master songs table in case it does not already exist
 		DBcalls::create_table_master
 
@@ -56,7 +56,6 @@ module Discogs
 			album['artist'].gsub!(/"([^"]*)"./, '')
 
 			# For ease of reading terminal output, can remove once confident it's working
-			puts
 			puts "#{album['artist']} - #{album['albumtitle']}"
 
 			# Resetting here so each album gets 5 retries
@@ -67,8 +66,6 @@ module Discogs
 		begin
 			# Searching Discogs API
 			result = wrapper.search("#{album['artist']} - #{album['albumtitle']}", :per_page => 10, :type => :release)
-			# Totally optional, helpful for debugging
-			puts "Found #{result.results.count} results"
 
 			# Hash needs to exist outside of upcoming block
 			simscores = Hash.new
@@ -89,7 +86,7 @@ module Discogs
 				next
 			else
 				choice = simscores.max_by { |k, v| v }[0]
-				puts "Chose: \"#{result.results[choice].title}\", which was result number #{choice+1}"
+				# puts "Chose: \"#{result.results[choice].title}\", which was result number #{choice+1}"
 			end
 
 			# Adding this metadata to database for future use. Catalog number is a standard that stretches beyond Discogs
@@ -97,8 +94,9 @@ module Discogs
 			catnum = result.results[choice].catno
 
 			foundalbum = wrapper.get_release("#{discogsid}")
-			DB.execute("UPDATE album_master SET discogsid = ? WHERE id = ?", discogsid, album['id'])
-			DB.execute("UPDATE album_master SET catnum = ? WHERE id = ?", catnum, album['id'])
+			db.execute("UPDATE album_master SET discogsid = ? WHERE id = ?", discogsid, album['id'])
+			db.execute("UPDATE album_master SET catnum = ? WHERE id = ?", catnum, album['id'])
+			db.execute("UPDATE album_master SET discogsrun = 'TRUE' where id = ?", album['id'])
 
 			# Iterating through each song on the tracklist and adding them to the songs table
 			foundalbum.tracklist.each do |x|
@@ -111,9 +109,13 @@ module Discogs
 					end
 				
 					# Putting all the information into the table now
-					DB.execute("INSERT INTO master (songtitle, artist, album_title, album_id, num_on_album, from_album, extra_artists) VALUES (?,?,?,?,?,?,?)",
-					"#{x.title}", "#{album['artist']}", "#{foundalbum.title}", "#{album['id']}", "#{x.position}", "true", "#{extras}")
-			
+					if x.title != '' && x.title != nil
+						DB.execute("INSERT INTO master (songtitle, artist, album_title, album_id, num_on_album, from_album_chart, extra_artists) VALUES (?,?,?,?,?,?,?)",
+						"#{x.title}", "#{album['artist']}", "#{foundalbum.title}", "#{album['id']}", "#{x.position}", "true", "#{extras}")
+					else
+						next
+					end
+
 				# No need to worry about the DB rejecting duplicate entries
 				rescue SQLite3::ConstraintException
 					next
@@ -153,6 +155,8 @@ module Discogs
 end
 
 		puts
-		puts "Time elapsed: #{Time.now - beginning} seconds."
+		puts "Time elapsed using Discogs: #{Time.now - beginning} seconds."
+
+	end
 
 end

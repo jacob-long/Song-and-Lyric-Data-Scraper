@@ -9,10 +9,110 @@ require 'RSpotify'
 require 'json'
 require 'sqlite3'
 
-require_relative 'songclass'
 module Lyricsearch
 
-	def metro_alt_search(dbname)
+	def self.primary_lyric_search(dbname)
+		metrosuccess =[]
+		wikiasuccess = []
+
+		db = SQLite3::Database.open "#{dbname}"
+		db.results_as_hash = true
+
+		# Wikia search–only includes titles that do not already have lyrics listed.
+		db.execute("SELECT id, songtitle, artist FROM master WHERE (lyrics_w IS NULL OR lyrics_w = '')") do |row|
+
+			row['songtitle'].gsub!(/\&amp\;/, '&')
+			row['songtitle'].gsub!(/\&\#039\;/, '\'')
+			row['songtitle'].gsub!(/F\*\*k/, 'Fuck')
+			row['songtitle'].gsub!(/S\*\*t/, 'Shit')
+
+			row['artist'].slice!(/.Featuring.*$/)
+			row['artist'].slice!(/.With.*$/)
+			row['artist'].gsub!(/\&amp\;/, '&')
+			row['artist'].gsub!(/\&\#039\;/, '\'')
+			row['artist'].gsub!(/"([^"]*)"./, '')
+
+			begin
+				puts "#{row['songtitle']} by #{row['artist']}"
+				fetcher = Lyricfy::Fetcher.new(:wikia)
+				song = fetcher.search "#{row['artist']}", "#{row['songtitle']}"
+				# Trying to deal with false positives resulting from a body of 0 characters being saved as lyrics
+				if song.body == ''
+					puts "Found empty body of lyrics. Skipping..."
+					next
+				else
+					songw = song.body("\n")
+					db.execute("UPDATE master SET lyrics_w = ? WHERE id = #{row['id']}", "#{songw}")
+					wikiasuccess.push(true)
+					puts "Used Wikia successfully"
+				end
+			rescue
+				puts "Can't find #{row['songtitle']} by #{row['artist']} with Wikia."
+				next
+			end
+		end
+
+		# MetroLyrics search–only includes titles that do not already have lyrics listed.
+		db.execute("SELECT id, songtitle, artist FROM master WHERE (lyrics_ml IS NULL OR lyrics_ml = '')") do |row|
+
+			row['songtitle'].delete! '.'
+			row['songtitle'].delete! '!'
+			row['songtitle'].delete! '#'
+			row['songtitle'].delete! '+'
+			row['songtitle'].delete! ','
+			row['songtitle'].delete! '\''
+			row['songtitle'].slice!(/.\(.*$/)
+			row['songtitle'].gsub!(/\&amp\;/, '&')
+			row['songtitle'].gsub!(/\&\#039\;/, '\'')
+			row['songtitle'].gsub!(/F\*\*k/, 'Fuck')
+			row['songtitle'].gsub!(/S\*\*t/, 'Shit')
+
+			row['artist'].slice!(/.Featuring.*$/)
+			row['artist'].slice!(/.With.*$/)
+			row['artist'].slice!(/.\&amp\;.*$/)
+			row['artist'].slice!(/,.*$/)
+			row['artist'].slice!(/.\&.*$/)
+			row['artist'].gsub!(/\$/, 'S')
+			row['artist'].delete!('-')
+			row['artist'].delete!('\'')
+			row['artist'].gsub!(/"([^"]*)"./, '')
+
+			begin
+				fetcher2 = Lyricfy::Fetcher.new(:metro_lyrics)
+				song2 = fetcher2.search "#{row['artist']}", "#{row['songtitle']}"
+				# Trying to deal with false positives resulting from a body of 0 characters being saved as lyrics
+				if song2.body == ''
+					puts "Found empty body of lyrics. Skipping..."
+					raise StandardError
+				else
+					songml = song2.body("\n")
+					db.execute("UPDATE master SET lyrics_ml = ? WHERE id = #{row['id']}", "#{songml}")
+					puts "Used MetroLyrics successfully."
+				end
+			rescue
+				puts "I couldn't find lyrics for #{row['songtitle']} by #{row['artist']} on MetroLyrics."
+				next
+			end
+		end
+
+		# Below I'm just calculating some rough numbers on how successful the lyric search was and outputting to console
+		stmt = db.execute( "select * from master" )
+		stmt = stmt.length
+		puts "Total songs: #{stmt}"
+
+		stmt2 = db.execute( "select * from master WHERE (lyrics_w NOTNULL AND lyrics_w <> '') OR (lyrics_ml NOTNULL AND lyrics_ml <> '')" )
+		stmt2 = stmt2.length
+		totalfails = (stmt - stmt2)
+
+		metrolyricsrate = metrosuccess.count{ |i| i == true }
+		wikiarate = wikiasuccess.count{ |i| i == true }
+
+		puts "Metrolyrics found #{metrolyricsrate} tracks out of #{stmt}."
+		puts "Wikia found #{wikiarate} tracks out of #{stmt}."
+		puts "I couldn't find lyrics for #{totalfails} tracks out of #{stmt} total."
+	end
+
+	def self.metro_alt_search(dbname)
 		db = SQLite3::Database.open "#{dbname}"
 		db.results_as_hash = true
 
@@ -89,7 +189,7 @@ module Lyricsearch
 
 	end
 
-	def wikia_alt_search(dbname)
+	def self.wikia_alt_search(dbname)
 		db = SQLite3::Database.open "#{dbname}"
 		db.results_as_hash = true
 

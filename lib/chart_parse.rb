@@ -26,6 +26,7 @@ class Parse
 
         # Grabbing the chart page from billboard.com
         page2 = Nokogiri::HTML(open(link.url, 'User-Agent' => 'ruby'))
+        puts "Parsing...#{link.genre}: #{link.date}"
 
         # Fetching songtitles
         titlespre = page2.css('main#main.page-content div.chart-data div.container article.chart-row div.row-primary div.row-title h2')
@@ -109,6 +110,7 @@ class Parse
           retry
         else
           puts "\t\tCouldn't access on further attempts, either. Try visiting #{link.url}"
+          next
         end
       end
 
@@ -151,6 +153,9 @@ class Parse
           putidstmt = DB.prepare("UPDATE [#{link.genre}] SET song_id = (?) WHERE songtitle = ? AND artist = ?")
           putidstmt.execute!("#{id}", "#{titles[i]}", "#{artists[i]}")
 
+          # Marking the song as charting on singles chart
+          DB.execute("UPDATE master SET from_album_song = 'FALSE' AND from_album_chart = 'FALSE' WHERE id = ?", id)
+
         rescue StandardError => e
           puts "Problem looking up ID for #{titles[i]} by #{artists[i]}. Moving on with no ID..."
           puts e
@@ -167,6 +172,7 @@ class Parse
 
       # Grabbing the chart page from billboard.com
       page2 = Nokogiri::HTML(open(link.url, 'User-Agent' => 'ruby'))
+      puts "Parsing...#{link.genre}: #{link.date}"
 
       # Fetching songtitles
       titlespre = page2.css('main#main.page-content div.chart-data div.container article.chart-row div.row-primary div.row-title h2')
@@ -242,7 +248,7 @@ class Parse
         x.rstrip!
       end
 
-        # Error handling for problems with opening webpages.
+    # Error handling for problems with opening webpages.
     rescue StandardError=>e
       puts "\tError: #{e}"
       if retries > 0
@@ -265,6 +271,7 @@ class Parse
       rescue StandardError => e
         puts "Error: Check if number of titles and artists match for the #{link.genre} genre on #{link.date}."
         puts e
+        next
       end
     end
 
@@ -279,6 +286,7 @@ class Parse
       rescue StandardError=>e
         puts "Error: Check if number of titles and artists match for the #{link.genre} genre on #{link.date}."
         puts e
+        next
       end
       begin
         # prevents lookup errors due to apostrophe
