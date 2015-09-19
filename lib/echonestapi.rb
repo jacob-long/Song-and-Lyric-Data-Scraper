@@ -1,0 +1,139 @@
+require 'rubygems'
+require 'bundler/setup'
+
+require 'Echowrap'
+require 'sqlite3'
+require 'nokogiri'
+require 'open-uri'
+require 'json'
+
+module Echonest
+
+def echo_search(dbname)
+	db = SQLite3::Database.open( dbname )
+
+	# Echo Nest API keys and such, don't share with public
+	Echowrap.configure do |config|
+		config.api_key =       'UQHQ5ON6UJ3FXV4UB'
+		config.consumer_key =  'b4a21f70d81680d02d4f8390225d1986'
+		config.shared_secret = 'iebmiY4TRIaiUI08HjpqdQ'
+	end
+
+	number_selected = []
+	number_rescued = []
+
+	# The following loops through each row in the database, then passing it to Echo Nest API,
+	# which writes its various outputs to the specified columns in the database
+
+	db.results_as_hash = true
+	db.execute(" SELECT id, artist, songtitle FROM master WHERE echonest_id IS NULL ") do |x|
+		# Cleaning songtitles using same string manipulations as lyric search script
+		x['songtitle'].delete! '.'
+		x['songtitle'].delete! '!'
+		x['songtitle'].delete! '#'
+		x['songtitle'].delete! '+'
+		x['songtitle'].delete! ','
+		x['songtitle'].delete! '\''
+		x['songtitle'].slice!(/.\(.*$/)
+		x['songtitle'].gsub!(/\&amp\;/, '&')
+		x['songtitle'].gsub!(/\&\#039\;/, '\'')
+		x['songtitle'].gsub!(/F\*\*k/, 'Fuck')
+		x['songtitle'].gsub!(/S\*\*t/, 'Shit')
+
+		# Cleaning artists using same string manipulations as lyric search script
+		x['artist'].slice!(/.Featuring.*$/)
+		x['artist'].slice!(/.With.*$/)
+		x['artist'].slice!(/.\&amp\;.*$/)
+		x['artist'].slice!(/,.*$/)
+		x['artist'].slice!(/.\&.*$/)
+		x['artist'].gsub!(/\$/, 'S')
+		x['artist'].delete!('-')
+		x['artist'].delete!('\'')
+		x['artist'].gsub!(/"([^"]*)"./, '')
+
+		# Dealing with rate limit
+		sleep(0.5)
+
+		# Showing progress
+		puts
+		puts x['id']
+
+		# Initiating the search
+		Echowrap.song_search(:artist => x['artist'], :title => x['songtitle'], :bucket => ['audio_summary', 'artist_location'], :results => 5).map do |song|
+			number_selected.push("1")
+
+			good_tracks = {}
+			chosen_track = nil
+			song.each_with_index { |value, key|
+				artist_score = song[key].artist.similar("#{x['artist']}")
+				title_score = song[key].title.similar("#{x['songtitle']}")
+				if artist_score > 75 && title_score > 75
+					good_tracks[key] = artist_score+title_score
+				else
+					next
+				end
+			}
+
+			# This prevents albums with no close matches from having the wrong data inserted into database
+			if good_tracks == {}
+			then
+				puts 'No solid match found.'
+				next
+			else
+				# Choosing closest match from search results
+				chosen_track = good_tracks.max
+				chosen_track = chosen_track[0]
+
+				# This puts the closest match's data in the database
+				begin
+					puts "Found it!"
+					# The convoluted syntax is necessary because I'm updating an existing data table.
+					db.execute_batch("
+						UPDATE master SET echonest_id ='#{song[chosen_track].id.to_s}' WHERE id='#{x['id']}';
+						UPDATE master SET key ='#{song[chosen_track].audio_summary.key}' WHERE id='#{x['id']}';
+						UPDATE master SET energy ='#{song[chosen_track].audio_summary.energy}' WHERE id='#{x['id']}';
+						UPDATE master SET liveness ='#{song[chosen_track].audio_summary.liveness}' WHERE id='#{x['id']}';
+						UPDATE master SET loudness ='#{song[chosen_track].audio_summary.loudness}' WHERE id='#{x['id']}';
+						UPDATE master SET valence ='#{song[chosen_track].audio_summary.valence}' WHERE id='#{x['id']}';
+						UPDATE master SET danceability ='#{song[chosen_track].audio_summary.danceability}' WHERE id='#{x['id']}';
+						UPDATE master SET tempo ='#{song[chosen_track].audio_summary.tempo}' WHERE id='#{x['id']}';
+						UPDATE master SET speechiness ='#{song[chosen_track].audio_summary.speechiness}' WHERE id='#{x['id']}';
+						UPDATE master SET acousticness ='#{song[chosen_track].audio_summary.acousticness}' WHERE id='#{x['id']}';
+						UPDATE master SET mode ='#{song[chosen_track].audio_summary.mode}' WHERE id='#{x['id']}';
+						UPDATE master SET time_signature ='#{song[chosen_track].audio_summary.time_signature}' WHERE id='#{x['id']}';
+						UPDATE master SET duration ='#{song[chosen_track].audio_summary.duration}' WHERE id='#{x['id']}';
+						UPDATE master SET analysis_url ='#{song[chosen_track].audio_summary.analysis_url}' WHERE id='#{x['id']}';
+						UPDATE master SET instrumentalness ='#{song[chosen_track].audio_summary.instrumentalness}' WHERE id='#{x['id']}';
+						UPDATE master SET artist_location ='#{song[chosen_track].artist_location.location}' WHERE id='#{x['id']}';
+					")
+
+					# This grabs the detailed analysis from the link embedded in the search result
+					analysis_url = song[chosen_track].audio_summary.analysis_url
+					# sleep(3) - not needed because my API rate limit was lifted. Use if you are rate limited
+					jsonobject = open(analysis_url)
+					analysis_parse = JSON.parse(jsonobject.first)
+
+					# This adds additional data from the JSON analysis document.
+					db.execute_batch("
+						UPDATE master SET key_confidence ='#{analysis_parse['track']['key_confidence']}' WHERE id='#{x['id']}';
+						UPDATE master SET audio_md5 ='#{analysis_parse['track']['audio_md5']}' WHERE id='#{x['id']}';
+						UPDATE master SET tempo_confidence ='#{analysis_parse['track']['tempo_confidence']}' WHERE id='#{x['id']}';
+						UPDATE master SET mode_confidence ='#{analysis_parse['track']['mode_confidence']}' WHERE id='#{x['id']}';
+						UPDATE master SET time_signature_confidence ='#{analysis_parse['track']['time_signature_confidence']}' WHERE id='#{x['id']}';
+					")
+				rescue Exception => e
+					puts e.message
+					puts e.backtrace.inspect
+					puts "Problem with #{x['songtitle']} by #{x['artist']}. Moving on..."
+					number_rescued.push("1")
+					next
+				end
+		end
+	end
+
+	puts number_selected.length
+	puts number_rescued.length
+
+end
+end
+end
