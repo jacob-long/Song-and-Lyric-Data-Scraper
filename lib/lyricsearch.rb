@@ -18,7 +18,7 @@ module Lyricsearch
 		db = SQLite3::Database.open "#{dbname}"
 		db.results_as_hash = true
 
-		# Wikia search–only includes titles that do not already have lyrics listed.
+		# Wikia search–only includes titles that do not already have lyrics from W listed.
 		db.execute("SELECT id, songtitle, artist FROM master WHERE (lyrics_w IS NULL OR lyrics_w = '')") do |row|
 
 			row['songtitle'].gsub!(/\&amp\;/, '&')
@@ -52,7 +52,7 @@ module Lyricsearch
 			end
 		end
 
-		# MetroLyrics search–only includes titles that do not already have lyrics listed.
+		# MetroLyrics search–only includes titles that do not already have lyrics from ML listed.
 		db.execute("SELECT id, songtitle, artist FROM master WHERE (lyrics_ml IS NULL OR lyrics_ml = '')") do |row|
 
 			row['songtitle'].delete! '.'
@@ -100,7 +100,7 @@ module Lyricsearch
 		stmt = stmt.length
 		puts "Total songs: #{stmt}"
 
-		stmt2 = db.execute( "select * from master WHERE (lyrics_w NOTNULL AND lyrics_w <> '') OR (lyrics_ml NOTNULL AND lyrics_ml <> '')" )
+		stmt2 = db.execute( "select * from master WHERE (lyrics_w NOTNULL AND lyrics_w <> '') OR (lyrics_ml NOTNULL AND lyrics_ml <> '') AND id > 62000" )
 		stmt2 = stmt2.length
 		totalfails = (stmt - stmt2)
 
@@ -193,7 +193,7 @@ module Lyricsearch
 		db = SQLite3::Database.open "#{dbname}"
 		db.results_as_hash = true
 
-		w_have = db.execute("SELECT id, songtitle, alt_songtitle, artist, alt_artist FROM master WHERE lyrics_w IS NULL OR lyrics_w = ''")
+		w_have = db.execute("SELECT id, songtitle, alt_songtitle, artist, alt_artist FROM master WHERE lyrics_w IS NULL OR lyrics_w = '' AND id > 62000")
 		w_have = w_have.count
 
 		song_total = db.execute("SELECT * FROM master")
@@ -250,7 +250,7 @@ module Lyricsearch
 		w_have_2 = db.execute("SELECT id, songtitle, alt_songtitle, artist, alt_artist FROM master WHERE lyrics_w IS NULL OR lyrics_w = ''")
 		w_have_2 = w_have_2.count
 
-		puts "After secondary search, I have #{song_total - w_have_2} songs with lyrics from MetroLyrics. That's #{w_have_2 - w_have} additional songs!"
+		puts "After secondary search, I have #{song_total - w_have_2} songs with lyrics from Wikia. That's #{w_have_2 - w_have} additional songs!"
 
 	end
 

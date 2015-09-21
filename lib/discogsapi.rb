@@ -16,7 +16,6 @@ module DiscogsAPI
 		beginning = Time.now
 
 		# Authenticates with Discogs, "wrapper" variable will be used to initiate all interactions with the API
-		#wrapper = Discogs::Wrapper.new("BB DB", app_key: "OgeBBIfpCfWxUuYujuSS", app_secret: "SaeoYeahnErQLhDUMMYHHgNIaLenfTaf")
 		wrapper = Discogs::Wrapper.new("BB DB", user_token: "***REMOVED***")
 		# target/source database (I'm assuming they are same, modifications could make working with two possible)
 		db_name = "#{dbname}"
@@ -25,7 +24,7 @@ module DiscogsAPI
 		db.results_as_hash = true
 
 		# Grabbing albums from database
-		dbalbums = db.execute("SELECT * FROM album_master WHERE discogsrun IS NULL")
+		dbalbums = db.execute("SELECT * FROM album_master WHERE discogsid IS NULL")
 		# Creating a master songs table in case it does not already exist
 		DBcalls::create_table_master
 
@@ -54,6 +53,7 @@ module DiscogsAPI
 			album['artist'].gsub!(/\$/, 'S')
 			album['artist'].delete!('\'')
 			album['artist'].gsub!(/"([^"]*)"./, '')
+			album['artist'].gsub!(/Various Artists/, 'Various')
 
 			# For ease of reading terminal output, can remove once confident it's working
 			puts "#{album['artist']} - #{album['albumtitle']}"
@@ -62,7 +62,7 @@ module DiscogsAPI
 			retries = 5
 
 			# Trying to find balance between rate limit and performance
-			sleep 1
+			sleep 0.5
 		begin
 			# Searching Discogs API
 			result = wrapper.search("#{album['artist']} - #{album['albumtitle']}", :per_page => 10, :type => :release)
@@ -83,6 +83,7 @@ module DiscogsAPI
 			if simscores == {}
 				then
 				puts "No solid match found."
+				db.execute("UPDATE album_master SET discogsrun = 'TRUE' where id = ?", album['id'])
 				next
 			else
 				choice = simscores.max_by { |k, v| v }[0]
@@ -107,7 +108,12 @@ module DiscogsAPI
 						then x.extraartists.each{ |y| extras.push(y.name) }
 					else extras = nil
 					end
-				
+
+					# This is to identify tracks that came from albums that did not themselves make a chart
+					if album['from_single'] == 'TRUE'
+						DB.execute("INSERT INTO master (songtitle, artist, album_title, album_id, num_on_album, from_album_single, extra_artists) VALUES (?,?,?,?,?,?,?)",
+											 "#{x.title}", "#{album['artist']}", "#{foundalbum.title}", "#{album['id']}", "#{x.position}", "true", "#{extras}")
+					else
 					# Putting all the information into the table now
 					if x.title != '' && x.title != nil
 						DB.execute("INSERT INTO master (songtitle, artist, album_title, album_id, num_on_album, from_album_chart, extra_artists) VALUES (?,?,?,?,?,?,?)",
@@ -115,10 +121,11 @@ module DiscogsAPI
 					else
 						next
 					end
-
+					end
 				# No need to worry about the DB rejecting duplicate entries
 				rescue SQLite3::ConstraintException
 					next
+					db.execute("UPDATE album_master SET discogsrun = 'TRUE' where id = ?", album['id'])
 				end
 		end
 	
@@ -138,6 +145,7 @@ module DiscogsAPI
 				retry
 			else
 				puts "Couldn't connect after 5 tries. Moving on..."
+				db.execute("UPDATE album_master SET discogsrun = 'TRUE' where id = ?", album['id'])
 				next
 			end
 		rescue OpenSSL::SSL::SSLError => e
@@ -149,6 +157,7 @@ module DiscogsAPI
 				retry
 			else
 				puts "Couldn't connect after 5 tries. Moving on..."
+				db.execute("UPDATE album_master SET discogsrun = 'TRUE' where id = ?", album['id'])
 				next
 			end
 		end

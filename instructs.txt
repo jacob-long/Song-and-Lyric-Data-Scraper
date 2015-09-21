@@ -7,16 +7,54 @@ There are commands filled in by default to give you a sense of what things shoul
 # Acceptable years begin around 2005, though this varies by genre.
 
 ## years
-2014, 2015
+2010, 2011, 2012, 2013, 2014, 2015
 
 # Possible genres: pop, country, rock, R&B/hip hop, dance/electronic, rap, latin, christian
 # Album-only genres: blues, classical, jazz, new age, reggae
 
-## genres
-pop, rock
+## song-genres
+rap, latin, christian, pop, country, rock, R&B/hip hop, dance/electronic
+
+## album-genres
+country, rock, dance/electronic, rap, latin, christian, blues, jazz, new age, reggae, R&B/hip hop, classical
 
 # Name the .sqlite file where your data will be stored
 
 ## dbname
-example.sqlite
+final3.sqlite
 
+## overwrite
+false
+
+# Scrape? Either 'true' or 'false'. This is to allow you to choose whether you want to get tracks from Billboard or skip the process.
+'false' if you want to skip.
+
+## scrape-songs
+false
+
+## albums
+true
+
+## scrape-albums
+false
+
+## echonest
+true
+
+## discogs
+false
+
+## spotify
+false
+
+## lyric-search
+false
+
+## statistics
+false
+
+## write
+false
+
+## path
+/lyrics

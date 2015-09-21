@@ -5,44 +5,86 @@ require 'sqlite3'
 
 module Summarize
 
-  def singles(genre, dbname)
+  def self.singles(genre, dbname)
 
     db = SQLite3::Database.open(dbname)
 
-    statement_numerator = db.prepare("SELECT COUNT(DISTINCT master.id)
+    numerator = db.execute("SELECT COUNT(DISTINCT master.id)
       FROM master
-      JOIN [?] ON master.id = [?].song_id
+      JOIN [#{genre}] ON master.id = [#{genre}].song_id
       WHERE (master.lyrics_w NOT NULL or master.lyrics_w != '') OR (master.lyrics_ml NOT NULL or master.lyrics_ml != '')")
 
-    numerator = statement_numerator.execute(genre, genre)
-
-    statement_denominator = db.prepare("SELECT COUNT(DISTINCT master.id)
+    denominator = db.execute("SELECT COUNT(DISTINCT master.id)
       FROM master
-      JOIN [?] ON master.id = [?].song_id")
+      JOIN [#{genre}] ON master.id = [#{genre}].song_id")
 
-    denominator = statement_denominator.execute(genre, genre)
+    numerator = Float(numerator[0][0])
+    denominator = Float(denominator[0][0])
+    percentage = (numerator/denominator)
 
-    puts "I have lyrics for #{(numerator/denominator)} of singles in #{genre}."
+    puts "I have lyrics for #{percentage} of singles in #{genre}."
   end
 
-  def with_albums(genre, dbname)
+  def self.with_albums(genre, dbname)
     db = SQLite3::Database.open(dbname)
 
-    statement_numerator = db.prepare("SELECT COUNT(DISTINCT master.id)
+    begin
+    numerator = db.execute("SELECT COUNT(DISTINCT master.id)
       FROM master
-      JOIN [?] ON master.album_id = [?].album_id
+      JOIN [#{genre}] ON master.id = [#{genre}].song_id
+      WHERE (master.lyrics_w NOT NULL or master.lyrics_w != '') OR (master.lyrics_ml NOT NULL or master.lyrics_ml != '')")
+
+    denominator = db.execute("SELECT COUNT(DISTINCT master.id)
+      FROM master
+      JOIN [#{genre}] ON master.id = [#{genre}].song_id")
+
+    numerator = Float(numerator[0][0])
+    denominator = Float(denominator[0][0])
+
+    rescue
+      numerator = Float(0)
+      denominator = Float(0)
+    end
+
+    numerator2 = db.execute("SELECT COUNT(DISTINCT master.id)
+      FROM master
+      JOIN [#{genre}_albums] ON master.album_id = [#{genre}_albums].album_id
       WHERE (master.lyrics_w NOT NULL or master.lyrics_w != '') OR (master.lyrics_ml NOT NULL or master.lyrics_ml != '') AND master.from_album_chart = 'true'")
 
-    numerator = statement_numerator.execute("#{genre}_albums", "#{genre}_albums")
+    denominator2 = db.execute("SELECT COUNT(DISTINCT master.id)
+      FROM master
+      JOIN [#{genre}_albums] ON master.album_id = [#{genre}_albums].album_id
+      WHERE master.from_album_chart = 'true'")
 
-    statement_denominator = db.prepare("SELECT COUNT(DISTINCT master.id)
-    FROM master
-    JOIN [?] ON master.album_id = [?].album_id
-    WHERE master.from_album_chart = 'true'")
+    numerator2 = Float(numerator2[0][0])
+    denominator2 = Float(denominator2[0][0])
 
-    denominator = statement_denominator.execute("#{genre}_albums", "#{genre}_albums")
+    final_numerator = numerator + numerator2
+    final_denominator = denominator + denominator2
 
-    puts "I have lyrics for #{(numerator/denominator)} of singles in #{genre}."
+    percentage = final_numerator/final_denominator
+
+    puts "I have lyrics for #{percentage} of total tracks in #{genre}."
+  end
+
+  def self.albums_fetched(genre, dbname)
+
+    db = SQLite3::Database.open(dbname)
+
+    numerator = db.execute("SELECT COUNT(DISTINCT master.album_id) FROM master
+      JOIN [#{genre}_albums] ON master.album_id = [#{genre}_albums].album_id")
+
+    numerator = Float(numerator[0][0])
+
+    denominator = db.execute("SELECT COUNT(DISTINCT album_master.id) FROM album_master
+      JOIN [#{genre}_albums] ON album_master.id = [#{genre}_albums].album_id")
+
+    denominator = Float(denominator[0][0])
+
+    percentage = numerator/denominator
+
+    puts "I found #{percentage} of tracklists for #{genre} albums"
+
   end
 
 end

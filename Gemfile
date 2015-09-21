@@ -13,4 +13,5 @@ gem 'echowrap'
 gem "rapgenius", "~> 1.0.5"
 gem 'fileutils'
 gem 'similar_text'
-gem 'under_fire'
+gem 'wannabe_bool'
+gem 'json_pure'
