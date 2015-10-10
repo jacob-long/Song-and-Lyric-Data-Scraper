@@ -17,7 +17,7 @@ require_relative 'lib/spotifycleaning'
 require_relative 'lib/echonestapi'
 require_relative 'lib/lyricsearch'
 require_relative 'lib/statistics'
-require_relative 'lib/writetofile'
+require_relative 'lib/writetofile2'
 
 instructs = File.open("instructs.txt", 'r')
 instructs = instructs.readlines
@@ -37,6 +37,7 @@ overwrite = false
 write = false
 write_path = false
 statistics = false
+origdirectory = Dir.getwd
 
 begin
 
@@ -146,6 +147,10 @@ if albums == true
     DiscogsAPI::get_tracklists(db_input)
   end
 
+  if spotify == true
+    Spotifyclean::album_expand(db_input)
+  end
+
 end
 
 puts 'Finding more song data on Spotify...' if spotify == true
@@ -155,8 +160,8 @@ puts 'Getting additional info on songs from the Echonest...' if echonest == true
 Echonest::echo_search(db_input) if echonest == true
 
 if lyrics == true
-  puts 'Starting lyric search...'
-  Lyricsearch::primary_lyric_search(db_input)
+  # puts 'Starting lyric search...'
+  # Lyricsearch::primary_lyric_search(db_input)
   puts 'Using alternate methods to improve MetroLyrics searches...'
   Lyricsearch::metro_alt_search(db_input)
   puts 'Using alternate methods to improve Wikia searches...'
@@ -179,8 +184,8 @@ if statistics == true
 end
 
 if write == true
-  WriteFile::write_songs(song_genres, db_input)
-  WriteFile::write_albums(album_genres, db_input)
+  WriteFile::write_songs(song_genres, db_input, origdirectory, write_path)
+  WriteFile::write_albums(album_genres, db_input, origdirectory, write_path)
 end
 
 
