@@ -12,14 +12,12 @@ require 'sqlite3'
 module Lyricsearch
 
 	def self.primary_lyric_search(dbname)
-		metrosuccess =[]
-		wikiasuccess = []
 
 		db = SQLite3::Database.open "#{dbname}"
 		db.results_as_hash = true
 
 		# Wikia search–only includes titles that do not already have lyrics from W listed.
-		db.execute("SELECT id, songtitle, artist FROM master WHERE (lyrics_w IS NULL OR lyrics_w = '')") do |row|
+		db.execute("SELECT id, songtitle, artist FROM master WHERE (lyrics_w IS NULL OR lyrics_w = '') AND id >2140") do |row|
 
 			row['songtitle'].gsub!(/\&amp\;/, '&')
 			row['songtitle'].gsub!(/\&\#039\;/, '\'')
@@ -33,7 +31,6 @@ module Lyricsearch
 			row['artist'].gsub!(/"([^"]*)"./, '')
 
 			begin
-				puts "#{row['songtitle']} by #{row['artist']}"
 				fetcher = Lyricfy::Fetcher.new(:wikia)
 				song = fetcher.search "#{row['artist']}", "#{row['songtitle']}"
 				# Trying to deal with false positives resulting from a body of 0 characters being saved as lyrics
@@ -43,11 +40,10 @@ module Lyricsearch
 				else
 					songw = song.body("\n")
 					db.execute("UPDATE master SET lyrics_w = ? WHERE id = #{row['id']}", "#{songw}")
-					wikiasuccess.push(true)
-					puts "Used Wikia successfully"
+					puts "Used Wikia successfully (id: #{row['id']})"
 				end
 			rescue
-				puts "Can't find #{row['songtitle']} by #{row['artist']} with Wikia."
+				puts "Can't find #{row['songtitle']} by #{row['artist']} (id: #{row['id']}) with Wikia."
 				next
 			end
 		end
@@ -87,10 +83,10 @@ module Lyricsearch
 				else
 					songml = song2.body("\n")
 					db.execute("UPDATE master SET lyrics_ml = ? WHERE id = #{row['id']}", "#{songml}")
-					puts "Used MetroLyrics successfully."
+					puts "Used MetroLyrics successfully. (id: #{row['id']})"
 				end
 			rescue
-				puts "I couldn't find lyrics for #{row['songtitle']} by #{row['artist']} on MetroLyrics."
+				puts "I couldn't find lyrics for #{row['songtitle']} by #{row['artist']} (id: #{row['id']}) on MetroLyrics."
 				next
 			end
 		end
@@ -170,7 +166,6 @@ module Lyricsearch
 				# puts song2.body
 				songml = song2.body("\n")
 				db.execute("UPDATE master SET lyrics_ml = ? WHERE id = #{row['id']}", "#{songml}")
-				metrosuccess.push(true)
 			rescue
 				puts "I couldn't find lyrics for #{row['songtitle']} by #{row['artist']} on MetroLyrics with alternate songtitle."
 				next
@@ -235,7 +230,6 @@ module Lyricsearch
 				# puts song2.body
 				songml = song2.body("\n")
 				db.execute("UPDATE master SET lyrics_w = ? WHERE id = #{row['id']}", "#{songml}")
-				metrosuccess.push(true)
 			rescue
 				puts "I couldn't find lyrics for #{row['songtitle']} by #{row['artist']} on Wikia with alternate songtitle."
 				next

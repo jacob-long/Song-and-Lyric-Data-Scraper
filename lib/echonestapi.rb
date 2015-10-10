@@ -19,14 +19,11 @@ def self.echo_search(dbname)
 		config.shared_secret = 'iebmiY4TRIaiUI08HjpqdQ'
 	end
 
-	number_selected = []
-	number_rescued = []
-
 	# The following loops through each row in the database, then passing it to Echo Nest API,
 	# which writes its various outputs to the specified columns in the database
 
 	db.results_as_hash = true
-	db.execute(" SELECT id, artist, songtitle FROM master WHERE echonest_id IS NULL ") do |x|
+	db.execute(" SELECT id, artist, songtitle FROM master WHERE echonest_run IS NULL AND id > 34287") do |x|
 		# Cleaning songtitles using same string manipulations as lyric search script
 		x['songtitle'].delete! '.'
 		x['songtitle'].delete! '!'
@@ -64,7 +61,6 @@ def self.echo_search(dbname)
 		# Initiating the search
 		song = Echowrap.song_search(:artist => x['artist'], :title => x['songtitle'], :bucket => ['audio_summary', 'artist_location'], :results => 5)
 		song.each_with_index do |value, key|
-			number_selected.push("1")
 
 			artist_score = song[key].artist_name.similar("#{x['artist']}")
 			title_score = song[key].title.similar("#{x['songtitle']}")
@@ -79,6 +75,7 @@ def self.echo_search(dbname)
 		if good_tracks == {}
 		then
 			puts 'No solid match found.'
+			db.execute("UPDATE master SET echonest_run = 'true' WHERE id = '#{x['id']}'")
 			next
 		else
 			# Choosing closest match from search results
@@ -110,6 +107,8 @@ def self.echo_search(dbname)
 					UPDATE master SET artist_location ='#{song[chosen_track].artist_location.location}' WHERE id='#{x['id']}';
 				")
 
+				db.execute("UPDATE master SET echonest_run = 'true' WHERE id = '#{x['id']}'")
+
 				# This grabs the detailed analysis from the link embedded in the search result
 				analysis_url = song[chosen_track].audio_summary.analysis_url
 				# sleep(3) - not needed because my API rate limit was lifted. Use if you are rate limited
@@ -125,21 +124,22 @@ def self.echo_search(dbname)
 					UPDATE master SET time_signature_confidence ='#{analysis_parse['track']['time_signature_confidence']}' WHERE id='#{x['id']}';
 				")
 
-			rescue Exception => e
+			rescue NoMethodError => e
+				puts e.backtrace
+				puts e
+				puts song.inspect
+				db.execute("UPDATE master SET echonest_run = 'true' WHERE id = '#{x['id']}'")
+			rescue => e
 				puts e.message
 				puts e.backtrace.inspect
 				puts song.inspect
 				puts analysis_url
 				puts jsonobject.inspect
 				puts "Problem with #{x['songtitle']} by #{x['artist']}. Moving on..."
-				number_rescued.push("1")
+				db.execute("UPDATE master SET echonest_run = 'true' WHERE id = '#{x['id']}'")
 				next
 			end
 		end
 	end
-
-	puts number_selected.length
-	puts number_rescued.length
-
 end
 end

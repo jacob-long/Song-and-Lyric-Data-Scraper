@@ -41,10 +41,12 @@ class DBcalls
 				album_id INTEGER,
 				num_on_album INTEGER, 
 				spotify_album_id NUMERIC,
+				spotify_song_run TEXT,
 				from_album_chart TEXT,
 				from_album_song TEXT,
 				artist_location TEXT,
 				echonest_id TEXT,
+				echonest_run TEXT,
 				key INTEGER,
 				key_confidence NUMERIC,
 				energy NUMERIC,
@@ -66,8 +68,9 @@ class DBcalls
 				analysis_url TEXT,
 				ISRC NUMERIC,
 				UNIQUE(songtitle COLLATE NOCASE, artist COLLATE NOCASE),
-				UNIQUE(songtitle, artist)
-				UNIQUE(songtitle COLLATE NOCASE, album_title COLLATE NOCASE)
+				UNIQUE(songtitle, artist),
+				UNIQUE(songtitle COLLATE NOCASE, album_title COLLATE NOCASE),
+				UNIQUE(songtitle COLLATE NOCASE, spotify_album_id COLLATE NOCASE)
 			)
 		")
 	end
@@ -84,9 +87,11 @@ class DBcalls
 				discogsid NUMERIC,
 				from_single TEXT,
 				discogsrun TEXT,
+				spotify_run TEXT,
 				catnum NUMERIC,
 				UNIQUE(albumtitle, artist),
-				UNIQUE(albumtitle COLLATE NOCASE, artist COLLATE NOCASE)
+				UNIQUE(albumtitle COLLATE NOCASE, artist COLLATE NOCASE),
+				UNIQUE(spotifyid COLLATE NOCASE)
 			)"
 		)
 	end

@@ -219,23 +219,28 @@ class Parse
           spotifyids.push(pageparse3[0]['href'])
         rescue
           # puts "No Spotify entry found."
-          spotifyids.push("None")
+          spotifyids.push(nil)
           next
         end
       end
 
       spotifyids.each do |x|
-        x.gsub!(/https:\/\/embed.spotify.com\/\?uri=spotify\:album\:/, '')
+        begin
+          x.gsub!(/https:\/\/embed.spotify.com\/\?uri=spotify\:album\:/, '')
+        rescue StandardError => e
+          puts e
+          next
+        end
       end
 
-      # Retrieving, grooming, and storing each song's rank on that week's list.
+      # Retrieving, grooming, and storing each album's rank on that week's list.
       ranks = []
       rankspre = page2.css('main#main.page-content div.chart-data div.container article.chart-row div.row-primary div.row-rank span.this-week')
       rankspre.each do |x|
         ranks.push(x.text)
       end
 
-      # Retrieving, grooming, and storing each song's rank on that week's list.
+      # Retrieving, grooming, and storing each album's rank on that week's list.
       ranks_last = []
       ranks_last_pre = page2.css('main#main.page-content div.chart-data div.container article.chart-row div.row-primary div.row-rank span.last-week')
       ranks_last_pre.each do |x|
@@ -262,10 +267,11 @@ class Parse
       end
     end
 
-    # Inserts songs into master table that contains all songs
+    # Inserts albums into master table that contains all songs
     for i in 0...upperbound do
       begin
-        DB.execute("INSERT INTO album_master(albumtitle, artist, spotifyid) VALUES ('#{titles[i]}', '#{artists[i]}', '#{spotifyids[i]}')")
+        # DB.execute("INSERT INTO album_master(albumtitle, artist, spotifyid) VALUES ('#{titles[i]}', '#{artists[i]}', '#{spotifyids[i]}')")
+        DB.execute("INSERT INTO album_master(albumtitle, artist, spotifyid) VALUES (?, ?, ?)", "#{titles[i]}", "#{artists[i]}", spotifyids[i])
       rescue SQLite3::ConstraintException
         next
       rescue StandardError => e
@@ -275,7 +281,7 @@ class Parse
       end
     end
 
-    # Inserts songs into genre-named table.
+    # Inserts albums into genre-named table.
     for i in 0...upperbound do
       begin
         DB.execute("INSERT INTO [#{link.genre}_albums](albumtitle, artist, genre_bb, date, year, week, rank, rank_last)
@@ -290,17 +296,17 @@ class Parse
       end
       begin
         # prevents lookup errors due to apostrophe
-        titles[i].gsub!(/\'\'/, '\'')
-        artists[i].gsub!(/\'\'/, '\'')
+        # titles[i].gsub!(/\'\'/, '\'')
+        # artists[i].gsub!(/\'\'/, '\'')
 
         # grabbing album ID from master table
         preidstmt = DB.prepare("SELECT id FROM album_master WHERE albumtitle LIKE ? AND artist LIKE ?")
-        preid = preidstmt.execute!("#{titles[i]}", "#{artists[i]}")
+        preid = preidstmt.execute!(titles[i], artists[i])
         id = preid[0][0]
 
         # attaching album ID from master table to genre table
         putidstmt = DB.prepare("UPDATE [#{link.genre}_albums] SET album_id = (?) WHERE albumtitle = ? AND artist = ?")
-        putid = putidstmt.execute!("#{id}", "#{titles[i]}", "#{artists[i]}")
+        putid = putidstmt.execute!(id, titles[i], artists[i])
 
       rescue StandardError => e
         puts "Problem looking up ID for #{titles[i]} by #{artists[i]}. Moving on with no ID..."

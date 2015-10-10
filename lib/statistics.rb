@@ -22,7 +22,7 @@ module Summarize
     denominator = Float(denominator[0][0])
     percentage = (numerator/denominator)
 
-    puts "I have lyrics for #{percentage} of singles in #{genre}."
+    puts "I have lyrics for #{percentage} of singles in #{genre} (#{denominator} total tracks)."
   end
 
   def self.with_albums(genre, dbname)
@@ -64,7 +64,7 @@ module Summarize
 
     percentage = final_numerator/final_denominator
 
-    puts "I have lyrics for #{percentage} of total tracks in #{genre}."
+    puts "I have lyrics for #{percentage} of total tracks in #{genre} (#{final_denominator} total tracks)."
   end
 
   def self.albums_fetched(genre, dbname)

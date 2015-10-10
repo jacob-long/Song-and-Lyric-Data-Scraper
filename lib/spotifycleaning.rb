@@ -190,7 +190,7 @@ module Spotifyclean
 						# noinspection RubyQuotedStringsInspection
 						preidstmt = db.prepare("SELECT id FROM album_master WHERE spotifyid = ? OR ((albumtitle LIKE ? OR alt_albumtitle LIKE ?) AND artist LIKE ?)")
 						preid = preidstmt.execute!("#{albid}", "#{albname}", "#{albname}", "#{artistname}")
-						if preid != nil
+						if preid != nil && preid != []
 							db_albid = preid[0][0]
 
 							# attaching album ID from album_master table to master table
@@ -199,7 +199,7 @@ module Spotifyclean
 
 							# If the single's album isn't in album_master, putting it there so I can add their full tracklists too
 						else
-							putnewidstmt = db.prepare("INSERT INTO album_master(albumtitle, artist, spotifyid, from_single) VALUES (?,?,?,?")
+							putnewidstmt = db.prepare("INSERT INTO album_master(albumtitle, artist, spotifyid, from_single) VALUES (?,?,?,?)")
 							putnewidstmt.execute!("#{albname}", "#{artistname}", "#{track.album.id}", "TRUE")
 							puts "Created new album entry for #{albname} by #{artistname}"
 						end
@@ -228,6 +228,50 @@ module Spotifyclean
 				puts e.backtrace
 				next
 			end
+		end
+	end
+
+	def self.album_expand(dbname)
+
+		# This is private information, do not share!
+		RSpotify.authenticate('***REMOVED***', '***REMOVED***')
+
+		db = SQLite3::Database.open(dbname)
+		db.results_as_hash = true
+
+		db.execute("SELECT id, spotifyid, albumtitle FROM album_master WHERE discogsid IS NULL AND spotify_run IS NULL AND (spotifyid NOT NULL AND spotifyid != 'None') AND from_single IS NULL") do |album|
+			begin
+
+			result = RSpotify::Album.find(album['spotifyid'])
+
+			result.tracks.each do |track|
+				begin
+				statement = db.prepare("INSERT INTO master (songtitle, artist, album_id, spotifyid, spotify_album_id, num_on_album, from_album_chart) VALUES (?, ?, ?, ?, ?, ?, ?)")
+				statement.execute(track.name, track.artists.first.name, album['id'], track.id, album['spotifyid'], track.track_number, 'true')
+
+				rescue SQLite3::ConstraintException => e
+				puts e
+					id = db.execute("SELECT id FROM master WHERE artist LIKE ? AND songtitle LIKE ?", track.artists.first.name, track.name)
+					id = id[0]
+					db.execute("UPDATE master SET album_id = ? WHERE id = ?", "#{album['id']}", "#{id}")
+					db.execute("UPDATE master SET spotify_album_id = ? WHERE id = ?", "#{album['spotifyid']}", "#{id}")
+					db.execute("UPDATE master SET num_on_album = ? WHERE id = ?", "#{track.track_number}", "#{id}")
+					db.execute("UPDATE master SET album_title = ? WHERE id = ?", "#{album['albumtitle']}", "#{id}")
+					puts "Updated original entry instead."
+				end
+
+			end
+
+			rescue => e
+				puts e
+				puts e.backtrace
+				puts "Some kind of problem! Moving on to the next album..."
+				db.execute("UPDATE album_master SET spotify_run = 'true' WHERE id = ?", album['id'])
+				next
+			end
+
+			puts "Found tracklist with Spotify successfully."
+			db.execute("UPDATE album_master SET spotify_run = 'true' WHERE id = ?", album['id'])
 		end
 	end
 end

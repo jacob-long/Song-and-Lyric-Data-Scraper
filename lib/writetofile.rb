@@ -6,23 +6,20 @@ require 'fileutils'
 
 module WriteFile
 
-	def self.write_songs(genres, dbname)
+	def self.write_songs(genres, dbname, root, path)
 		db = SQLite3::Database.open(dbname)
 		db.results_as_hash = true
 
-		origdirectory = Dir.getwd
-		puts origdirectory
-
 		genres.each do |genre|
-			Dir.chdir("#{origdirectory}")
-			puts origdirectory
+			Dir.chdir("#{root}")
+			puts root
 
 			songids = db.execute("SELECT DISTINCT song_id from [#{genre}]")
 			puts genre
 			genre1 = genre.delete('/')
-			FileUtils::mkdir_p "lyrics/#{genre1}"
+			FileUtils::mkdir_p "#{path}/#{genre1}"
 			# puts songids
-			Dir.chdir("lyrics/#{genre1}")
+			Dir.chdir("#{path}/#{genre1}")
 			songids.each do |songid|
 				songs = db.execute("SELECT songtitle, artist, lyrics_ml, lyrics_w FROM master WHERE id = ? AND ((lyrics_w NOTNULL AND lyrics_w != '') OR (lyrics_ml NOTNULL AND lyrics_ml != ''))", songid['song_id'])
 				puts songs.count
@@ -49,22 +46,20 @@ module WriteFile
 			end
 		end
 
-	def self.write_albums(genres, dbname)
+	def self.write_albums(genres, dbname, root, path)
 
 		db = SQLite3::Database.open(dbname)
 		db.results_as_hash = true
 
-		origdirectory = Dir.getwd
-		puts origdirectory
 		genres.each do |genre|
-			Dir.chdir("#{origdirectory}")
-			puts origdirectory
-			songids = db.execute("SELECT DISTINCT master.id from master JOIN [#{genre}_albums] ON master.album_id = [#{genre}_albums].album_id")
+			Dir.chdir("#{root}")
+			puts root
+			songids = db.execute("SELECT DISTINCT master.id FROM master JOIN [#{genre}_albums] ON master.album_id = [#{genre}_albums].album_id")
 			puts genre
 			genre1 = genre.delete('/')
-			FileUtils::mkdir_p "lyrics/#{genre1}"
+			FileUtils::mkdir_p "#{path}/#{genre1}"
 			# puts songids
-			Dir.chdir("lyrics/#{genre1}")
+			Dir.chdir("#{path}/#{genre1}")
 			songids.each do |songid|
 				songs = db.execute("SELECT songtitle, artist, lyrics_ml, lyrics_w FROM master WHERE id = ? AND ((lyrics_w NOTNULL AND lyrics_w != '') OR (lyrics_ml NOTNULL AND lyrics_ml != ''))", songid['song_id'])
 				puts songs.count
