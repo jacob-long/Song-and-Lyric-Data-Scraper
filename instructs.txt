@@ -16,12 +16,12 @@ There are commands filled in by default to give you a sense of what things shoul
 rap, latin, christian, pop, country, rock, R&B/hip hop, dance/electronic
 
 ## album-genres
-country, rock, dance/electronic, rap, latin, christian, blues, jazz, new age, reggae, R&B/hip hop, classical
+rap, country, rock, dance/electronic, latin, christian, blues, jazz, new age, reggae, R&B/hip hop, classical
 
 # Name the .sqlite file where your data will be stored
 
 ## dbname
-final3.sqlite
+final7.sqlite
 
 ## overwrite
 false
@@ -57,4 +57,4 @@ false
 false
 
 ## path
-/lyrics
+lyrics
