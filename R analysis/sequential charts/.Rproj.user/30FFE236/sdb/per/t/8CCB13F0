@@ -1,0 +1,28 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1456806233912.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "8CCB13F0",
+    "lastKnownWriteTime" : 8389754659302220288,
+    "last_content_update" : 1456806233912,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "qn6itfuxbh",
+        "caption" : "joinedmeans",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=joinedmeans&cache_key=qn6itfuxbh",
+        "displayedObservations" : "10",
+        "environment" : "",
+        "object" : "joinedmeans",
+        "totalObservations" : "10",
+        "variables" : "485"
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}
