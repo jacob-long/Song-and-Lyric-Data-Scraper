@@ -47,31 +47,24 @@ begin
 
 instructs.each_with_index do |line, num|
   if line.match(/^## statistics/)
-    puts "statistics = #{instructs[num+1]}"
     statistics = instructs[num+1].strip.to_b
   end
   if line.match(/^## overwrite/)
-    puts "overwrite = #{instructs[num+1]}"
     overwrite = instructs[num+1].strip.to_b
   end
   if line.match(/^## albums/)
-    puts "albums = #{instructs[num+1]}"
     albums = instructs[num+1].strip.to_b
   end
   if line.match(/^## scrape-albums/)
-    puts "scrape-albums = #{instructs[num+1]}"
     scrape_albums = instructs[num+1].strip.to_b
   end
   if line.match(/^## path/)
-    puts "write_path = #{instructs[num+1]}"
     write_path = instructs[num+1].strip
   end
   if line.match(/^## write/)
-    puts "write = #{instructs[num+1]}"
     write = instructs[num+1].strip.to_b
   end
   if line.match(/^## lyric-search/)
-    puts "lyrics = #{instructs[num+1]}"
     lyrics = instructs[num+1].strip.to_b
   end
   if line.match(/^## wikia-search/)
@@ -84,42 +77,33 @@ instructs.each_with_index do |line, num|
     alt_search = instructs[num+1].strip.to_b
   end
   if line.match(/^## spotify/)
-    puts "spotify = #{instructs[num+1]}"
     spotify = instructs[num+1].strip.to_b
   end
   if line.match(/^## echonest/)
-    puts "echonest = #{instructs[num+1]}"
     echonest = instructs[num+1].strip.to_b
   end
   if line.match(/^## discogs/)
-    puts "discogs = #{instructs[num+1]}"
     discogs = instructs[num+1].strip.to_b
   end
   if line.match(/^## token\-discogs/)
-    puts "discogs-token = #{instructs[num+1]}"
     discogs_token = instructs[num+1].strip
   end
   if line.match(/^## scrape-songs/)
-    puts "scrape-songs = #{instructs[num+1]}"
     scrape_songs = instructs[num+1].strip.to_b
   end
   if line.match(/^## song-genres/)
-    puts "song-genres = #{instructs[num+1]}"
     genre_in = instructs[num+1]
     song_genres = genre_in.split(", ").collect{ |x| x.strip}
   end
   if line.match(/^## album-genres/)
-    puts "album-genres = #{instructs[num+1]}"
     genre_in = instructs[num+1]
     album_genres = genre_in.split(", ").collect{ |x| x.strip}
   end
   if line.match(/^## years/)
-    puts "years = #{instructs[num+1]}"
     year_in = instructs[num+1]
     years = year_in.split(", ").collect{ |x| x.strip}
   end
   if line.match(/^## dbname/)
-    puts "dbname = #{instructs[num+1]}"
     db_input = instructs[num+1].strip
   end
 end
