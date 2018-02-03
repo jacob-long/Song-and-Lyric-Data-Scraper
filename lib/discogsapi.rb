@@ -22,7 +22,9 @@ module DiscogsAPI
 		db.results_as_hash = true
 
 		# Grabbing albums from database
-		dbalbums = db.execute("SELECT * FROM album_master WHERE discogsid IS NULL AND (spotifyid IS NULL OR spotify_run IS NULL) AND (from_single != 'TRUE' OR from_single IS NULL) AND discogsrun IS NULL ")
+		dbalbums = db.execute("SELECT * FROM album_master WHERE discogsid IS NULL AND
+		 (spotifyid IS NULL OR spotify_run IS NULL) AND 
+		 (from_single != 'TRUE' OR from_single IS NULL) AND discogsrun IS NULL ")
 		# Creating a master songs table in case it does not already exist
 		DBcalls::create_table_master
 
@@ -44,7 +46,9 @@ module DiscogsAPI
 			sleep 0.5
 		begin
 			# Searching Discogs API
-			result = wrapper.search("#{album['artist']} - #{album['albumtitle']}", per_page: "10", type: "release")
+			result = wrapper.search("#{album['artist']} - #{album['albumtitle']}",
+									 per_page: "10",
+									 type: "release")
 
 			# Hash needs to exist outside of upcoming block
 			simscores = Hash.new
@@ -90,13 +94,19 @@ module DiscogsAPI
 					# This is to identify tracks that came from albums that did not themselves make a chart
 					if album['from_single'] == 'TRUE'
 						# For now, don't want any of these.
-						# DB.execute("INSERT INTO master (songtitle, artist, album_title, album_id, num_on_album, from_album_song, extra_artists) VALUES (?,?,?,?,?,?,?)",
-						# 					 "#{x.title}", "#{album['artist']}", "#{foundalbum.title}", "#{album['id']}", "#{x.position}", "true", "#{extras}")
+						# DB.execute("INSERT INTO master (songtitle, artist, album_title, album_id, num_on_album, 
+						# from_album_song, extra_artists) VALUES (?,?,?,?,?,?,?)",
+						# 					 "#{x.title}", "#{album['artist']}",
+						#  "#{foundalbum.title}", "#{album['id']}", "#{x.position}", "true", "#{extras}")
 					else
 					# Putting all the information into the table now
 						if x.title != '' && x.title != nil
-							DB.execute("INSERT INTO master (songtitle, artist, album_title, album_id, num_on_album, from_album_chart, extra_artists) VALUES (?,?,?,?,?,?,?)",
-							"#{x.title}", "#{album['artist']}", "#{foundalbum.title}", "#{album['id']}", "#{x.position}", "true", "#{extras}")
+							DB.execute("INSERT INTO master 
+								(songtitle, artist, album_title, album_id, num_on_album,
+								 from_album_chart, extra_artists)
+								VALUES (?,?,?,?,?,?,?)",
+								"#{x.title}", "#{album['artist']}", "#{foundalbum.title}",
+								"#{album['id']}", "#{x.position}", "true", "#{extras}")
 						else
 							next
 						end
