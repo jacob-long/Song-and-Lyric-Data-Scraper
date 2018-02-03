@@ -37,9 +37,6 @@ module DiscogsAPI
 			album['albumtitle'] = alb_title_clean(album['albumtitle'])
 			album['artist'] = artist_clean(album['albumtitle'])
 
-			# For ease of reading terminal output, can remove once confident it's working
-			# puts "#{album['artist']} - #{album['albumtitle']}"
-
 			# Resetting here so each album gets 5 retries
 			retries = 5
 
@@ -47,7 +44,7 @@ module DiscogsAPI
 			sleep 0.5
 		begin
 			# Searching Discogs API
-			result = wrapper.search("#{album['artist']} - #{album['albumtitle']}", :per_page => 10, :type => :release)
+			result = wrapper.search("#{album['artist']} - #{album['albumtitle']}", per_page: "10", type: "release")
 
 			# Hash needs to exist outside of upcoming block
 			simscores = Hash.new
@@ -64,13 +61,11 @@ module DiscogsAPI
 			# This prevents albums with no close matches from having the wrong data inserted into database
 			if simscores == {}
 				then
-				puts "No solid match found."
 				prog_bar.increment
 				db.execute("UPDATE album_master SET discogsrun = 'TRUE' where id = ?", album['id'])
 				next
 			else
 				choice = simscores.max_by { |k, v| v }[0]
-				# puts "Chose: \"#{result.results[choice].title}\", which was result number #{choice+1}"
 			end
 
 			# Adding this metadata to database for future use. Catalog number is a standard that stretches beyond Discogs
@@ -99,19 +94,22 @@ module DiscogsAPI
 						# 					 "#{x.title}", "#{album['artist']}", "#{foundalbum.title}", "#{album['id']}", "#{x.position}", "true", "#{extras}")
 					else
 					# Putting all the information into the table now
-					if x.title != '' && x.title != nil
-						DB.execute("INSERT INTO master (songtitle, artist, album_title, album_id, num_on_album, from_album_chart, extra_artists) VALUES (?,?,?,?,?,?,?)",
-						"#{x.title}", "#{album['artist']}", "#{foundalbum.title}", "#{album['id']}", "#{x.position}", "true", "#{extras}")
-					else
-						next
+						if x.title != '' && x.title != nil
+							DB.execute("INSERT INTO master (songtitle, artist, album_title, album_id, num_on_album, from_album_chart, extra_artists) VALUES (?,?,?,?,?,?,?)",
+							"#{x.title}", "#{album['artist']}", "#{foundalbum.title}", "#{album['id']}", "#{x.position}", "true", "#{extras}")
+						else
+							next
+						end
 					end
-					end
+					
 				# No need to worry about the DB rejecting duplicate entries
 				rescue SQLite3::ConstraintException
 					next
 					db.execute("UPDATE album_master SET discogsrun = 'TRUE' where id = ?", album['id'])
 				end
-		end
+			
+			end
+
 			prog_bar.increment
 	
 		# Shouldn't be getting this, but you never know
@@ -146,10 +144,11 @@ module DiscogsAPI
 				next
 			end
 		end
+	end
+	end
+
 end
 
-		puts
-		puts "Time elapsed using Discogs: #{Time.now - beginning} seconds."
 # These changes, in addition to the fixes in my fork of discogs-wrapper,
 # stop the warnings from Hashie from key clashes
 class Discogs::Wrapper 
