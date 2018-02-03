@@ -10,10 +10,6 @@ require_relative 'dbcalls'
 
 module DiscogsAPI
 
-	def self.get_tracklists(dbname)
-
-		# included for crude benchmarking purposes
-		beginning = Time.now
 	def self.get_tracklists(dbname, token)
 
 		# Authenticates with Discogs, "wrapper" variable will be used to initiate all interactions with the API
