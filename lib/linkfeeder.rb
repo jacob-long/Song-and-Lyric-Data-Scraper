@@ -86,11 +86,15 @@ class Feeder
     list = []
     @list = list
 
+    prog_bar = ProgressBar.create(:title => "Links progress",
+									   :starting_at => 0,
+									   :total => @genres.length * @years.length)
+
     # iterating through each genre
     @genres.each do |g|
 
       # Only one output to console for link-building phase
-      puts "Building #{g} albums links..."
+      prog_bar.log "Building #{g} albums links..."
 
       # This has nothing to do with the link object, so moving the create table 
       # command here prevents calling it way more times than necessary.
@@ -132,10 +136,13 @@ class Feeder
               # This rescue is for dealing with the every few years that there is
               #  a 53rd Saturday.
           rescue
-            puts "#{linkdate} is not a valid date! Moving to the next year..."
+            prog_bar.log "#{linkdate} is not a valid date! Moving to the next year..."
             next
           end
         end
+
+        prog_bar.increment
+
       end
     end
   end
