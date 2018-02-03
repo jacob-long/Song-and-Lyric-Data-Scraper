@@ -24,11 +24,12 @@ instructs = instructs.readlines
 
 scrape_songs = false
 scrape_albums = false
-song_genres=[]
-album_genres=[]
-years=[]
+song_genres = []
+album_genres = []
+years = []
 db_input = nil
 discogs = false
+discogs_token = nil
 spotify = false
 echonest = false
 lyrics = false
@@ -81,6 +82,10 @@ instructs.each_with_index do |line, num|
   if line.match(/^## discogs/)
     puts "discogs = #{instructs[num+1]}"
     discogs = instructs[num+1].strip.to_b
+  end
+  if line.match(/^## token\-discogs/)
+    puts "discogs-token = #{instructs[num+1]}"
+    discogs_token = instructs[num+1].strip
   end
   if line.match(/^## scrape-songs/)
     puts "scrape-songs = #{instructs[num+1]}"
@@ -144,7 +149,7 @@ if albums == true
 
   if discogs == true
     puts 'Getting tracklists for albums from Discogs...'
-    DiscogsAPI::get_tracklists(db_input)
+    DiscogsAPI::get_tracklists(db_input, discogs_token)
   end
 
   if spotify == true

@@ -14,9 +14,10 @@ module DiscogsAPI
 
 		# included for crude benchmarking purposes
 		beginning = Time.now
+	def self.get_tracklists(dbname, token)
 
 		# Authenticates with Discogs, "wrapper" variable will be used to initiate all interactions with the API
-		wrapper = Discogs::Wrapper.new("BB DB", user_token: "***REMOVED***")
+		wrapper = Discogs::Wrapper.new("BB DB", user_token: token)
 		# target/source database (I'm assuming they are same, modifications could make working with two possible)
 		db_name = "#{dbname}"
 
