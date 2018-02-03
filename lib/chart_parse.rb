@@ -20,13 +20,28 @@ class Parse
 
   # I need an array of Link objects on which to run chart_parse in an each loop
   def chart_parse_songs
+
+    genre = nil
+    prog_bar = ProgressBar.create(:title => "Song charts progress",
+									   :starting_at => 0,
+                      :total => food.list.length)
+                      
     food.list.each do |link|
       retries = 3
       begin
 
+        if genre != link.genre
+          prog_bar.log "Parsing #{link.genre} songs... "
+          genre = link.genre
+        end
+  
         # Grabbing the chart page from billboard.com
-        page2 = Nokogiri::HTML(open(link.url, 'User-Agent' => 'ruby'))
-        puts "Parsing...#{link.genre}: #{link.date}"
+        if (retries < 3) == true
+          page2 = Nokogiri::HTML(open(link.url, 'User-Agent' => 'ruby'))
+        else 
+          # print "#{link.date}..."
+          page2 = Nokogiri::HTML(open(link.url))
+        end
 
         # Fetching songtitles
         titlespre = page2.css('h2.chart-row__song')
@@ -62,6 +77,7 @@ class Parse
         if titles.count == artists.count
           upperbound = titles.count
         else
+          prog_bar.log "Number of titles and artists don't match!"
         end
 
         # Retrieving, grooming, and storing each song's rank on that week's list.
@@ -82,16 +98,20 @@ class Parse
           x.gsub!(/Last Week:/, '')
         end
 
-          # Error handling for problems with opening webpages.
-      rescue StandardError => e
-        puts "\tError: #{e}"
-        if retries > 0
-          puts "\tCan't access the webpage for #{link.genre_snip} on #{link.date}. Going to try again #{retries} more times"
+      # Error handling for problems with opening webpages.
+      rescue OpenURI::HTTPError => e
+        if retries > 0 and retries < 3
+          prog_bar.log "\tError: #{e}"
+          prog_bar.log "\tCan't access the webpage for #{link.genre} on #{link.date}. Going to try again #{retries} more times"
           retries -= 1
-          sleep 1
+          sleep 1 + (retries_start - retries) * 2
+          retry
+        elsif retries == 3
+          retries -= 1
           retry
         else
-          puts "\t\tCouldn't access on further attempts, either. Try visiting #{link.url}"
+          prog_bar.log "\t\tCouldn't access on further attempts, either. Try visiting #{link.url}"
+          prog_bar.increment
           next
         end
       end
@@ -103,8 +123,8 @@ class Parse
         rescue SQLite3::ConstraintException
           next
         rescue StandardError => e
-          puts "Error: Check if number of titles and artists match for the #{link.genre_snip} genre on #{link.date}."
-          puts e
+          prog_bar.log "Error: Check if number of titles and artists match for the #{link.genre_snip} genre on #{link.date}."
+          prog_bar.log e
         end
       end
 
@@ -144,17 +164,34 @@ class Parse
           next
         end
       end
+
+      prog_bar.increment
+
     end
   end
 
   def chart_parse_albums
+
+    genre = nil
+    prog_bar = ProgressBar.create(:title => "Album charts progress",
+									   :starting_at => 0,
+                      :total => food.list.length)
+                      
     food.list.each do |link|
     retries = 3
     begin
 
+      if genre != link.genre
+        prog_bar.log "Parsing #{link.genre} albums..."
+        genre = link.genre
+      end
+
       # Grabbing the chart page from billboard.com
-      page2 = Nokogiri::HTML(open(link.url, 'User-Agent' => 'ruby'))
-      puts "Parsing...#{link.genre}: #{link.date}"
+      if (retries < 3) == true
+        page2 = Nokogiri::HTML(open(link.url, 'User-Agent' => 'ruby'))
+      else 
+        page2 = Nokogiri::HTML(open(link.url))
+      end
 
       # Fetching songtitles
       titlespre = page2.css('h2.chart-row__song')
@@ -190,6 +227,7 @@ class Parse
       if titles.count == artists.count
         upperbound = titles.count
       else
+        prog_bar.log "Number of titles and artists don't match!"
       end
 
       # Retrieving, grooming, and storing each album's rank on that week's list.
@@ -213,15 +251,19 @@ class Parse
       end
 
     # Error handling for problems with opening webpages.
-    rescue StandardError=>e
-      puts "\tError: #{e}"
-      if retries > 0
-        puts "\tCan't access the webpage for #{link.genre} on #{link.date}. Going to try again #{retries} more times"
+    rescue OpenURI::HTTPError => e
+      if retries > 0 and retries < 3
+        prog_bar.log "\tError: #{e}"
+        prog_bar.log "\tCan't access the webpage for #{link.genre} albums on #{link.date}. Going to try again #{retries} more times"
         retries -= 1
-        sleep 1
+        sleep 1 + (retries_start - retries) * 2
+        retry
+      elsif retries == 3
+        retries -= 1
         retry
       else
-        puts "\t\tCouldn't access on further attempts, either. Try visiting #{link.url}"
+        prog_bar.log "\t\tCouldn't access on further attempts, either. Try visiting #{link.url}"
+        prog_bar.incremenet
         next
       end
     end
@@ -234,8 +276,8 @@ class Parse
       rescue SQLite3::ConstraintException
         next
       rescue StandardError => e
-        puts "Error: Check if number of titles and artists match for the #{link.genre} genre on #{link.date}."
-        puts e
+        prog_bar.log "Error: Check if number of titles and artists match for the #{link.genre} genre on #{link.date}."
+        prog_bar.log e
         next
       end
     end
@@ -248,9 +290,9 @@ class Parse
 						'#{link.year}', '#{link.week}', '#{ranks[i]}', '#{ranks_last[i]}') ")
       rescue SQLite3::ConstraintException
         next
-      rescue StandardError=>e
-        puts "Error: Check if number of titles and artists match for the #{link.genre} genre on #{link.date}."
-        puts e
+      rescue StandardError => e
+        prog_bar.log "Error: Check if number of titles and artists match for the #{link.genre} genre on #{link.date}."
+        prog_bar.log e
         next
       end
       begin
@@ -268,11 +310,14 @@ class Parse
         putid = putidstmt.execute!(id, titles[i], artists[i])
 
       rescue StandardError => e
-        puts "Problem looking up ID for #{titles[i]} by #{artists[i]}. Moving on with no ID..."
-        puts e
+        prog_bar.log "Problem looking up ID for #{titles[i]} by #{artists[i]}. Moving on with no ID..."
+        prog_bar.log e
         next
       end
     end
+
+    prog_bar.increment
+
   end
 
   end
