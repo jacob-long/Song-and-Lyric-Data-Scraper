@@ -69,8 +69,8 @@ module DiscogsAPI
 			# Adding this metadata to database for future use. Catalog number is a standard that stretches beyond Discogs
 			discogsid = result.results[choice].id
 			catnum = result.results[choice].catno
-
-			foundalbum = wrapper.get_release("#{discogsid}")
+		
+			foundalbum = wrapper.get_release_lim("#{discogsid}")
 			db.execute("UPDATE album_master SET discogsid = ? WHERE id = ?", discogsid, album['id'])
 			db.execute("UPDATE album_master SET catnum = ? WHERE id = ?", catnum, album['id'])
 			db.execute("UPDATE album_master SET discogsrun = 'TRUE' where id = ?", album['id'])
@@ -80,8 +80,8 @@ module DiscogsAPI
 				begin
 					# Using the extra artists category for dealing with "various artists" albums
 					extras = []
-					if x.extraartists != nil
-						then x.extraartists.each{ |y| extras.push(y.name) }
+					if x["extraartists"] != nil
+						then x["extraartists"].each{ |y| extras.push(y.name) }
 					else extras = nil
 					end
 
@@ -142,8 +142,33 @@ end
 
 		puts
 		puts "Time elapsed using Discogs: #{Time.now - beginning} seconds."
+# These changes, in addition to the fixes in my fork of discogs-wrapper,
+# stop the warnings from Hashie from key clashes
+class Discogs::Wrapper 
 
+	def get_release_lim(release_id)
+		query_and_build_lim "releases/#{release_id}"
 	end
+
+	def query_and_build_lim(path, params={}, method=:get, body=nil)
+		parameters = {:f => "json"}.merge(params)
+		data = query_api(path, params, method, body)
+
+		if data != ""
+		hash = JSON.parse(data)
+		hash = hash.select {|key, value| ["id", "tracklist", "title"].include?(key) }
+		if hash["tracklist"].is_a?(Array)
+		  hash["tracklist"].each_index do |x|
+			hash["tracklist"][x] = sanitize_hash(hash["tracklist"][x])
+		  end
+		end
+		Hashie::Mash.new(sanitize_hash(hash))
+		else
+		Hashie::Mash.new
+		end
+	end
+
+end
 
 # These methods edit the album titles and artist names to increase search success
 # with Discogs
