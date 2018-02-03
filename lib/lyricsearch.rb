@@ -17,7 +17,18 @@ module Lyricsearch
 		db.results_as_hash = true
 
 		# Wikia search–only includes titles that do not already have lyrics from W listed.
-		db.execute("SELECT id, songtitle, artist FROM master WHERE (lyrics_w IS NULL OR lyrics_w = '') AND id >2140") do |row|
+		wsongs = db.execute("SELECT id, songtitle, artist FROM master 
+							WHERE (lyrics_w IS NULL OR lyrics_w = '')")
+
+		# A list of zeroes to track how many successes. If I find lyrics
+		# I push a 1 to that index. The mean is overall success					 
+		wsuccess = Array.new(wsongs.length, 0)
+
+		prog_bar = ProgressBar.create(:title => "Wikia search progress",
+									  :starting_at => 0,
+									  :total => wsongs.length)
+
+		wsongs.each_with_index do |row, i|
 
 			row['songtitle'].gsub!(/\&amp\;/, '&')
 			row['songtitle'].gsub!(/\&\#039\;/, '\'')
@@ -33,23 +44,33 @@ module Lyricsearch
 			begin
 				fetcher = Lyricfy::Fetcher.new(:wikia)
 				song = fetcher.search "#{row['artist']}", "#{row['songtitle']}"
+				prog_bar.increment
 				# Trying to deal with false positives resulting from a body of 0 characters being saved as lyrics
 				if song.body == ''
-					puts "Found empty body of lyrics. Skipping..."
 					next
 				else
 					songw = song.body("\n")
 					db.execute("UPDATE master SET lyrics_w = ? WHERE id = #{row['id']}", "#{songw}")
-					puts "Used Wikia successfully (id: #{row['id']})"
+					wsuccess[i] = 1
 				end
 			rescue
-				puts "Can't find #{row['songtitle']} by #{row['artist']} (id: #{row['id']}) with Wikia."
 				next
 			end
 		end
 
 		# MetroLyrics search–only includes titles that do not already have lyrics from ML listed.
-		db.execute("SELECT id, songtitle, artist FROM master WHERE (lyrics_ml IS NULL OR lyrics_ml = '')") do |row|
+		msongs = db.execute("SELECT id, songtitle, artist FROM master 
+							 WHERE (lyrics_ml IS NULL OR lyrics_ml = '')") 
+
+		# A list of zeroes to track how many successes. If I find lyrics
+		# I push a 1 to that index. The mean is overall success					 
+		msuccess = Array.new(msongs.length, 0)
+
+		prog_bar = ProgressBar.create(:title => "MetroLyrics search progress",
+									  :starting_at => 0,
+									  :total => msongs.length)
+
+		msongs.each_with_index do |row, i|
 
 			row['songtitle'].delete! '.'
 			row['songtitle'].delete! '!'
@@ -76,43 +97,33 @@ module Lyricsearch
 			begin
 				fetcher2 = Lyricfy::Fetcher.new(:metro_lyrics)
 				song2 = fetcher2.search "#{row['artist']}", "#{row['songtitle']}"
+				prog_bar.increment
 				# Trying to deal with false positives resulting from a body of 0 characters being saved as lyrics
 				if song2.body == ''
-					puts "Found empty body of lyrics. Skipping..."
 					raise StandardError
 				else
 					songml = song2.body("\n")
 					db.execute("UPDATE master SET lyrics_ml = ? WHERE id = #{row['id']}", "#{songml}")
-					puts "Used MetroLyrics successfully. (id: #{row['id']})"
+					msuccess[i] = 1
 				end
 			rescue
-				puts "I couldn't find lyrics for #{row['songtitle']} by #{row['artist']} (id: #{row['id']}) on MetroLyrics."
 				next
 			end
 		end
 
-		# Below I'm just calculating some rough numbers on how successful the lyric search was and outputting to console
-		stmt = db.execute( "select * from master" )
-		stmt = stmt.length
-		puts "Total songs: #{stmt}"
+		wrate = wsuccess.reduce(:+).to_f / wsuccess.size
+		mrate = msuccess.reduce(:+).to_f / msuccess.size
 
-		stmt2 = db.execute( "select * from master WHERE (lyrics_w NOTNULL AND lyrics_w <> '') OR (lyrics_ml NOTNULL AND lyrics_ml <> '') AND id > 62000" )
-		stmt2 = stmt2.length
-		totalfails = (stmt - stmt2)
-
-		metrolyricsrate = metrosuccess.count{ |i| i == true }
-		wikiarate = wikiasuccess.count{ |i| i == true }
-
-		puts "Metrolyrics found #{metrolyricsrate} tracks out of #{stmt}."
-		puts "Wikia found #{wikiarate} tracks out of #{stmt}."
-		puts "I couldn't find lyrics for #{totalfails} tracks out of #{stmt} total."
+		puts "Metrolyrics found #{mrate.round(2)}% of #{msongs.length} songs."
+		puts "Wikia found #{wrate.round(2)}% of #{wsongs.length} songs."
 	end
 
 	def self.metro_alt_search(dbname)
 		db = SQLite3::Database.open "#{dbname}"
 		db.results_as_hash = true
 
-		ml_have = db.execute("SELECT id, songtitle, alt_songtitle, artist, alt_artist FROM master WHERE lyrics_ml IS NULL OR lyrics_ml = ''")
+		ml_have = db.execute("SELECT id, songtitle, alt_songtitle, artist, alt_artist 
+							 FROM master WHERE lyrics_ml IS NULL OR lyrics_ml = ''")
 		ml_have = ml_have.count
 
 		song_total = db.execute("SELECT * FROM master")
