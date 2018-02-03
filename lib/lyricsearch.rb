@@ -135,7 +135,14 @@ module Lyricsearch
 
 		puts "Before this search, I have #{song_total - ml_have} songs without lyrics from MetroLyrics."
 
-		db.execute("SELECT id, songtitle, alt_songtitle, artist, alt_artist FROM master WHERE lyrics_ml IS NULL OR lyrics_ml = ''") do |row|
+		songs = db.execute("SELECT id, songtitle, alt_songtitle, artist, alt_artist
+							 FROM master WHERE lyrics_ml IS NULL OR lyrics_ml = ''")
+
+		prog_bar = ProgressBar.create(:title => "Wikia alternative search progress",
+									  :starting_at => 0,
+									  :total => songs.length)
+
+		songs.each do |row|
 
 			if row['alt_songtitle'] != nil then
 			row['alt_songtitle'].delete! '.'
@@ -155,13 +162,15 @@ module Lyricsearch
 			begin
 				fetcher2 = Lyricfy::Fetcher.new(:metro_lyrics)
 				song2 = fetcher2.search "#{row['artist']}", "#{row['alt_songtitle']}"
-				# puts song2.body
-				songml = song2.body("\n")
-				db.execute("UPDATE master SET lyrics_ml = ? WHERE id = #{row['id']}", "#{songml}")
-				metrosuccess.push(true)
+				if song2.body == ''
+					raise StandardError
+				else
+					songml = song2.body("\n")
+					db.execute("UPDATE master SET lyrics_ml = ? WHERE id = #{row['id']}", "#{songml}")
+					prog_bar.increment
+					next
+				end
 			rescue
-				puts "I couldn't find lyrics for #{row['songtitle']} by #{row['artist']} on MetroLyrics with alternate songtitle."
-				next
 			end
 
 			elsif row['alt_artist'] != nil then
@@ -178,15 +187,21 @@ module Lyricsearch
 			begin
 				fetcher2 = Lyricfy::Fetcher.new(:metro_lyrics)
 				song2 = fetcher2.search "#{row['alt_artist']}", "#{row['songtitle']}"
-				# puts song2.body
-				songml = song2.body("\n")
-				db.execute("UPDATE master SET lyrics_ml = ? WHERE id = #{row['id']}", "#{songml}")
+				if song2.body == ''
+					raise StandardError
+				else
+					songml = song2.body("\n")
+					db.execute("UPDATE master SET lyrics_ml = ? WHERE id = #{row['id']}", "#{songml}")
+					prog_bar.increment
+					next
+				end
 			rescue
-				puts "I couldn't find lyrics for #{row['songtitle']} by #{row['artist']} on MetroLyrics with alternate songtitle."
+				prog_bar.increment
 				next
 			end
 
-			else puts "I don't have alternate metadata for #{row['songtitle']} by #{row['artist']}"
+			else
+				prog_bar.increment
 				next
 			end
 
@@ -195,7 +210,8 @@ module Lyricsearch
 		ml_have_2 = db.execute("SELECT id, songtitle, alt_songtitle, artist, alt_artist FROM master WHERE lyrics_ml IS NULL OR lyrics_ml = ''")
 		ml_have_2 = ml_have_2.count
 
-		puts "After secondary search, I have #{song_total - ml_have_2} songs without lyrics from MetroLyrics. That's #{ml_have_2 - ml_have} additional songs!"
+		puts "After secondary search, I have #{song_total - ml_have_2} songs without lyrics from MetroLyrics.
+		     That's #{ml_have_2 - ml_have} additional songs!"
 
 	end
 
@@ -211,7 +227,10 @@ module Lyricsearch
 
 		puts "Before this search, I have #{song_total - w_have} songs with lyrics from Wikia."
 
-		db.execute("SELECT id, songtitle, alt_songtitle, artist, alt_artist FROM master WHERE lyrics_w IS NULL OR lyrics_w = ''") do |row|
+		songs = db.execute("SELECT id, songtitle, alt_songtitle, artist, alt_artist 
+							FROM master WHERE lyrics_w IS NULL OR lyrics_w = ''") 
+		
+		songs.each do |row|
 
 			if row['alt_songtitle'] != nil then
 				row['alt_songtitle'].gsub!(/\&amp\;/, '&')
