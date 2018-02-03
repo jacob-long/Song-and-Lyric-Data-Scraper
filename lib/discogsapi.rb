@@ -5,6 +5,7 @@ require 'discogs-wrapper'
 require 'json'
 require 'sqlite3'
 require 'similar_text'
+require 'ruby-progressbar'
 
 require_relative 'dbcalls'
 
@@ -24,6 +25,11 @@ module DiscogsAPI
 		dbalbums = db.execute("SELECT * FROM album_master WHERE discogsid IS NULL AND (spotifyid IS NULL OR spotify_run IS NULL) AND (from_single != 'TRUE' OR from_single IS NULL) AND discogsrun IS NULL ")
 		# Creating a master songs table in case it does not already exist
 		DBcalls::create_table_master
+
+		num_albums = dbalbums.length
+		prog_bar = ProgressBar.create(:title => "Progress",
+									   :starting_at => 0,
+									    :total => num_albums)
 
 		# Performing searches on each album, one by one
 		dbalbums.each do |album|
@@ -59,6 +65,7 @@ module DiscogsAPI
 			if simscores == {}
 				then
 				puts "No solid match found."
+				prog_bar.increment
 				db.execute("UPDATE album_master SET discogsrun = 'TRUE' where id = ?", album['id'])
 				next
 			else
@@ -105,6 +112,7 @@ module DiscogsAPI
 					db.execute("UPDATE album_master SET discogsrun = 'TRUE' where id = ?", album['id'])
 				end
 		end
+			prog_bar.increment
 	
 		# Shouldn't be getting this, but you never know
 		rescue NoMethodError => e
