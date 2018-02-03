@@ -29,7 +29,7 @@ class Parse
         puts "Parsing...#{link.genre}: #{link.date}"
 
         # Fetching songtitles
-        titlespre = page2.css('main#main.page-content div.chart-data div.container article.chart-row div.row-primary div.row-title h2')
+        titlespre = page2.css('h2.chart-row__song')
 
         # Grooming and storing songtitle entries.
         titles = []
@@ -44,7 +44,7 @@ class Parse
         end
 
         # Fetching artists
-        artistspre = page2.css('main#main.page-content div.chart-data div.container article.chart-row div.row-primary div.row-title h3')
+        artistspre = page2.css('div.chart-row__title .chart-row__artist')
 
         # Grooming and storing artist entries.
         artists = []
@@ -62,36 +62,18 @@ class Parse
         if titles.count == artists.count
           upperbound = titles.count
         else
-          puts "Number of titles and artists don't match!"
-        end
-
-        # Retrieving, grooming, and storing each song's Spotify ID (if one exists).
-        spotifyids = []
-        (1...upperbound+1).each { |q|
-          begin
-            pageparse3 = page2.css("main#main.page-content div.chart-data div.container article#row-#{q}.chart-row div.row-primary a.spotify")
-            spotifyids.push(pageparse3[0]['href'])
-          rescue
-            # puts "No Spotify entry found."
-            spotifyids.push('None')
-            next
-          end
-        }
-
-        spotifyids.each do |x|
-          x.gsub!(/https:\/\/embed.spotify.com\/\?uri=spotify:track:/, '')
         end
 
         # Retrieving, grooming, and storing each song's rank on that week's list.
         ranks = []
-        rankspre = page2.css('main#main.page-content div.chart-data div.container article.chart-row div.row-primary div.row-rank span.this-week')
+        rankspre = page2.css('div.chart-row__rank span.chart-row__current-week')
         rankspre.each do |x|
           ranks.push(x.text)
         end
 
         # Retrieving, grooming, and storing each song's rank on that week's list.
         ranks_last = []
-        ranks_last_pre = page2.css('main#main.page-content div.chart-data div.container article.chart-row div.row-primary div.row-rank span.last-week')
+        ranks_last_pre = page2.css('div.chart-row__last-week span.chart-row__value')
         ranks_last_pre.each do |x|
           ranks_last.push(x.text)
         end
@@ -117,7 +99,7 @@ class Parse
       # Inserts songs into master table that contains all songs
       (0...upperbound).each do |i|
         begin
-          DB.execute("INSERT INTO master(songtitle, artist, spotifyid) VALUES ('#{titles[i]}', '#{artists[i]}', '#{spotifyids[i]}')")
+          DB.execute("INSERT INTO master(songtitle, artist) VALUES ('#{titles[i]}', '#{artists[i]}')")
         rescue SQLite3::ConstraintException
           next
         rescue StandardError => e
@@ -175,7 +157,7 @@ class Parse
       puts "Parsing...#{link.genre}: #{link.date}"
 
       # Fetching songtitles
-      titlespre = page2.css('main#main.page-content div.chart-data div.container article.chart-row div.row-primary div.row-title h2')
+      titlespre = page2.css('h2.chart-row__song')
 
       # Grooming and storing songtitle entries.
       titles = []
@@ -190,7 +172,7 @@ class Parse
       end
 
       # Fetching artists
-      artistspre = page2.css('main#main.page-content div.chart-data div.container article.chart-row div.row-primary div.row-title h3')
+      artistspre = page2.css('div.chart-row__title .chart-row__artist')
 
       # Grooming and storing artist entries.
       artists = []
@@ -208,41 +190,18 @@ class Parse
       if titles.count == artists.count
         upperbound = titles.count
       else
-        puts "Number of titles and artists don't match!"
-      end
-
-      # Retrieving, grooming, and storing each song's Spotify ID (if one exists).
-      spotifyids = []
-      for q in 1...upperbound+1 do
-        begin
-          pageparse3 = page2.css("main#main.page-content div.chart-data div.container article#row-#{q}.chart-row div.row-primary a.spotify")
-          spotifyids.push(pageparse3[0]['href'])
-        rescue
-          # puts "No Spotify entry found."
-          spotifyids.push(nil)
-          next
-        end
-      end
-
-      spotifyids.each do |x|
-        begin
-          x.gsub!(/https:\/\/embed.spotify.com\/\?uri=spotify\:album\:/, '')
-        rescue StandardError => e
-          puts e
-          next
-        end
       end
 
       # Retrieving, grooming, and storing each album's rank on that week's list.
       ranks = []
-      rankspre = page2.css('main#main.page-content div.chart-data div.container article.chart-row div.row-primary div.row-rank span.this-week')
+      rankspre = page2.css('div.chart-row__rank span.chart-row__current-week')
       rankspre.each do |x|
         ranks.push(x.text)
       end
 
       # Retrieving, grooming, and storing each album's rank on that week's list.
       ranks_last = []
-      ranks_last_pre = page2.css('main#main.page-content div.chart-data div.container article.chart-row div.row-primary div.row-rank span.last-week')
+      ranks_last_pre = page2.css('div.chart-row__last-week span.chart-row__value')
       ranks_last_pre.each do |x|
         ranks_last.push(x.text)
       end
@@ -271,7 +230,7 @@ class Parse
     for i in 0...upperbound do
       begin
         # DB.execute("INSERT INTO album_master(albumtitle, artist, spotifyid) VALUES ('#{titles[i]}', '#{artists[i]}', '#{spotifyids[i]}')")
-        DB.execute("INSERT INTO album_master(albumtitle, artist, spotifyid) VALUES (?, ?, ?)", "#{titles[i]}", "#{artists[i]}", spotifyids[i])
+        DB.execute("INSERT INTO album_master(albumtitle, artist) VALUES (?, ?)", "#{titles[i]}", "#{artists[i]}")
       rescue SQLite3::ConstraintException
         next
       rescue StandardError => e
