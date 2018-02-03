@@ -1,14 +1,23 @@
 GIT
   remote: https://github.com/guilhermesad/rspotify
-  revision: 1786f8b834d4beb847e0762c2f65771b44265071
+  revision: c4ff51c54303d6cf2fe167d9d5d1a7a0f6a90f1e
   specs:
-    rspotify (1.15.2)
-      omniauth-oauth2 (~> 1.1)
-      rest-client (~> 1.7)
+    rspotify (1.26.0)
+      omniauth-oauth2 (~> 1.3.1)
+      rest-client (~> 2.0.2)
+
+GIT
+  remote: https://github.com/jacob-long/discogs
+  revision: 1c76156a6542b91bc882d24303f61f8548b6cd76
+  specs:
+    discogs-wrapper (2.4.0)
+      hashie (~> 3.0)
+      httparty (~> 0.14)
+      oauth (~> 0.5.1)
 
 GIT
   remote: https://github.com/javichito/Lyricfy
-  revision: faf83b940e754823d6f5a209316729b128d57574
+  revision: 66c5c2a892ebdbd0adfd41c1e6a00cb79f778672
   specs:
     lyricfy (0.1.0)
       highline
@@ -17,84 +26,79 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    discogs-wrapper (2.1.4)
-      hashie (~> 3.0)
-      oauth (~> 0.4.7)
-    domain_name (0.5.24)
+    domain_name (0.5.20170404)
       unf (>= 0.0.5, < 1.0.0)
     echowrap (0.2.0)
       faraday (~> 0.9)
       multi_json (~> 1.0)
       simple_oauth (~> 0.2)
-    faraday (0.9.1)
+    faraday (0.12.2)
       multipart-post (>= 1.2, < 3)
-    fileutils (0.7)
-      rmagick (>= 2.13.1)
-    hashie (3.4.2)
-    highline (1.7.6)
-    http-cookie (1.0.2)
+    fileutils (1.0.2)
+    hashie (3.5.7)
+    highline (1.7.10)
+    http-cookie (1.0.3)
       domain_name (~> 0.5)
-    httparty (0.11.0)
-      multi_json (~> 1.0)
+    httparty (0.15.6)
       multi_xml (>= 0.5.2)
-    json (1.8.3)
-    json_pure (1.8.2)
-    jwt (1.5.1)
-    mime-types (2.6.2)
-    mini_portile (0.6.2)
-    multi_json (1.11.2)
-    multi_xml (0.5.5)
+    json (2.1.0)
+    json_pure (2.1.0)
+    jwt (1.5.6)
+    mime-types (3.1)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2016.0521)
+    mini_portile2 (2.3.0)
+    multi_json (1.13.1)
+    multi_xml (0.6.0)
     multipart-post (2.0.0)
-    netrc (0.10.3)
-    nokogiri (1.6.6.2)
-      mini_portile (~> 0.6.0)
-    oauth (0.4.7)
-    oauth2 (1.0.0)
-      faraday (>= 0.8, < 0.10)
+    netrc (0.11.0)
+    nokogiri (1.8.2)
+      mini_portile2 (~> 2.3.0)
+    oauth (0.5.4)
+    oauth2 (1.4.0)
+      faraday (>= 0.8, < 0.13)
       jwt (~> 1.0)
       multi_json (~> 1.3)
       multi_xml (~> 0.5)
-      rack (~> 1.2)
-    omniauth (1.2.2)
-      hashie (>= 1.2, < 4)
-      rack (~> 1.0)
+      rack (>= 1.2, < 3)
+    omniauth (1.8.1)
+      hashie (>= 3.4.6, < 3.6.0)
+      rack (>= 1.6.2, < 3)
     omniauth-oauth2 (1.3.1)
       oauth2 (~> 1.0)
       omniauth (~> 1.2)
-    rack (1.6.4)
-    rapgenius (1.0.5)
-      httparty (~> 0.11.0)
-    rest-client (1.8.0)
+    rack (2.0.4)
+    rest-client (2.0.2)
       http-cookie (>= 1.0.2, < 2.0)
-      mime-types (>= 1.16, < 3.0)
-      netrc (~> 0.7)
-    rmagick (2.15.4)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
+    ruby-progressbar (1.9.0)
     similar_text (0.0.4)
     simple-rss (1.3.1)
     simple_oauth (0.3.1)
-    sqlite3 (1.3.10)
+    sqlite3 (1.3.13)
     unf (0.1.4)
       unf_ext
-    unf_ext (0.0.7.1)
-    wannabe_bool (0.1.1)
+    unf_ext (0.0.7.4)
+    wannabe_bool (0.7.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  discogs-wrapper
+  discogs-wrapper!
   echowrap
   fileutils
   json
   json_pure
   lyricfy!
   nokogiri
-  rapgenius (~> 1.0.5)
   rspotify!
+  ruby-progressbar
   similar_text
   simple-rss
-  sqlite3 (~> 1.3.9)
+  sqlite3
   wannabe_bool
 
 BUNDLED WITH
-   1.10.6
+   1.16.1

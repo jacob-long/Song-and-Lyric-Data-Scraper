@@ -1,4 +1,0 @@
--Should discid be part of under_fire?
--To implement:
-    * ALBUM_FINGERPRINT
-    * ALBUM_FETCH
