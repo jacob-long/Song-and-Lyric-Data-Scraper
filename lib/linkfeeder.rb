@@ -18,14 +18,20 @@ class Feeder
 
   def feed
 
-    # Creating an instance variable of feed which consists of an array of Link objects, which will in a future operation be passed to Parse::chart_parse_song or Parse::chart_parse_album
+    # Creating an instance variable of feed which consists of an array of 
+    # Link objects, which will in a future operation be passed to 
+    # Parse::chart_parse_song or Parse::chart_parse_album
     list = []
     @list = list
 
     # iterating through each genre
     @genres.each do |g|
 
-      # This has nothing to do with the link object, so moving the create table command here prevents calling it way more times than necessary.
+      # Just one console output per genre
+      puts "Building #{g} songs links..."
+
+      # This has nothing to do with the link object, so moving the create table 
+      # command here prevents calling it way more times than necessary.
       DBcalls::create_genre_table(g)
 
       # Iterating through each year
@@ -40,7 +46,8 @@ class Feeder
           link.genre = g
           link.year = y.to_i
 
-          # Turning the week and year into date, using the date and genre to build a link with operations from Link class.
+          # Turning the week and year into date, using the date and genre to
+          # build a link with operations from Link class.
           begin
             link.week = w
             link.date_get
@@ -48,19 +55,20 @@ class Feeder
             link.url_genre
 
             # Dealing with future dates
-            if linkdate > Date.today+6
+            if linkdate > Date.today + 6
               then
               next
             else
               # Printing date and extra blnak line to make output more readable
-              puts "Building links...#{g}: #{linkdate}"
               link.url_make
             end
 
-            # This is where each individual link is pushed to the array of links to be used by chart_parse module
+            # This is where each individual link is pushed to the array of links
+            # to be used by chart_parse module
             @list << link
 
-          # This rescue is for dealing with the every few years that there is a 53rd Saturday.
+          # This rescue is for dealing with the every few years that there is a
+          # 53rd Saturday.
           rescue
             puts "#{linkdate} is not a valid date! Moving to the next year..."
             next
@@ -72,14 +80,20 @@ class Feeder
 
   def feed_albums
 
-    # Creating an instance variable of feed which consists of an array of Link objects, which will in a future operation be passed to Parse::chart_parse_song or Parse::chart_parse_album
+    # Creating an instance variable of feed which consists of an array of Link 
+    # objects, which will in a future operation be passed to 
+    # Parse::chart_parse_song or Parse::chart_parse_album
     list = []
     @list = list
 
     # iterating through each genre
     @genres.each do |g|
 
-      # This has nothing to do with the link object, so moving the create table command here prevents calling it way more times than necessary.
+      # Only one output to console for link-building phase
+      puts "Building #{g} albums links..."
+
+      # This has nothing to do with the link object, so moving the create table 
+      # command here prevents calling it way more times than necessary.
       DBcalls::create_album_genre(g)
 
       # Iterating through each year
@@ -94,7 +108,8 @@ class Feeder
           link.genre = g
           link.year = y.to_i
 
-          # Turning the week and year into date, using the date and genre to build a link with operations from Link class.
+          # Turning the week and year into date, using the date and genre to build a
+          # link with operations from Link class.
           begin
             link.week = w
             link.date_get
@@ -102,19 +117,20 @@ class Feeder
             link.url_albums
 
             # Dealing with future dates
-            if linkdate > Date.today+6
+            if linkdate > Date.today + 6
             then
               next
             else
               # Printing date and extra blnak line to make output more readable
-              puts "Building links...#{g}: #{linkdate}"
               link.url_make
             end
 
-            # This is where each individual link is pushed to the array of links to be used by chart_parse module
+            # This is where each individual link is pushed to the array of links to be
+            # used by chart_parse module
             @list << link
 
-              # This rescue is for dealing with the every few years that there is a 53rd Saturday.
+              # This rescue is for dealing with the every few years that there is
+              #  a 53rd Saturday.
           rescue
             puts "#{linkdate} is not a valid date! Moving to the next year..."
             next
