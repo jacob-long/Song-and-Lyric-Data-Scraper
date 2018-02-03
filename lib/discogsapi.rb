@@ -32,32 +32,11 @@ module DiscogsAPI
 		# Performing searches on each album, one by one
 		dbalbums.each do |album|
 		
-			# this cleanup improved search results
-			album['albumtitle'].delete! '.'
-			album['albumtitle'].delete! '!'
-			album['albumtitle'].delete! '#'
-			album['albumtitle'].delete! '+'
-			album['albumtitle'].delete! ','
-			album['albumtitle'].delete! '\''
-			album['albumtitle'].gsub!(/\$/, 'S')
-			album['albumtitle'].slice!(/.\(.*$/)
-			album['albumtitle'].gsub!(/\&amp\;/, '&')
-			album['albumtitle'].gsub!(/\&\#039\;/, '\'')
-			album['albumtitle'].gsub!(/F\*\*k/, 'Fuck')
-			album['albumtitle'].gsub!(/S\*\*t/, 'Shit')
-
-			album['artist'].slice!(/.Featuring.*$/)
-			album['artist'].slice!(/.With.*$/)
-			album['artist'].slice!(/.\&amp\;.*$/)
-			album['artist'].slice!(/,.*$/)
-			album['artist'].slice!(/.\&.*$/)
-			album['artist'].gsub!(/\$/, 'S')
-			album['artist'].delete!('\'')
-			album['artist'].gsub!(/"([^"]*)"./, '')
-			album['artist'].gsub!(/Various Artists/, 'Various')
+			album['albumtitle'] = alb_title_clean(album['albumtitle'])
+			album['artist'] = artist_clean(album['albumtitle'])
 
 			# For ease of reading terminal output, can remove once confident it's working
-			puts "#{album['artist']} - #{album['albumtitle']}"
+			# puts "#{album['artist']} - #{album['albumtitle']}"
 
 			# Resetting here so each album gets 5 retries
 			retries = 5
@@ -170,4 +149,36 @@ end
 
 	end
 
+# These methods edit the album titles and artist names to increase search success
+# with Discogs
+class String
+	def DiscogsAPI.alb_title_clean(x)
+		# this cleanup improved search results
+		x.delete! '.'
+		x.delete! '!'
+		x.delete! '#'
+		x.delete! '+'
+		x.delete! ','
+		x.delete! '\''
+		x.gsub!(/\$/, 'S')
+		x.slice!(/.\(.*$/)
+		x.gsub!(/\&amp\;/, '&')
+		x.gsub!(/\&\#039\;/, '\'')
+		x.gsub!(/F\*\*k/, 'Fuck')
+		x.gsub!(/S\*\*t/, 'Shit')
+		x
+	end
+	
+	def DiscogsAPI.artist_clean(x)
+		x.slice!(/.Featuring.*$/)
+		x.slice!(/.With.*$/)
+		x.slice!(/.\&amp\;.*$/)
+		x.slice!(/,.*$/)
+		x.slice!(/.\&.*$/)
+		x.gsub!(/\$/, 'S')
+		x.delete!('\'')
+		x.gsub!(/"([^"]*)"./, '')
+		x.gsub!(/Various Artists/, 'Various')
+		x
+	end
 end
