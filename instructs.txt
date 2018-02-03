@@ -50,7 +50,14 @@ false
 
 ## lyric-search
 false
+## wikia-search
+true
 
+## metro-search
+true
+
+## alt-search
+true
 ## statistics
 false
 

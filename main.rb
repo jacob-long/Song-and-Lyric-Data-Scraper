@@ -33,6 +33,9 @@ discogs_token = nil
 spotify = false
 echonest = false
 lyrics = false
+alt_search = false
+metro = false
+wikia = false
 albums = false
 overwrite = false
 write = false
@@ -70,6 +73,15 @@ instructs.each_with_index do |line, num|
   if line.match(/^## lyric-search/)
     puts "lyrics = #{instructs[num+1]}"
     lyrics = instructs[num+1].strip.to_b
+  end
+  if line.match(/^## wikia-search/)
+    wikia = instructs[num+1].strip.to_b
+  end
+  if line.match(/^## metro-search/)
+    metro = instructs[num+1].strip.to_b
+  end
+  if line.match(/^## alt-search/)
+    alt_search = instructs[num+1].strip.to_b
   end
   if line.match(/^## spotify/)
     puts "spotify = #{instructs[num+1]}"
@@ -164,12 +176,25 @@ puts 'Getting additional info on songs from the Echonest...' if echonest == true
 Echonest::echo_search(db_input) if echonest == true
 
 if lyrics == true
-  puts 'Starting lyric search...'
-  Lyricsearch::primary_lyric_search(db_input)
-  puts 'Using alternate methods to improve MetroLyrics searches...'
-  Lyricsearch::metro_alt_search(db_input)
-  puts 'Using alternate methods to improve Wikia searches...'
-  Lyricsearch::wikia_alt_search(db_input)
+
+  if metro == true
+    puts 'Starting MetroLyrics search...'
+    Lyricsearch::metro_search(db_input)
+    if alt_search == true
+      puts 'Searching MetroLyrics with alternate metadata...'
+      Lyricsearch::metro_alt_search(db_input)
+    end
+  end
+
+  if wikia == true
+    puts 'Starting Wikia search...'
+    Lyricsearch::wikia_search(db_input)
+    if alt_search == true
+      puts 'Searching Wikia with alternate metadata...'
+      Lyricsearch::wikia_alt_search(db_input)
+    end
+  end
+  
 end
 
 if statistics == true
