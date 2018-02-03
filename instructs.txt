@@ -47,6 +47,8 @@ false
 
 ## spotify
 false
+## client-key-spotify
+## secret-key-spotify
 
 ## lyric-search
 false
