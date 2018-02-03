@@ -11,7 +11,7 @@ require 'sqlite3'
 
 module Lyricsearch
 
-	def self.primary_lyric_search(dbname)
+	def self.wikia_search(dbname)
 
 		db = SQLite3::Database.open "#{dbname}"
 		db.results_as_hash = true
@@ -58,6 +58,12 @@ module Lyricsearch
 			end
 		end
 
+		wrate = wsuccess.reduce(:+).to_f / wsuccess.size
+		puts "Wikia found #{wrate.round(4) * 100}% of #{wsongs.length} songs."
+
+	end
+
+	def self.metro_search(dbname)
 		# MetroLyrics search–only includes titles that do not already have lyrics from ML listed.
 		msongs = db.execute("SELECT id, songtitle, artist FROM master 
 							 WHERE (lyrics_ml IS NULL OR lyrics_ml = '')") 
@@ -111,11 +117,9 @@ module Lyricsearch
 			end
 		end
 
-		wrate = wsuccess.reduce(:+).to_f / wsuccess.size
 		mrate = msuccess.reduce(:+).to_f / msuccess.size
-
-		puts "Metrolyrics found #{mrate.round(2)}% of #{msongs.length} songs."
-		puts "Wikia found #{wrate.round(2)}% of #{wsongs.length} songs."
+		puts "Metrolyrics found #{mrate.round(4) * 100}% of #{msongs.length} songs."
+		
 	end
 
 	def self.metro_alt_search(dbname)
