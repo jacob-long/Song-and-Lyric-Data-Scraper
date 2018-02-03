@@ -127,7 +127,6 @@ end
 if scrape_songs == true
   # This creates an object of objects of link type (think about that for a minute)
   feed = Feeder.new(song_genres, years)
-  puts feed.inspect
   feed.feed
 
   # Now I'm sending all of those pre-built links to the parsing method that goes to the site and scrapes the data
@@ -165,8 +164,8 @@ puts 'Getting additional info on songs from the Echonest...' if echonest == true
 Echonest::echo_search(db_input) if echonest == true
 
 if lyrics == true
-  # puts 'Starting lyric search...'
-  # Lyricsearch::primary_lyric_search(db_input)
+  puts 'Starting lyric search...'
+  Lyricsearch::primary_lyric_search(db_input)
   puts 'Using alternate methods to improve MetroLyrics searches...'
   Lyricsearch::metro_alt_search(db_input)
   puts 'Using alternate methods to improve Wikia searches...'
