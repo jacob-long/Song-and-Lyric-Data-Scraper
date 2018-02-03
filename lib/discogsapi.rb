@@ -21,7 +21,7 @@ module DiscogsAPI
 		db.results_as_hash = true
 
 		# Grabbing albums from database
-		dbalbums = db.execute("SELECT * FROM album_master WHERE discogsid IS NULL AND (spotifyid IS NULL OR spotify_run IS NULL) AND from_single != 'TRUE' ")
+		dbalbums = db.execute("SELECT * FROM album_master WHERE discogsid IS NULL AND (spotifyid IS NULL OR spotify_run IS NULL) AND (from_single != 'TRUE' OR from_single IS NULL) AND discogsrun IS NULL ")
 		# Creating a master songs table in case it does not already exist
 		DBcalls::create_table_master
 
