@@ -124,32 +124,32 @@ module DiscogsAPI
 	
 		# Shouldn't be getting this, but you never know
 		rescue NoMethodError => e
-			puts e.message
-			puts e.backtrace.inspect
+			prog_bar.log e.message
+			prog_bar.log e.backtrace.inspect
 			next
 	
 		# Discogs seems to have some very informal rate limiting mechanism, resulting in a few different sorts of errors.
 		rescue Errno::ECONNRESET => e
-			puts "\tError: #{e}"
+			prog_bar.log "\tError: #{e}"
 			if retries > 0
 				retries -= 1
-				puts "\tConnection error. #{retries} retries remaining..."
+				prog_bar.log "\tConnection error. #{retries} retries remaining..."
 				sleep 10
 				retry
 			else
-				puts "Couldn't connect after 5 tries. Moving on..."
+				prog_bar.log "Couldn't connect after 5 tries. Moving on..."
 				db.execute("UPDATE album_master SET discogsrun = 'TRUE' where id = ?", album['id'])
 				next
 			end
 		rescue OpenSSL::SSL::SSLError => e
-			puts "\tError: #{e}"
+			prog_bar.log "\tError: #{e}"
 			if retries > 0
 				retries -= 1
-				puts "\tConnection error. #{retries} retries remaining..."
+				prog_bar.log "\tConnection error. #{retries} retries remaining..."
 				sleep 2
 				retry
 			else
-				puts "Couldn't connect after 5 tries. Moving on..."
+				prog_bar.log "Couldn't connect after 5 tries. Moving on..."
 				db.execute("UPDATE album_master SET discogsrun = 'TRUE' where id = ?", album['id'])
 				next
 			end
