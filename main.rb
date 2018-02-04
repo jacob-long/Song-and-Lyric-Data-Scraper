@@ -16,7 +16,6 @@ require_relative 'lib/discogsapi'
 require_relative 'lib/spotifycleaning'
 require_relative 'lib/lyricsearch'
 require_relative 'lib/statistics'
-require_relative 'lib/writetofile2'
 
 instructs = File.open("instructs.txt", 'r')
 instructs = instructs.readlines
@@ -38,10 +37,7 @@ metro = false
 wikia = false
 albums = false
 overwrite = false
-write = false
-write_path = false
 statistics = false
-origdirectory = Dir.getwd
 
 begin
 
@@ -194,11 +190,6 @@ if statistics == true
 
   end
 
-end
-
-if write == true
-  WriteFile::write_songs(song_genres, db_input, origdirectory, write_path)
-  WriteFile::write_albums(album_genres, db_input, origdirectory, write_path)
 end
 
 
