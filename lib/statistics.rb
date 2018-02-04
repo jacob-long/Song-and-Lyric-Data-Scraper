@@ -12,7 +12,8 @@ module Summarize
     numerator = db.execute("SELECT COUNT(DISTINCT master.id)
       FROM master
       JOIN [#{genre}] ON master.id = [#{genre}].song_id
-      WHERE (master.lyrics_w NOT NULL or master.lyrics_w != '') OR (master.lyrics_ml NOT NULL or master.lyrics_ml != '')")
+      WHERE (master.lyrics_w NOT NULL or master.lyrics_w != '') OR
+      (master.lyrics_ml NOT NULL or master.lyrics_ml != '')")
 
     denominator = db.execute("SELECT COUNT(DISTINCT master.id)
       FROM master
@@ -33,7 +34,8 @@ module Summarize
     numerator = db.execute("SELECT COUNT(DISTINCT master.id)
       FROM master
       JOIN [#{genre}] ON master.id = [#{genre}].song_id
-      WHERE (master.lyrics_w NOT NULL or master.lyrics_w != '') OR (master.lyrics_ml NOT NULL or master.lyrics_ml != '')")
+      WHERE (master.lyrics_w NOT NULL or master.lyrics_w != '') OR
+      (master.lyrics_ml NOT NULL or master.lyrics_ml != '')")
 
     denominator = db.execute("SELECT COUNT(DISTINCT master.id)
       FROM master
@@ -50,7 +52,8 @@ module Summarize
     numerator2 = db.execute("SELECT COUNT(DISTINCT master.id)
       FROM master
       JOIN [#{genre}_albums] ON master.album_id = [#{genre}_albums].album_id
-      WHERE (master.lyrics_w NOT NULL or master.lyrics_w != '') OR (master.lyrics_ml NOT NULL or master.lyrics_ml != '') AND master.from_album_chart = 'true'")
+      WHERE (master.lyrics_w NOT NULL or master.lyrics_w != '') OR
+      (master.lyrics_ml NOT NULL or master.lyrics_ml != '') AND master.from_album_chart = 'true'")
 
     denominator2 = db.execute("SELECT COUNT(DISTINCT master.id)
       FROM master
