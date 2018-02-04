@@ -154,7 +154,15 @@ module Spotifyclean
 		db = SQLite3::Database.open(dbname)
 		db.results_as_hash = true
 
-		db.execute("SELECT id, spotifyid, albumtitle FROM album_master WHERE discogsid IS NULL AND spotify_run IS NULL AND (spotifyid NOT NULL AND spotifyid != 'None') AND from_single IS NULL") do |album|
+		albums = db.execute("SELECT id, spotifyid, albumtitle FROM album_master WHERE
+							 discogsid IS NULL AND spotify_run IS NULL AND (spotifyid 
+							 NOT NULL AND spotifyid != 'None') AND from_single IS NULL")
+
+		prog_bar = ProgressBar.create(:title => "Spotify metadata search progress",
+							 		  :starting_at => 0,
+							 		  :total => albums.length) 
+		
+		albums.each do |album|
 			begin
 
 			result = RSpotify::Album.find(album['spotifyid'])
@@ -165,28 +173,29 @@ module Spotifyclean
 				statement.execute(track.name, track.artists.first.name, album['id'], track.id, album['spotifyid'], track.track_number, 'true')
 
 				rescue SQLite3::ConstraintException => e
-				puts e
+					prog_bar.log e
 					id = db.execute("SELECT id FROM master WHERE artist LIKE ? AND songtitle LIKE ?", track.artists.first.name, track.name)
 					id = id[0]
 					db.execute("UPDATE master SET album_id = ? WHERE id = ?", "#{album['id']}", "#{id}")
 					db.execute("UPDATE master SET spotify_album_id = ? WHERE id = ?", "#{album['spotifyid']}", "#{id}")
 					db.execute("UPDATE master SET num_on_album = ? WHERE id = ?", "#{track.track_number}", "#{id}")
 					db.execute("UPDATE master SET album_title = ? WHERE id = ?", "#{album['albumtitle']}", "#{id}")
-					puts "Updated original entry instead."
 				end
 
 			end
 
 			rescue => e
-				puts e
-				puts e.backtrace
-				puts "Some kind of problem! Moving on to the next album..."
+				prog_bar.log e
+				prog_bar.log e.backtrace
+				prog_bar.log "Some kind of problem! Moving on to the next album..."
 				db.execute("UPDATE album_master SET spotify_run = 'true' WHERE id = ?", album['id'])
+				prog_bar.increment
 				next
 			end
 
-			puts "Found tracklist with Spotify successfully."
 			db.execute("UPDATE album_master SET spotify_run = 'true' WHERE id = ?", album['id'])
+			prog_bar.increment
+
 		end
 	end
 
