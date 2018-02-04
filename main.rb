@@ -34,6 +34,9 @@ spotify = false
 spotify_client = nil
 spotify_secret = nil
 echonest = false
+echonest_api = nil
+echonest_consumer = nil
+echonest_shared = nil
 lyrics = false
 alt_search = false
 metro = false
@@ -89,6 +92,15 @@ instructs.each_with_index do |line, num|
   end
   if line.match(/^## echonest/)
     echonest = instructs[num+1].strip.to_b
+  end
+  if line.match(/^## api\-key\-echonest/)
+    echonest_api = instructs[num+1].strip
+  end
+  if line.match(/^## consumer\-key\-echonest/)
+    echonest_consumer = instructs[num+1].strip
+  end
+  if line.match(/^## shared\-secret\-echonest/)
+    echonest_shared = instructs[num+1].strip
   end
   if line.match(/^## discogs/)
     discogs = instructs[num+1].strip.to_b
@@ -165,7 +177,9 @@ puts 'Finding more song data on Spotify...' if spotify == true
 Spotifyclean::clean(db_input, spotify_client, spotify_secret) if spotify == true
 
 puts 'Getting additional info on songs from the Echonest...' if echonest == true
-Echonest::echo_search(db_input) if echonest == true
+if echonest == true
+  Echonest::echo_search(db_input, echonest_api, echonest_consumer, echonest_shared) 
+end
 
 if lyrics == true
 

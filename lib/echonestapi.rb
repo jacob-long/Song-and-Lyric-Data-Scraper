@@ -9,21 +9,28 @@ require 'json/pure'
 
 module Echonest
 
-def self.echo_search(dbname)
+def self.echo_search(dbname, api_key, consumer_key, shared_secret)
 	db = SQLite3::Database.open( dbname )
 
 	# Echo Nest API keys and such, don't share with public
 	Echowrap.configure do |config|
-		config.api_key =       'UQHQ5ON6UJ3FXV4UB'
-		config.consumer_key =  'b4a21f70d81680d02d4f8390225d1986'
-		config.shared_secret = 'iebmiY4TRIaiUI08HjpqdQ'
+		config.api_key =       api_key
+		config.consumer_key =  consumer_key
+		config.shared_secret = shared_secret
 	end
 
 	# The following loops through each row in the database, then passing it to Echo Nest API,
 	# which writes its various outputs to the specified columns in the database
 
 	db.results_as_hash = true
-	db.execute(" SELECT id, artist, songtitle FROM master WHERE echonest_run IS NULL AND id > 34287") do |x|
+	songs = db.execute(" SELECT id, artist, songtitle FROM master 
+						 WHERE echonest_run IS NULL") 
+	
+	prog_bar = ProgressBar.create(:title => "Progress",
+								  :starting_at => 0,
+								  :total => songs.length)
+
+	songs.each do |x|
 		# Cleaning songtitles using same string manipulations as lyric search script
 		x['songtitle'].delete! '.'
 		x['songtitle'].delete! '!'
@@ -51,21 +58,17 @@ def self.echo_search(dbname)
 		# Dealing with rate limit
 		sleep(0.5)
 
-		# Showing progress
-		puts
-		puts x['id']
-
 		good_tracks = {}
 		chosen_track = nil
 
 		# Initiating the search
-		song = Echowrap.song_search(:artist => x['artist'], :title => x['songtitle'], :bucket => ['audio_summary', 'artist_location'], :results => 5)
-		song.each_with_index do |value, key|
+		result = Echowrap.song_search(:artist => x['artist'], :title => x['songtitle'], :bucket => ['audio_summary', 'artist_location'], :results => 5)
+		result.each_with_index do |value, key|
 
-			artist_score = song[key].artist_name.similar("#{x['artist']}")
-			title_score = song[key].title.similar("#{x['songtitle']}")
+			artist_score = result[key].artist_name.similar("#{x['artist']}")
+			title_score = result[key].title.similar("#{x['songtitle']}")
 			if artist_score > 75 && title_score > 60
-				good_tracks[key] = artist_score+title_score
+				good_tracks[key] = artist_score + title_score
 			else
 				next
 			end
@@ -74,8 +77,8 @@ def self.echo_search(dbname)
 		# This prevents albums with no close matches from having the wrong data inserted into database
 		if good_tracks == {}
 		then
-			puts 'No solid match found.'
 			db.execute("UPDATE master SET echonest_run = 'true' WHERE id = '#{x['id']}'")
+			prog_bar.increment
 			next
 		else
 			# Choosing closest match from search results
@@ -85,8 +88,6 @@ def self.echo_search(dbname)
 
 			# This puts the closest match's data in the database
 			begin
-				puts 'Found it!'
-				puts song[chosen_track].inspect
 				# The convoluted syntax is necessary because I'm updating an existing data table.
 				db.execute_batch("
 					UPDATE master SET echonest_id ='#{song[chosen_track].id.to_s}' WHERE id='#{x['id']}';
@@ -124,22 +125,22 @@ def self.echo_search(dbname)
 					UPDATE master SET time_signature_confidence ='#{analysis_parse['track']['time_signature_confidence']}' WHERE id='#{x['id']}';
 				")
 
+				prog_bar.increment
+
 			rescue NoMethodError => e
-				puts e.backtrace
-				puts e
-				puts song.inspect
+				prog_bar.log e.backtrace
+				prog_bar.log e
 				db.execute("UPDATE master SET echonest_run = 'true' WHERE id = '#{x['id']}'")
 			rescue => e
-				puts e.message
-				puts e.backtrace.inspect
-				puts song.inspect
-				puts analysis_url
-				puts jsonobject.inspect
-				puts "Problem with #{x['songtitle']} by #{x['artist']}. Moving on..."
+				prog_bar.log e.message
+				prog_bar.log analysis_url
+				prog_bar.log "Problem with #{x['songtitle']} by #{x['artist']}. Moving on..."
 				db.execute("UPDATE master SET echonest_run = 'true' WHERE id = '#{x['id']}'")
+				prog_bar.increment
 				next
 			end
 		end
+		prog_bar.increment
 	end
 end
 end
