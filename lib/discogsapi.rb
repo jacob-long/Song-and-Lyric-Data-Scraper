@@ -37,7 +37,7 @@ module DiscogsAPI
 		dbalbums.each do |album|
 		
 			album['albumtitle'] = alb_title_clean(album['albumtitle'])
-			album['artist'] = artist_clean(album['albumtitle'])
+			album['artist'] = artist_clean(album['artist'])
 
 			# Resetting here so each album gets 5 retries
 			retries = 5
