@@ -24,11 +24,25 @@ class Feeder
     list = []
     @list = list
 
+    # Want a warning system for unknown genres, since they could
+    # work but may also be sign of an error.
+    known_genres = ["pop", "country", "rock", "R&B/hip hop",
+                    "dance/electronic", "rap", "latin", "christian",
+                    "blues", "classical", "jazz", "new age", "reggae"]
+
+
+    prog_bar = ProgressBar.create(:title => "Song links progress",
+									                :starting_at => 0,
+									    :total => @genres.length * @years.length * 53)
     # iterating through each genre
     @genres.each do |g|
 
-      # Just one console output per genre
-      puts "Building #{g} songs links..."
+      if known_genres.include? g == false
+        prog_bar.log "I don't know the genre #{g}, but I will try anyway."
+      end
+
+      # Only one output to console for link-building phase
+      prog_bar.log "Building #{g} songs links..."
 
       # This has nothing to do with the link object, so moving the create table 
       # command here prevents calling it way more times than necessary.
@@ -70,9 +84,13 @@ class Feeder
           # This rescue is for dealing with the every few years that there is a
           # 53rd Saturday.
           rescue
-            puts "#{linkdate} is not a valid date! Moving to the next year..."
+            prog_bar.log "#{linkdate} is not a valid date! Moving to the next year..."
+            prog_bar.increment
             next
           end
+
+          prog_bar.increment
+
         end
       end
     end
@@ -86,12 +104,22 @@ class Feeder
     list = []
     @list = list
 
-    prog_bar = ProgressBar.create(:title => "Links progress",
+    # Want a warning system for unknown genres, since they could
+    # work but may also be sign of an error.
+    known_genres = ["pop", "country", "rock", "R&B/hip hop",
+                    "dance/electronic", "rap", "latin", "christian",
+                    "blues", "classical", "jazz", "new age", "reggae"]
+
+    prog_bar = ProgressBar.create(:title => "Album links progress",
 									   :starting_at => 0,
-									   :total => @genres.length * @years.length)
+									   :total => @genres.length * @years.length * 53)
 
     # iterating through each genre
     @genres.each do |g|
+
+      if known_genres.include? g == false
+        prog_bar.log "I don't know the genre #{g}, but I will try anyway."
+      end
 
       # Only one output to console for link-building phase
       prog_bar.log "Building #{g} albums links..."
@@ -137,6 +165,7 @@ class Feeder
               #  a 53rd Saturday.
           rescue
             prog_bar.log "#{linkdate} is not a valid date! Moving to the next year..."
+            prog_bar.increment
             next
           end
         end

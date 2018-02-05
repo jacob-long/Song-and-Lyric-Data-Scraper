@@ -75,6 +75,8 @@ class Link
 			@album = false
 
 		else 
+			@genre_snip = genre
+			@album = false
 		end
 	end
 
@@ -141,7 +143,8 @@ class Link
 			@album = true
 
 		else
-			puts 'Genre or year is incompatible'
+			@genre_snip = genre
+			@album = true
 			exit
 		end
 	end 
