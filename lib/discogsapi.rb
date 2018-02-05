@@ -29,7 +29,7 @@ module DiscogsAPI
 		DBcalls::create_table_master
 
 		num_albums = dbalbums.length
-		prog_bar = ProgressBar.create(:title => "Progress",
+		prog_bar = ProgressBar.create(:title => "Discogs album tracklists progress",
 									   :starting_at => 0,
 									    :total => num_albums)
 
@@ -54,9 +54,15 @@ module DiscogsAPI
 			simscores = Hash.new
 
 			# Calculating similarity scores for each search result with my search term because Discogs has mind-bogglingly bad search results
-			result.results.each_with_index do |x, ind|
-				res = x.title
-				simscores[ind] = x.title.similar("#{album['artist']} - #{album['albumtitle']}")
+			if result != nil 
+				result.results.each_with_index do |x, ind|
+					res = x.title
+					simscores[ind] = x.title.similar("#{album['artist']} - #{album['albumtitle']}")
+				end
+			else 
+				db.execute("UPDATE album_master SET discogsrun = 'TRUE' where id = ?", album['id'])
+				prog_bar.increment
+				next
 			end
 
 			# There's no need to delete the search results that aren't close, but by doing so I create a way to eliminate entirely albums that do not have any close matches
@@ -98,6 +104,8 @@ module DiscogsAPI
 						# from_album_song, extra_artists) VALUES (?,?,?,?,?,?,?)",
 						# 					 "#{x.title}", "#{album['artist']}",
 						#  "#{foundalbum.title}", "#{album['id']}", "#{x.position}", "true", "#{extras}")
+						db.execute("UPDATE album_master SET discogsrun = 'TRUE' where id = ?", album['id'])
+						prog_bar.increment
 					else
 					# Putting all the information into the table now
 						if x.title != '' && x.title != nil
@@ -114,8 +122,8 @@ module DiscogsAPI
 					
 				# No need to worry about the DB rejecting duplicate entries
 				rescue SQLite3::ConstraintException
-					next
 					db.execute("UPDATE album_master SET discogsrun = 'TRUE' where id = ?", album['id'])
+					next
 				end
 			
 			end
