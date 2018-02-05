@@ -54,7 +54,15 @@ WHERE master.id IN
         [R&B/hip hop].year < 2013 )
 ```
 
-If you plan to do cross-genre comparisons, you'll need to 
+If you plan to do cross-genre comparisons, you'll need to find some way to 
+label the outputted table from each select statement. For instance, I first
+exported one CSV for each select statement, naming that file `rap.csv`,
+`pop.csv`, and so on. Then, I imported each into R as a data frame, added
+a column called `genre`, and labeled each data frame's `genre` column as their
+genre. Then I combined them all together with `rbind`. 
+
+There are other ways to do this, even with more convoluted SQL syntax, but 
+you'll have to decide how to keep it all straight.
 
 ## Get the charts time series with song data
 
