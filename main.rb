@@ -29,7 +29,7 @@ begin
 
 # This creates the database. It will overwrite in case of a naming conflict if 'overwrite' is set to 'true'.
 DBNAME = "#{args['db_path']}"
-DB = SQLite3::Database.new(DBNAME)
+DB = SQLite3::Database.open(DBNAME)
 DBcalls::create_table_master
 DB.results_as_hash = true
 
@@ -55,7 +55,7 @@ if args['albums']['run'] == true
     fed2.chart_parse_albums
   end
 
-  if args['discogs'] == true
+  if args['discogs']['run'] == true
     puts 'Getting tracklists for albums from Discogs...'
     DiscogsAPI::get_tracklists(args['db_path'],
                                args['discogs']['token'])

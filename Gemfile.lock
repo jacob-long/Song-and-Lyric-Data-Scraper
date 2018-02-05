@@ -30,7 +30,6 @@ GEM
       unf (>= 0.0.5, < 1.0.0)
     faraday (0.12.2)
       multipart-post (>= 1.2, < 3)
-    fileutils (1.0.2)
     hashie (3.5.7)
     highline (1.7.10)
     http-cookie (1.0.3)
@@ -82,7 +81,6 @@ PLATFORMS
 
 DEPENDENCIES
   discogs-wrapper!
-  fileutils
   json
   json_pure
   lyricfy!
