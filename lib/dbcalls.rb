@@ -44,7 +44,6 @@ class DBcalls
 				spotify_song_run TEXT,
 				from_album_chart TEXT,
 				from_album_song TEXT,
-				artist_location TEXT,
 				attributes_run TEXT,
 				key INTEGER,
 				key_confidence NUMERIC,

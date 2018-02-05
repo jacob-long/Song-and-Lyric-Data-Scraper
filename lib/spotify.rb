@@ -401,33 +401,37 @@ module Spotifyclean
 	
 		songs.each do |x|
 			
-			track = RSpotify::Track.find(x['spotifyid'])
+			track = RSpotify::AudioFeatures.find(x['spotifyid'])
+			if track == nil
+				db.execute("UPDATE master SET attributes_run = 'true' WHERE id = '#{x['id']}'")
+				prog_bar.increment
+				next
+			end
 	
 			# This puts the closest match's data in the database
 			begin
 			# The convoluted syntax is necessary because I'm updating an existing data table.
 			db.execute_batch("
-				UPDATE master SET key ='#{track.audio_features.key}' WHERE id='#{x['id']}';
-				UPDATE master SET energy ='#{track.audio_features.energy}' WHERE id='#{x['id']}';
-				UPDATE master SET liveness ='#{track.audio_features.liveness}' WHERE id='#{x['id']}';
-				UPDATE master SET loudness ='#{track.audio_features.loudness}' WHERE id='#{x['id']}';
-				UPDATE master SET valence ='#{track.audio_features.valence}' WHERE id='#{x['id']}';
-				UPDATE master SET danceability ='#{track.audio_features.danceability}' WHERE id='#{x['id']}';
-				UPDATE master SET tempo ='#{track.audio_features.tempo}' WHERE id='#{x['id']}';
-				UPDATE master SET speechiness ='#{track.audio_features.speechiness}' WHERE id='#{x['id']}';
-				UPDATE master SET acousticness ='#{track.audio_features.acousticness}' WHERE id='#{x['id']}';
-				UPDATE master SET mode ='#{track.audio_features.mode}' WHERE id='#{x['id']}';
-				UPDATE master SET time_signature ='#{track.audio_features.time_signature}' WHERE id='#{x['id']}';
-				UPDATE master SET duration ='#{track.audio_features.duration_ms}' WHERE id='#{x['id']}';
-				UPDATE master SET analysis_url ='#{track.audio_features.analysis_url}' WHERE id='#{x['id']}';
-				UPDATE master SET instrumentalness ='#{track.audio_features.instrumentalness}' WHERE id='#{x['id']}';
-				UPDATE master SET artist_location ='#{track.artist_location.location}' WHERE id='#{x['id']}';
+				UPDATE master SET key ='#{track.key}' WHERE id='#{x['id']}';
+				UPDATE master SET energy ='#{track.energy}' WHERE id='#{x['id']}';
+				UPDATE master SET liveness ='#{track.liveness}' WHERE id='#{x['id']}';
+				UPDATE master SET loudness ='#{track.loudness}' WHERE id='#{x['id']}';
+				UPDATE master SET valence ='#{track.valence}' WHERE id='#{x['id']}';
+				UPDATE master SET danceability ='#{track.danceability}' WHERE id='#{x['id']}';
+				UPDATE master SET tempo ='#{track.tempo}' WHERE id='#{x['id']}';
+				UPDATE master SET speechiness ='#{track.speechiness}' WHERE id='#{x['id']}';
+				UPDATE master SET acousticness ='#{track.acousticness}' WHERE id='#{x['id']}';
+				UPDATE master SET mode ='#{track.mode}' WHERE id='#{x['id']}';
+				UPDATE master SET time_signature ='#{track.time_signature}' WHERE id='#{x['id']}';
+				UPDATE master SET duration ='#{track.duration_ms}' WHERE id='#{x['id']}';
+				UPDATE master SET analysis_url ='#{track.analysis_url}' WHERE id='#{x['id']}';
+				UPDATE master SET instrumentalness ='#{track.instrumentalness}' WHERE id='#{x['id']}';
 			")
 	
 			db.execute("UPDATE master SET attributes_run = 'true' WHERE id = '#{x['id']}'")
 	
 			# This grabs the detailed analysis from the link embedded in the search result
-			analysis_url = track.audio_features.analysis_url
+			analysis_url = "#{track.analysis_url}?access_token=#{RSpotify.client_token}"
 			# sleep(3) - not needed because my API rate limit was lifted. Use if you are rate limited
 			jsonobject = open(analysis_url)
 			analysis_parse = JSON.parse(jsonobject.first)
@@ -448,8 +452,7 @@ module Spotifyclean
 				prog_bar.log e
 				db.execute("UPDATE master SET attributes_run = 'true' WHERE id = '#{x['id']}'")
 			rescue => e
-				prog_bar.log e.message
-				prog_bar.log analysis_url
+				prog_bar.log e
 				prog_bar.log "Problem with #{x['songtitle']} by #{x['artist']}. Moving on..."
 				db.execute("UPDATE master SET attributes_run = 'true' WHERE id = '#{x['id']}'")
 				prog_bar.increment

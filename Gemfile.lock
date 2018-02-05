@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/guilhermesad/rspotify
-  revision: c4ff51c54303d6cf2fe167d9d5d1a7a0f6a90f1e
+  revision: 798121463a06af671aa0854d4435048cff34980f
   specs:
-    rspotify (1.26.0)
+    rspotify (1.27.0)
       omniauth-oauth2 (~> 1.3.1)
       rest-client (~> 2.0.2)
 
