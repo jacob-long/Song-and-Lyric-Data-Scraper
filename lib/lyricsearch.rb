@@ -64,6 +64,10 @@ module Lyricsearch
 	end
 
 	def self.metro_search(dbname)
+
+		db = SQLite3::Database.open "#{dbname}"
+		db.results_as_hash = true
+
 		# MetroLyrics search–only includes titles that do not already have lyrics from ML listed.
 		msongs = db.execute("SELECT id, songtitle, artist FROM master 
 							 WHERE (lyrics_ml IS NULL OR lyrics_ml = '')") 
