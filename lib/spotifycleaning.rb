@@ -12,7 +12,7 @@ require_relative 'metaclean'
 
 module Spotifyclean
 
-	def self.clean(dbname, spotify_client, spotify_secret)
+	def self.clean(dbname, spotify_client, spotify_secret, rerun = false)
 		db = SQLite3::Database.open(dbname)
 		db.results_as_hash = true
 
@@ -20,9 +20,14 @@ module Spotifyclean
 		RSpotify.authenticate(spotify_client, spotify_secret)
 
 		# For now, I'm just going to have it select all songs from the master table
-		songs = db.execute("SELECT id, songtitle, artist, spotifyid FROM master WHERE 
-							alt_songtitle IS NULL AND alt_artist IS NULL AND
-							spotify_album_id IS NULL")
+		if rerun == false
+			songs = db.execute("SELECT id, songtitle, artist, spotifyid FROM master WHERE 
+								alt_songtitle IS NULL AND alt_artist IS NULL AND
+								spotify_song_run IS NULL")
+		else
+			songs = db.execute("SELECT id, songtitle, artist, spotifyid FROM master WHERE 
+								alt_songtitle IS NULL AND alt_artist IS NULL")
+		end
 		
 		prog_bar = ProgressBar.create(:title => "Spotify metadata search progress",
 									  :starting_at => 0,
@@ -48,15 +53,24 @@ module Spotifyclean
 				rescue Encoding::InvalidByteSequenceError => e
 					# p $!      #=> #<Encoding::InvalidByteSequenceError: "\xA1" followed by "\xFF" on EUC-JP>
 					prog_bar.log e.inspect
+					prog_bar.log "Some kind of encoding problem with #{songtitlefetch} by"\
+								 " #{artistfetch}. Skipping to the next song..."
+					db.execute("UPDATE master SET spotify_song_run = 'error' WHERE id = ?", "#{row['id']}")
 					prog_bar.increment
 					next
 				rescue RestClient::ResourceNotFound => e
 					prog_bar.log e
+					prog_bar.log "Some kind of connection issue while getting #{songtitlefetch} by"\
+								 " #{artistfetch}. Skipping to the next song..."
+					db.execute("UPDATE master SET spotify_song_run = 'error' WHERE id = ?", "#{row['id']}")
 					prog_bar.increment
 					next
 				rescue StandardError => e
 					# puts "Couldn't find #{songtitlefetch} by #{artistfetch}"
 					prog_bar.log e
+					prog_bar.log "Something went wrong with #{songtitlefetch} by #{artistfetch}."\
+								"Skipping to the next song..."
+					db.execute("UPDATE master SET spotify_song_run = 'error' WHERE id = ?", "#{row['id']}")
 					prog_bar.increment
 					next
 				end
@@ -74,6 +88,9 @@ module Spotifyclean
 
 			rescue SQLite3::ConstraintException => e
 				prog_bar.log e
+				prog_bar.log "It looks like #{songtitlefetch} by #{artistfetch} might be a duplicate."\
+							"Skipping to the next song without entering new data..."
+				db.execute("UPDATE master SET spotify_song_run = 'duplicate' WHERE id = ?", "#{row['id']}")
 				prog_bar.increment
 				next
 			end
@@ -99,9 +116,10 @@ module Spotifyclean
 
 			rescue SQLite3::ConstraintException => e
 				prog_bar.log e
+				prog_bar.log "It looks like #{songtitlefetch} by #{artistfetch} might be a duplicate."\
+							"Skipping to the next song without entering new data..."
+				db.execute("UPDATE master SET spotify_song_run = 'duplicate' WHERE id = ?", "#{row['id']}")
 				prog_bar.increment
-				# f = File.open("dupes.txt", "a")
-				# f.write "#{track[chosen_track].album.name} - #{track[chosen_track].artists.first.name} ... song id = #{row['id']}\n"
 				next
 			end
 
@@ -134,9 +152,8 @@ module Spotifyclean
 				end
 
 			rescue StandardError => e
+				prog_bar.log e
 				prog_bar.log "Problem looking up or creating album ID for #{trackname} by #{artistname}. Moving on with no ID..."
-				prog_bar.log e.backtrace
-				prog_bar.log preid.inspect
 				prog_bar.increment
 				next
 			end
@@ -146,19 +163,18 @@ module Spotifyclean
 		end
 	end
 
-	def self.album_expand(dbname)
-
-		# This is private information, do not share!
-		RSpotify.authenticate('***REMOVED***', '***REMOVED***')
-
+	def self.album_expand(dbname, spotify_client, spotify_secret, rerun = false)
 		db = SQLite3::Database.open(dbname)
 		db.results_as_hash = true
 
-		albums = db.execute("SELECT id, spotifyid, albumtitle FROM album_master WHERE
-							 discogsid IS NULL AND spotify_run IS NULL AND (spotifyid 
-							 NOT NULL AND spotifyid != 'None') AND from_single IS NULL")
+		# This is private information, do not share!
+		RSpotify.authenticate(spotify_client, spotify_secret)
 
-		prog_bar = ProgressBar.create(:title => "Spotify metadata search progress",
+		albums = db.execute("SELECT id, spotifyid, albumtitle FROM album_master WHERE
+							 discogsid IS NULL AND spotify_run IS NULL AND spotifyid NOT NULL 
+							 AND from_single IS NULL")
+
+		prog_bar = ProgressBar.create(:title => "Spotify album tracklist progress",
 							 		  :starting_at => 0,
 							 		  :total => albums.length) 
 		
@@ -186,7 +202,7 @@ module Spotifyclean
 
 			rescue => e
 				prog_bar.log e
-				prog_bar.log e.backtrace
+				# prog_bar.log e.backtrace
 				prog_bar.log "Some kind of problem! Moving on to the next album..."
 				db.execute("UPDATE album_master SET spotify_run = 'true' WHERE id = ?", album['id'])
 				prog_bar.increment
@@ -199,12 +215,124 @@ module Spotifyclean
 		end
 	end
 
-	def self.no_id_search(row, artistfetch, songtitlefetch)
+	def self.get_ids(dbname, spotify_client, spotify_secret)
 		
-		track = RSpotify::Track.search("#{artistfetch} #{songtitlefetch}")
+		db = SQLite3::Database.open(dbname)
+		db.results_as_hash = true
 
-		artistfetch = row['artist'].downcase
-		songtitlefetch = row['songtitle'].downcase
+		# This is private information, do not share!
+		RSpotify.authenticate(spotify_client, spotify_secret)
+
+		# For now, I'm just going to have it select all matching songs from the master table
+		songs = db.execute("SELECT id, songtitle, artist FROM master WHERE 
+							spotifyid IS NULL")
+		
+		prog_bar = ProgressBar.create(:title => "Spotify ID search progress",
+									  :starting_at => 0,
+									  :total => songs.length)
+		
+		songs.each do |row|
+
+			begin
+				# Eliminating special formatting to improve search results
+				artistfetch = Metaclean::artist_clean(row['artist'])
+				songtitlefetch = Metaclean::title_clean(row['songtitle'])
+
+				track = no_id_search(row, artistfetch, songtitlefetch)
+
+			rescue Encoding::InvalidByteSequenceError => e
+				# p $!      #=> #<Encoding::InvalidByteSequenceError: "\xA1" followed by "\xFF" on EUC-JP>
+				prog_bar.log e.inspect
+				prog_bar.increment
+				next
+			rescue RestClient::ResourceNotFound => e
+				prog_bar.log e
+				prog_bar.increment
+				next
+			rescue StandardError => e
+				prog_bar.log e
+				prog_bar.increment
+				next
+			end
+
+			db.execute("UPDATE master SET spotifyid = ? WHERE id = ?",
+							"#{track.id}", "#{row['id']}")
+			prog_bar.increment
+
+		end
+
+	end
+
+	def self.get_album_ids(dbname, spotify_client, spotify_secret)
+		
+		db = SQLite3::Database.open(dbname)
+		db.results_as_hash = true
+
+		# This is private information, do not share!
+		RSpotify.authenticate(spotify_client, spotify_secret)
+
+		# For now, I'm just going to have it select all matching songs from the master table
+		albums = db.execute("SELECT id, albumtitle, artist FROM album_master WHERE 
+							spotifyid IS NULL")
+		
+		prog_bar = ProgressBar.create(:title => "Spotify ID search progress",
+									  :starting_at => 0,
+									  :total => albums.length)
+		
+		albums.each do |row|
+
+			begin
+				# Eliminating special formatting to improve search results
+				artistfetch = Metaclean::artist_clean(row['artist'])
+				albumtitlefetch = Metaclean::title_clean(row['albumtitle'])
+
+				track = no_id_search(row, artistfetch, albumtitlefetch, true)
+
+			rescue Encoding::InvalidByteSequenceError => e
+				# p $!      #=> #<Encoding::InvalidByteSequenceError: "\xA1" followed by "\xFF" on EUC-JP>
+				prog_bar.log e.inspect
+				prog_bar.increment
+				next
+			rescue RestClient::ResourceNotFound => e
+				prog_bar.log e
+				prog_bar.increment
+				next
+			rescue StandardError => e
+				prog_bar.log e
+				prog_bar.increment
+				next
+			end
+
+			if track != nil
+				begin 
+				db.execute("UPDATE album_master SET spotifyid = ? WHERE id = ?",
+								"#{track.id}", "#{row['id']}")
+				rescue SQLite3::ConstraintException => e
+					prog_bar.log "It looks like #{albumtitlefetch} by #{artistfetch} has a "\
+								  "duplicate in the database. Skipping album tracklist search..."
+					db.execute("UPDATE album_master SET spotifyid = ? WHERE id = ?",
+								  "'duplicate'", "#{row['id']}")
+					prog_bar.increment
+					next
+				end
+			else end
+			prog_bar.increment
+
+		end
+
+	end
+
+
+	def self.no_id_search(row, artistfetch, songtitlefetch, album = false)
+		
+		if album == false
+			track = RSpotify::Track.search("#{artistfetch} #{songtitlefetch}", limit: 25)
+		else
+			track = RSpotify::Album.search("#{artistfetch} #{songtitlefetch}", limit: 25)
+		end
+
+		artistfetch = artistfetch.downcase
+		songtitlefetch = songtitlefetch.downcase
 
 		# Now I will evaluate the quality of the search results. First I create these placeholder variables.
 		good_tracks = {}
@@ -243,6 +371,92 @@ module Spotifyclean
 	
 		track = RSpotify::Track.find(row['spotifyid'])
 	
+	end
+
+	# "echo_search" retained as name for legacy reasons as these features were
+	# once part of The Echo Nest
+	def self.echo_search(dbname, spotify_client, spotify_secret, rerun = false)
+		db = SQLite3::Database.open(dbname)
+		db.results_as_hash = true
+
+		# This is private information, do not share!
+		RSpotify.authenticate(spotify_client, spotify_secret)
+	
+		# The following loops through each row in the database, then passing it to Echo Nest API,
+		# which writes its various outputs to the specified columns in the database
+	
+		db.results_as_hash = true
+		if rerun == false 
+			songs = db.execute(" SELECT id, artist, songtitle, spotifyid FROM master 
+								WHERE attributes_run IS NULL ") 
+		else
+			songs = db.execute(" SELECT id, artist, songtitle, spotifyid FROM master 
+								WHERE duration IS NULL ") # arbitrary attribute that shouldn't be null
+		end
+
+		
+		prog_bar = ProgressBar.create(:title => "Song attribute search progress",
+									  :starting_at => 0,
+									  :total => songs.length)
+	
+		songs.each do |x|
+			
+			track = RSpotify::Track.find(x['spotifyid'])
+	
+			# This puts the closest match's data in the database
+			begin
+			# The convoluted syntax is necessary because I'm updating an existing data table.
+			db.execute_batch("
+				UPDATE master SET key ='#{track.audio_features.key}' WHERE id='#{x['id']}';
+				UPDATE master SET energy ='#{track.audio_features.energy}' WHERE id='#{x['id']}';
+				UPDATE master SET liveness ='#{track.audio_features.liveness}' WHERE id='#{x['id']}';
+				UPDATE master SET loudness ='#{track.audio_features.loudness}' WHERE id='#{x['id']}';
+				UPDATE master SET valence ='#{track.audio_features.valence}' WHERE id='#{x['id']}';
+				UPDATE master SET danceability ='#{track.audio_features.danceability}' WHERE id='#{x['id']}';
+				UPDATE master SET tempo ='#{track.audio_features.tempo}' WHERE id='#{x['id']}';
+				UPDATE master SET speechiness ='#{track.audio_features.speechiness}' WHERE id='#{x['id']}';
+				UPDATE master SET acousticness ='#{track.audio_features.acousticness}' WHERE id='#{x['id']}';
+				UPDATE master SET mode ='#{track.audio_features.mode}' WHERE id='#{x['id']}';
+				UPDATE master SET time_signature ='#{track.audio_features.time_signature}' WHERE id='#{x['id']}';
+				UPDATE master SET duration ='#{track.audio_features.duration_ms}' WHERE id='#{x['id']}';
+				UPDATE master SET analysis_url ='#{track.audio_features.analysis_url}' WHERE id='#{x['id']}';
+				UPDATE master SET instrumentalness ='#{track.audio_features.instrumentalness}' WHERE id='#{x['id']}';
+				UPDATE master SET artist_location ='#{track.artist_location.location}' WHERE id='#{x['id']}';
+			")
+	
+			db.execute("UPDATE master SET attributes_run = 'true' WHERE id = '#{x['id']}'")
+	
+			# This grabs the detailed analysis from the link embedded in the search result
+			analysis_url = track.audio_features.analysis_url
+			# sleep(3) - not needed because my API rate limit was lifted. Use if you are rate limited
+			jsonobject = open(analysis_url)
+			analysis_parse = JSON.parse(jsonobject.first)
+	
+			# This adds additional data from the JSON analysis document.
+			db.execute_batch("
+				UPDATE master SET key_confidence ='#{analysis_parse['track']['key_confidence']}' WHERE id='#{x['id']}';
+				UPDATE master SET audio_md5 ='#{analysis_parse['track']['audio_md5']}' WHERE id='#{x['id']}';
+				UPDATE master SET tempo_confidence ='#{analysis_parse['track']['tempo_confidence']}' WHERE id='#{x['id']}';
+				UPDATE master SET mode_confidence ='#{analysis_parse['track']['mode_confidence']}' WHERE id='#{x['id']}';
+				UPDATE master SET time_signature_confidence ='#{analysis_parse['track']['time_signature_confidence']}'
+				 	WHERE id='#{x['id']}';
+			")
+	
+			prog_bar.increment
+	
+			rescue NoMethodError => e
+				prog_bar.log e
+				db.execute("UPDATE master SET attributes_run = 'true' WHERE id = '#{x['id']}'")
+			rescue => e
+				prog_bar.log e.message
+				prog_bar.log analysis_url
+				prog_bar.log "Problem with #{x['songtitle']} by #{x['artist']}. Moving on..."
+				db.execute("UPDATE master SET attributes_run = 'true' WHERE id = '#{x['id']}'")
+				prog_bar.increment
+				next
+			end
+			prog_bar.increment
+		end
 	end
 
 end
