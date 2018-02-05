@@ -5,7 +5,7 @@
 *.sublime-project
 *.sublime-workspace
 /.idea/
-
+/R\ analysis/
 
 ## Begin Github-provided template, plus changes noted above
 *.gem
