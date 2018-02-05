@@ -136,7 +136,7 @@ which each Billboard entry had all of the song's information.
 I like [DB Browser](http://sqlitebrowser.org/) as a cross platform GUI for 
 exploring SQLite databases. You can try out select statements and export to
 CSV and similar formats as needed. I have included some example SQL statements
-in the [SQL Examples file]("SQL Examples.md").
+in the [SQL Examples file](SQL_Examples.md).
 
 ## Questions?
 
