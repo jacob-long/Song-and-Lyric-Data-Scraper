@@ -78,6 +78,41 @@ get tracklists for albums, go to their
 then make your account and get the required authentication token. Put
 that into `config.yaml`.
 
+**A note about genres**:
+
+I wrote this for a specific purpose and therefore it does not automatically
+handle every single Billboard chart. The genres tested to work are the 
+following:
+
+*Both singles and albums*: 
+* Country
+* Rock
+* R&B/hip hop
+* Dance/electronic
+* Rap
+* Latin
+* Christian
+
+*Singles only*: Pop
+
+*Albums only*:
+* Blues
+* Classical
+* Jazz
+* New Age
+* Reggae
+
+But if you include the verbatim URL slug as a genre in `config.yaml`,
+it will probably work. Let's take, for example, Billboard's K-Pop 
+charts. The URL for these charts goes like this:
+
+`https://www.billboard.com/charts/billboard-korea-k-pop-100`
+
+If you include `billboard-korea-k-pop-100`
+as one of the genres under `songs:` in `config.yaml`,
+the charts will be scraped successfully. The same should go for
+any other singles or albums genre.
+
 ### Running the app
 
 Using the command line, assuming you followed the installation instructions,
@@ -100,7 +135,8 @@ which each Billboard entry had all of the song's information.
 
 I like [DB Browser](http://sqlitebrowser.org/) as a cross platform GUI for 
 exploring SQLite databases. You can try out select statements and export to
-CSV and similar formats as needed.
+CSV and similar formats as needed. I have included some example SQL statements
+in the [SQL Examples file](SQL Examples.md).
 
 ## Questions?
 

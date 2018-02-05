@@ -4,7 +4,7 @@
 db_path: "test.sqlite"
 
 # Acceptable years begin around 2005, though this varies by genre.
-years: [2017]
+years: [2017, 2018]
 
 # Possible genres: "pop", "country", "rock", "R&B/hip hop",
 # "dance/electronic", "rap", "latin", "christian"
@@ -18,7 +18,7 @@ years: [2017]
 
 # The following settings refer only to songs
 songs:
-  genres: ["rap"] # Which genres to scrape?
+  genres: ["pop,"rap"] # Which genres to scrape?
   # Once you've scraped the genres/years of interest once,
   # there's no need to do it again (but no harm in it)
   scrape: true
@@ -33,7 +33,7 @@ songs:
 
 albums: 
   run: true
-  genres: ["rap"]
+  genres: ["rap","blues"]
   scrape: true
 
 spotify:
