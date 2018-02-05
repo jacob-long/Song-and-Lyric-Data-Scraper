@@ -14,7 +14,7 @@ require_relative 'lib/linkclass'
 require_relative 'lib/dbcalls'
 require_relative 'lib/chart_parse'
 require_relative 'lib/discogsapi'
-require_relative 'lib/spotifycleaning'
+require_relative 'lib/spotify'
 require_relative 'lib/lyricsearch'
 require_relative 'lib/statistics'
 
