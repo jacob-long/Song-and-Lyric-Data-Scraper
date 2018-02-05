@@ -446,8 +446,6 @@ module Spotifyclean
 				 	WHERE id='#{x['id']}';
 			")
 	
-			prog_bar.increment
-	
 			rescue NoMethodError => e
 				prog_bar.log e
 				db.execute("UPDATE master SET attributes_run = 'true' WHERE id = '#{x['id']}'")
