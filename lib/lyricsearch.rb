@@ -140,9 +140,10 @@ module Lyricsearch
 		puts "Before this search, I have #{song_total - ml_have} songs without lyrics from MetroLyrics."
 
 		songs = db.execute("SELECT id, songtitle, alt_songtitle, artist, alt_artist
-							 FROM master WHERE lyrics_ml IS NULL OR lyrics_ml = ''")
+							 FROM master WHERE (lyrics_ml IS NULL OR lyrics_ml = '') AND
+							 (alt_songtitle NOT NULL or alt_artist NOT NULL)")
 
-		prog_bar = ProgressBar.create(:title => "Wikia alternative search progress",
+		prog_bar = ProgressBar.create(:title => "MetroLyrics alternative search progress",
 									  :starting_at => 0,
 									  :total => songs.length)
 
@@ -232,7 +233,12 @@ module Lyricsearch
 		puts "Before this search, I have #{song_total - w_have} songs with lyrics from Wikia."
 
 		songs = db.execute("SELECT id, songtitle, alt_songtitle, artist, alt_artist 
-							FROM master WHERE lyrics_w IS NULL OR lyrics_w = ''") 
+							FROM master WHERE (lyrics_w IS NULL OR lyrics_w = '') AND
+							(alt_songtitle NOT NULL or alt_artist NOT NULL)") 
+
+		prog_bar = ProgressBar.create(:title => "Wikia alternative search progress",
+									  :starting_at => 0,
+									  :total => songs.length)
 		
 		songs.each do |row|
 
@@ -251,8 +257,9 @@ module Lyricsearch
 				songml = song2.body("\n")
 				db.execute("UPDATE master SET lyrics_w = ? WHERE id = #{row['id']}", "#{songml}")
 				metrosuccess.push(true)
+				prog_bar.increment
 			rescue
-				puts "I couldn't find lyrics for #{row['songtitle']} by #{row['artist']} on Wikia with alternate songtitle."
+				prog_bar.increment
 				next
 			end
 
@@ -268,12 +275,14 @@ module Lyricsearch
 				# puts song2.body
 				songml = song2.body("\n")
 				db.execute("UPDATE master SET lyrics_w = ? WHERE id = #{row['id']}", "#{songml}")
+				prog_bar.increment
 			rescue
-				puts "I couldn't find lyrics for #{row['songtitle']} by #{row['artist']} on Wikia with alternate songtitle."
+				prog_bar.increment
 				next
 			end
 
-			else puts "I don't have alternate metadata for #{row['songtitle']} by #{row['artist']}"
+			else 
+				prog_bar.increment
 				next
 			end
 
