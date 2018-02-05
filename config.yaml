@@ -1,0 +1,62 @@
+# Path to database. If you only provide a filename, it is 
+# assumed the sqlite database is wanted in the same directory
+# as this app.
+db_path: "test.sqlite"
+
+# Acceptable years begin around 2005, though this varies by genre.
+years: [2017]
+
+# Possible genres: "pop", "country", "rock", "R&B/hip hop",
+# "dance/electronic", "rap", "latin", "christian"
+# Note that "pop" does not have an album chart
+# 
+# There are also these album-only charts:
+# "blues", "classical", "jazz", "new age", "reggae"
+# 
+# Other genres may work, but are not tested. 
+# See the README for info
+
+# The following settings refer only to songs
+songs:
+  genres: ["rap"] # Which genres to scrape?
+  # Once you've scraped the genres/years of interest once,
+  # there's no need to do it again (but no harm in it)
+  scrape: true
+  lyrics:
+    search: true # Search for lyrics?
+    metrolyrics: true # Search on MetroLyrics?
+    wikia: true # Search on Wikia?
+    # Search using alternate metadata? This only applies to songs
+    # with no lyrics on the first attempt
+    alt_search: false 
+    statistics: false # Generates crude completeness statistics
+
+albums: 
+  run: true
+  genres: ["rap"]
+  scrape: true
+
+spotify:
+  # This refers to whether you want to use Spotify to search
+  # for alternate formats of the songtitles and artist names
+  get_metadata: true
+  # This allows you to search solely for the Spotify IDs of songs
+  # that don't have them yet
+  get_ids: false
+  # "Attributes" refers to (mostly) audio qualities that Spotify
+  # creates via The Echo Nest. It includes duration, tone, and several
+  # proprietary metrics like "liveness", "acousticness", etc.
+  get_attributes: false
+  # You can use Spotify in addition to Discogs to get tracklists
+  # from the albums you got on the album charts.
+  get_tracklists: false
+  # re_run means repeat metadata or attribute searches for those that
+  # have been searched before. When it's false, it helps you avoid
+  # searching all over again for the tracks that you won't ever find.
+  re_run: false
+  client_key: ""
+  secret_key: ""
+
+discogs: 
+  run: false
+  token: ""
