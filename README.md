@@ -1,5 +1,7 @@
 # Song and Lyric Data Scraper
 
+[![DOI](https://zenodo.org/badge/120316016.svg)](https://zenodo.org/badge/latestdoi/120316016)
+
 This command line tool accompanies Long & Eveland (forthcoming) as a means for
 others to get at the same or similar underlying data plus some other useful 
 goodies. In short, the tool does the following:
