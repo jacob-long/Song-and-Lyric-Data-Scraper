@@ -19,10 +19,10 @@ require_relative 'lib/lyricsearch'
 require_relative 'lib/statistics'
 
 instructs_location = ARGV
-instructs_location = "config.yaml" if instructs_location == nil
 instructs_location = instructs_location.join if instructs_location.is_a? Array
-# instructs = File.open(instructs_location, 'r')
-# instructs = instructs.readlines
+if [nil, ""].include? instructs_location 
+  instructs_location = "config.yaml" 
+end
 args = YAML.load(File.open(instructs_location))
 
 begin
