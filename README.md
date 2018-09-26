@@ -36,7 +36,13 @@ with Ruby 2.4.3 and I suggest you find a way to install that version of Ruby.
 
 Windows users are best off going to the 
 [Ruby Installer site](https://rubyinstaller.org/downloads/) and choosing the 
-2.4.3 installer (or whichever version offered that begins with 2.4).
+2.4.3 installer (or whichever version offered that begins with 2.4). 
+
+Another alternative for Windows users is to use the 
+[Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10), which gives you
+a Linux (typically Ubuntu) shell built into Windows. In that case, follow the
+instructions above for Linux installation of Ruby/RVM. Recent development of 
+this app has used this approach.
 
 ### This tool
 
