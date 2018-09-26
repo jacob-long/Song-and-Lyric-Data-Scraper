@@ -18,7 +18,7 @@ years: [2017, 2018]
 
 # The following settings refer only to songs
 songs:
-  genres: ["pop,"rap"] # Which genres to scrape?
+  genres: ["pop", "rap"] # Which genres to scrape?
   # Once you've scraped the genres/years of interest once,
   # there's no need to do it again (but no harm in it)
   scrape: true
