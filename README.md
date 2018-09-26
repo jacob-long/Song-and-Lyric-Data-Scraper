@@ -2,7 +2,9 @@
 
 [![DOI](https://zenodo.org/badge/120316016.svg)](https://zenodo.org/badge/latestdoi/120316016)
 
-This command line tool accompanies Long & Eveland (forthcoming) as a means for
+This command line tool accompanies 
+[Long & Eveland (forthcoming)](http://journals.sagepub.com/doi/full/10.1177/0093650218791011) 
+as a means for
 others to get at the same or similar underlying data plus some other useful 
 goodies. In short, the tool does the following:
 
@@ -149,3 +151,11 @@ in the [SQL Examples file](SQL_Examples.md).
 ## Questions?
 
 Create an issue here on Github or email me at long.1377@osu.edu.
+
+# References
+
+This tool was used for data collection in the following article:
+
+Long, J. A., & Eveland, W. P. (2018). Entertainment use and political ideology:
+Linking worldviews to media content. *Communication Research*. Advance online 
+publication. https://doi.org/10.1177/0093650218791011
