@@ -5,7 +5,7 @@ require 'bundler/setup'
 
 require 'json'
 require 'sqlite3'
-require 'RSpotify'
+require 'rspotify'
 require 'similar_text'
 
 require_relative 'metaclean'

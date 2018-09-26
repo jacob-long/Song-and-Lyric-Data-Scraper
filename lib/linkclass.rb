@@ -1,9 +1,9 @@
 require 'rubygems'
 require 'bundler/setup'
 
-require 'Date'
+require 'date'
 require 'sqlite3'
-require 'Nokogiri'
+require 'nokogiri'
 require 'open-uri'
 
 require_relative 'dbcalls'

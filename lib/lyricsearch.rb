@@ -1,11 +1,11 @@
 require 'rubygems'
 require 'bundler/setup'
 
-require 'Simple-RSS'
-require 'Lyricfy'
+require 'simple-rss'
+require 'lyricfy'
 require 'nokogiri'
 require 'yaml'
-require 'RSpotify'
+require 'rspotify'
 require 'json'
 require 'sqlite3'
 
