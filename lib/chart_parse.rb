@@ -44,12 +44,16 @@ class Parse
         end
 
         # Fetching songtitles
-        titlespre = page2.css('h2.chart-row__song')
+        the_songs = page2.css('div.chart-list-item')
 
         # Grooming and storing songtitle entries.
         titles = []
-        titlespre.each do |x|
-          titles.push(x.text.to_s)
+        artists = [] 
+        ranks = []
+        the_songs.each do |x|
+          titles.push(x['data-title'])
+          artists.push(x['data-artist'])
+          ranks.push(x['data-rank'])
         end
 
         titles.each do |x|
@@ -58,44 +62,34 @@ class Parse
           x.gsub!(/'/, '\'\'')
         end
 
-        # Fetching artists
-        artistspre = page2.css('div.chart-row__title .chart-row__artist')
-
-        # Grooming and storing artist entries.
-        artists = []
-        artistspre.each do |x|
-          artists.push(x.text.to_s)
-        end
-
         artists.each do |x|
           x.lstrip!
           x.rstrip!
           x.gsub!(/'/, '\'\'')
         end
 
+        # Retrieving, grooming, and storing each song's rank on that week's list.
+        ranks_last = []
+        ranks_last_pre = page2.css('chart-list-item__last-week')
+        ranks_last_pre.each do |x|
+          ranks_last.push(x.text)
+        end
+
+        # Deal with number ones
+        titles.push(page2.css('chart-number-one__title').text)
+        artists.push(page2.css('chart-number-one__artist').text)
+        ranks.push("1")
+        one_last_rank = page2.css('.chart-number-one__last-week').text
+        if one_last_rank == ""
+          one_last_rank = "1"
+        end
+        ranks_last.push(one_last_rank)
+
         # Making sure there are no errors parsing song titles and artist names.
         if titles.count == artists.count
           upperbound = titles.count
         else
           prog_bar.log "Number of titles and artists don't match!"
-        end
-
-        # Retrieving, grooming, and storing each song's rank on that week's list.
-        ranks = []
-        rankspre = page2.css('div.chart-row__rank span.chart-row__current-week')
-        rankspre.each do |x|
-          ranks.push(x.text)
-        end
-
-        # Retrieving, grooming, and storing each song's rank on that week's list.
-        ranks_last = []
-        ranks_last_pre = page2.css('div.chart-row__last-week span.chart-row__value')
-        ranks_last_pre.each do |x|
-          ranks_last.push(x.text)
-        end
-
-        ranks_last.each do |x|
-          x.gsub!(/Last Week:/, '')
         end
 
       # Error handling for problems with opening webpages.
@@ -209,61 +203,53 @@ class Parse
         page2 = Nokogiri::HTML(open(link.url))
       end
 
-      # Fetching songtitles
-      titlespre = page2.css('h2.chart-row__song')
+      # Fetching titles
+      the_albums = page2.css('div.chart-list-item')
 
       # Grooming and storing songtitle entries.
       titles = []
-      titlespre.each do |x|
-        titles.push(x.text.to_s)
+      artists = [] 
+      ranks = []
+      the_albums.each do |x|
+        titles.push(x['data-title'])
+        artists.push(x['data-artist'])
+        ranks.push(x['data-rank'])
       end
 
       titles.each do |x|
         x.lstrip!
         x.rstrip!
-        x.gsub!(/\'/, '\'\'')
-      end
-
-      # Fetching artists
-      artistspre = page2.css('div.chart-row__title .chart-row__artist')
-
-      # Grooming and storing artist entries.
-      artists = []
-      artistspre.each do |x|
-        artists.push(x.text.to_s)
+        x.gsub!(/'/, '\'\'')
       end
 
       artists.each do |x|
         x.lstrip!
         x.rstrip!
-        x.gsub!(/\'/, '\'\'')
+        x.gsub!(/'/, '\'\'')
       end
+
+      # Retrieving, grooming, and storing each song's rank on that week's list.
+      ranks_last = []
+      ranks_last_pre = page2.css('chart-list-item__last-week')
+      ranks_last_pre.each do |x|
+        ranks_last.push(x.text)
+      end
+
+      # Deal with number ones
+      titles.push(page2.css('chart-number-one__title').text)
+      artists.push(page2.css('chart-number-one__artist').text)
+      ranks.push("1")
+      one_last_rank = page2.css('.chart-number-one__last-week').text
+      if one_last_rank == ""
+        one_last_rank = "1"
+      end
+      ranks_last.push(one_last_rank)
 
       # Making sure there are no errors parsing song titles and artist names.
       if titles.count == artists.count
         upperbound = titles.count
       else
         prog_bar.log "Number of titles and artists don't match!"
-      end
-
-      # Retrieving, grooming, and storing each album's rank on that week's list.
-      ranks = []
-      rankspre = page2.css('div.chart-row__rank span.chart-row__current-week')
-      rankspre.each do |x|
-        ranks.push(x.text)
-      end
-
-      # Retrieving, grooming, and storing each album's rank on that week's list.
-      ranks_last = []
-      ranks_last_pre = page2.css('div.chart-row__last-week span.chart-row__value')
-      ranks_last_pre.each do |x|
-        ranks_last.push(x.text)
-      end
-
-      ranks_last.each do |x|
-        x.gsub!(/Last Week\:/, '')
-        x.lstrip!
-        x.rstrip!
       end
 
     # Error handling for problems with opening webpages.
