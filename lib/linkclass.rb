@@ -52,7 +52,7 @@ class Link
 			@album = false
 
 		elsif genre == 'dance/electronic' and year >= 2010 && year < 2013
-			then @genre_snip = 'dance-electronic-digital-songs'
+			then @genre_snip = 'dance-electronic-digital-song-sales'
 			@album = false
 
 		elsif genre == 'dance/electronic' and year < 2010
@@ -83,7 +83,7 @@ class Link
 	def url_albums
 		
 		# christian
-		if genre == 'christian' and year >=2000
+		if genre == 'christian' and year >= 2000
 			then @genre_snip = 'christian-albums'
 			@album = true
 			
