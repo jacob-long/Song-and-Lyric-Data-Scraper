@@ -215,7 +215,7 @@ module Spotifyclean
 		end
 	end
 
-	def self.get_ids(dbname, spotify_client, spotify_secret)
+	def self.get_ids(dbname, spotify_client, spotify_secret, rerun)
 		
 		db = SQLite3::Database.open(dbname)
 		db.results_as_hash = true
@@ -224,8 +224,12 @@ module Spotifyclean
 		RSpotify.authenticate(spotify_client, spotify_secret)
 
 		# For now, I'm just going to have it select all matching songs from the master table
-		songs = db.execute("SELECT id, songtitle, artist FROM master WHERE 
-							spotifyid IS NULL")
+		if rerun == false
+			songs = db.execute("SELECT id, songtitle, artist FROM master WHERE 
+													spotifyid IS NULL")
+		else 
+			songs = db.execute("SELECT id, songtitle, artist FROM master")
+		end
 		
 		prog_bar = ProgressBar.create(:title => "Spotify ID search progress",
 									  :starting_at => 0,
