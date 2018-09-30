@@ -259,9 +259,16 @@ module Spotifyclean
 				next
 			end
 
-			db.execute("UPDATE master SET spotifyid = ? WHERE id = ?",
-							"#{track.id}", "#{row['id']}")
-			prog_bar.increment
+		  begin 
+				db.execute("UPDATE master SET spotifyid = ? WHERE id = ?",
+								"#{track.id}", "#{row['id']}")
+				prog_bar.increment
+			rescue NoMethodError => e
+				prog_bar.log "Error in spotify ID search. Track was #{row}"
+				prog_bar.log e
+				prog_bar.increment
+				next
+			end 
 
 		end
 
@@ -403,65 +410,72 @@ module Spotifyclean
 									  :starting_at => 0,
 									  :total => songs.length)
 	
-		songs.each do |x|
+		songs.each_slice(50) { |x|
 			
-			track = RSpotify::AudioFeatures.find(x['spotifyid'])
-			if track == nil
-				db.execute("UPDATE master SET attributes_run = 'true' WHERE id = '#{x['id']}'")
+			ids = x.map {|y| y['spotifyid']}
+			tracks = RSpotify::AudioFeatures.find(ids)
+			if tracks == nil
+				db.execute("UPDATE master SET attributes_run = 'true' WHERE spotifyid IN '#{ids}'")
 				prog_bar.increment
 				next
-			end
-	
+			end 
+
 			# This puts the closest match's data in the database
-			begin
-			# The convoluted syntax is necessary because I'm updating an existing data table.
-			db.execute_batch("
-				UPDATE master SET key ='#{track.key}' WHERE id='#{x['id']}';
-				UPDATE master SET energy ='#{track.energy}' WHERE id='#{x['id']}';
-				UPDATE master SET liveness ='#{track.liveness}' WHERE id='#{x['id']}';
-				UPDATE master SET loudness ='#{track.loudness}' WHERE id='#{x['id']}';
-				UPDATE master SET valence ='#{track.valence}' WHERE id='#{x['id']}';
-				UPDATE master SET danceability ='#{track.danceability}' WHERE id='#{x['id']}';
-				UPDATE master SET tempo ='#{track.tempo}' WHERE id='#{x['id']}';
-				UPDATE master SET speechiness ='#{track.speechiness}' WHERE id='#{x['id']}';
-				UPDATE master SET acousticness ='#{track.acousticness}' WHERE id='#{x['id']}';
-				UPDATE master SET mode ='#{track.mode}' WHERE id='#{x['id']}';
-				UPDATE master SET time_signature ='#{track.time_signature}' WHERE id='#{x['id']}';
-				UPDATE master SET duration ='#{track.duration_ms}' WHERE id='#{x['id']}';
-				UPDATE master SET analysis_url ='#{track.analysis_url}' WHERE id='#{x['id']}';
-				UPDATE master SET instrumentalness ='#{track.instrumentalness}' WHERE id='#{x['id']}';
-			")
-	
-			db.execute("UPDATE master SET attributes_run = 'true' WHERE id = '#{x['id']}'")
-	
-			# This grabs the detailed analysis from the link embedded in the search result
-			analysis_url = "#{track.analysis_url}?access_token=#{RSpotify.client_token}"
-			# sleep(3) - not needed because my API rate limit was lifted. Use if you are rate limited
-			jsonobject = open(analysis_url)
-			analysis_parse = JSON.parse(jsonobject.first)
-	
-			# This adds additional data from the JSON analysis document.
-			db.execute_batch("
-				UPDATE master SET key_confidence ='#{analysis_parse['track']['key_confidence']}' WHERE id='#{x['id']}';
-				UPDATE master SET audio_md5 ='#{analysis_parse['track']['audio_md5']}' WHERE id='#{x['id']}';
-				UPDATE master SET tempo_confidence ='#{analysis_parse['track']['tempo_confidence']}' WHERE id='#{x['id']}';
-				UPDATE master SET mode_confidence ='#{analysis_parse['track']['mode_confidence']}' WHERE id='#{x['id']}';
-				UPDATE master SET time_signature_confidence ='#{analysis_parse['track']['time_signature_confidence']}'
-				 	WHERE id='#{x['id']}';
-			")
-	
-			rescue NoMethodError => e
-				prog_bar.log e
-				db.execute("UPDATE master SET attributes_run = 'true' WHERE id = '#{x['id']}'")
-			rescue => e
-				prog_bar.log e
-				prog_bar.log "Problem with #{x['songtitle']} by #{x['artist']}. Moving on..."
-				db.execute("UPDATE master SET attributes_run = 'true' WHERE id = '#{x['id']}'")
+			for track in tracks do 
+				begin
+				# The convoluted syntax is necessary because I'm updating an existing data table.
+				if track != nil 
+					db.execute_batch("
+						UPDATE master SET key ='#{track.key}' WHERE spotifyid='#{track.id}';
+						UPDATE master SET energy ='#{track.energy}' WHERE spotifyid='#{track.id}';
+						UPDATE master SET liveness ='#{track.liveness}' WHERE spotifyid='#{track.id}';
+						UPDATE master SET loudness ='#{track.loudness}' WHERE spotifyid='#{track.id}';
+						UPDATE master SET valence ='#{track.valence}' WHERE spotifyid='#{track.id}';
+						UPDATE master SET danceability ='#{track.danceability}' WHERE spotifyid='#{track.id}';
+						UPDATE master SET tempo ='#{track.tempo}' WHERE spotifyid='#{track.id}';
+						UPDATE master SET speechiness ='#{track.speechiness}' WHERE spotifyid='#{track.id}';
+						UPDATE master SET acousticness ='#{track.acousticness}' WHERE spotifyid='#{track.id}';
+						UPDATE master SET mode ='#{track.mode}' WHERE spotifyid='#{track.id}';
+						UPDATE master SET time_signature ='#{track.time_signature}' WHERE spotifyid='#{track.id}';
+						UPDATE master SET duration ='#{track.duration_ms}' WHERE spotifyid='#{track.id}';
+						UPDATE master SET analysis_url ='#{track.analysis_url}' WHERE spotifyid='#{track.id}';
+						UPDATE master SET instrumentalness ='#{track.instrumentalness}' WHERE spotifyid='#{track.id}';
+					")
+			
+					db.execute("UPDATE master SET attributes_run = 'true' WHERE spotifyid = '#{track.id}'")
+			
+					# This grabs the detailed analysis from the link embedded in the search result
+					analysis_url = "#{track.analysis_url}?access_token=#{RSpotify.client_token}"
+					# sleep(3) - not needed because my API rate limit was lifted. Use if you are rate limited
+					jsonobject = open(analysis_url)
+					analysis_parse = JSON.parse(jsonobject.first)
+					# This adds additional data from the JSON analysis document.
+					db.execute_batch("
+						UPDATE master SET key_confidence ='#{analysis_parse['track']['key_confidence']}' WHERE spotifyid='#{track.id}';
+						UPDATE master SET audio_md5 ='#{analysis_parse['track']['audio_md5']}' WHERE spotifyid='#{track.id}';
+						UPDATE master SET tempo_confidence ='#{analysis_parse['track']['tempo_confidence']}' WHERE spotifyid='#{track.id}';
+						UPDATE master SET mode_confidence ='#{analysis_parse['track']['mode_confidence']}' WHERE spotifyid='#{track.id}';
+						UPDATE master SET time_signature_confidence ='#{analysis_parse['track']['time_signature_confidence']}'
+							WHERE spotifyid='#{track.id}';
+					")
+				else 
+					prog_bar.increment
+					next
+				end
+		
+				rescue NoMethodError => e
+					prog_bar.log e
+					db.execute("UPDATE master SET attributes_run = 'true' WHERE spotifyid = '#{track.id}'")
+				rescue => e
+					prog_bar.log e
+					prog_bar.log "Problem with #{x[0]['songtitle']} by #{x[0]['artist']}. Moving on..."
+					db.execute("UPDATE master SET attributes_run = 'true' WHERE spotifyid = '#{track.id}'")
+					prog_bar.increment
+					next
+				end
 				prog_bar.increment
-				next
 			end
-			prog_bar.increment
-		end
+		}
 	end
 
 end
