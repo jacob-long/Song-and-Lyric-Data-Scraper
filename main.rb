@@ -25,6 +25,10 @@ if [nil, ""].include? instructs_location
 end
 args = YAML.load(File.open(instructs_location))
 
+# Turn the start and end year arguments into an array of years
+years = args['start_year'].to_i...args['end_year'].to_i
+years = years.to_a
+
 begin
 
 # This creates the database. It will overwrite in case of a naming conflict if 'overwrite' is set to 'true'.
@@ -35,7 +39,7 @@ DB.results_as_hash = true
 
 if args['songs']['scrape'] == true
   # This creates an object of objects of link type (think about that for a minute)
-  feed = Feeder.new(args['songs']['genres'], args['years'])
+  feed = Feeder.new(args['songs']['genres'], years)
   feed.feed
 
   # Now I'm sending all of those pre-built links to the parsing method that goes to the site and scrapes the data
@@ -47,7 +51,7 @@ if args['albums']['run'] == true
 
   if args['albums']['scrape'] == true
     # This creates an object of objects of link type (think about that for a minute)
-    feed2 = Feeder.new(args['albums']['genres'], args['years'])
+    feed2 = Feeder.new(args['albums']['genres'], years)
     feed2.feed_albums
 
     DBcalls::create_album_master

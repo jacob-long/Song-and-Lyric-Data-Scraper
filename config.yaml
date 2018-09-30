@@ -4,7 +4,8 @@
 db_path: "test.sqlite"
 
 # Acceptable years begin around 2005, though this varies by genre.
-years: [2017, 2018]
+start_year: 2010
+end_year: 2018
 
 # Possible genres: "pop", "country", "rock", "R&B/hip hop",
 # "dance/electronic", "rap", "latin", "christian"
