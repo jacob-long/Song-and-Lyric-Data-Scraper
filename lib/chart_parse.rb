@@ -124,6 +124,22 @@ class Parse
           prog_bar.increment
           next
         end
+
+      rescue StandardError => e
+        if retries > 0 and retries < 3
+          prog_bar.log "\nError: #{e}"
+          prog_bar.log "\nCan't access the #{link.genre} webpage on #{link.date}. Going to try again #{retries} more times"
+          retries -= 1
+          sleep 1 + (3 - retries) * 2
+          retry
+        elsif retries == 3
+          retries -= 1
+          retry
+        else
+          prog_bar.log "\n\nCouldn't access on further attempts, either. Try visiting #{link.url}"
+          prog_bar.increment
+          next
+        end  
       end
 
       # Inserts songs into master table that contains all songs
