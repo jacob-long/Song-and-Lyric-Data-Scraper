@@ -145,7 +145,6 @@ class Link
 		else
 			@genre_snip = genre
 			@album = true
-			exit
 		end
 	end 
 
