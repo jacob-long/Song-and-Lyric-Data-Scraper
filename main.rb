@@ -35,6 +35,7 @@ begin
 DBNAME = "#{args['db_path']}"
 DB = SQLite3::Database.open(DBNAME)
 DBcalls::create_table_master
+DBcalls::create_album_master
 DB.results_as_hash = true
 
 if args['songs']['scrape'] == true
@@ -54,7 +55,6 @@ if args['albums']['run'] == true
     feed2 = Feeder.new(args['albums']['genres'], years)
     feed2.feed_albums
 
-    DBcalls::create_album_master
     fed2 = Parse.new(feed2)
     fed2.chart_parse_albums
   end
