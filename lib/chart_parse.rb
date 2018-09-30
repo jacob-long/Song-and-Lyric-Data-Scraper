@@ -95,8 +95,8 @@ class Parse
       # Error handling for problems with opening webpages.
       rescue OpenURI::HTTPError => e
         if retries > 0 and retries < 3
-          prog_bar.log "\tError: #{e}"
-          prog_bar.log "\tCan't access the webpage for #{link.genre} on #{link.date}. Going to try again #{retries} more times"
+          prog_bar.log "\nError: #{e}"
+          prog_bar.log "\nCan't access the webpage for #{link.genre} on #{link.date}. Going to try again #{retries} more times"
           retries -= 1
           sleep 1 + (3 - retries) * 2
           retry
@@ -104,7 +104,7 @@ class Parse
           retries -= 1
           retry
         else
-          prog_bar.log "\t\tCouldn't access on further attempts, either. Try visiting #{link.url}"
+          prog_bar.log "\n\nCouldn't access on further attempts, either. Try visiting #{link.url}"
           prog_bar.increment
           next
         end
@@ -255,8 +255,8 @@ class Parse
     # Error handling for problems with opening webpages.
     rescue OpenURI::HTTPError => e
       if retries > 0 and retries < 3
-        prog_bar.log "\tError: #{e}"
-        prog_bar.log "\tCan't access the webpage for #{link.genre} albums on #{link.date}. Going to try again #{retries} more times"
+        prog_bar.log "\nError: #{e}"
+        prog_bar.log "\nCan't access the webpage for #{link.genre} albums on #{link.date}. Going to try again #{retries} more times"
         retries -= 1
         sleep 1 + (3 - retries) * 2
         retry
@@ -264,8 +264,8 @@ class Parse
         retries -= 1
         retry
       else
-        prog_bar.log "\t\tCouldn't access on further attempts, either. Try visiting #{link.url}"
-        prog_bar.incremenet
+        prog_bar.log "\n\nCouldn't access on further attempts, either. Try visiting #{link.url}"
+        prog_bar.increment
         next
       end
     
